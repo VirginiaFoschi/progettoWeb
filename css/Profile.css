@@ -1,0 +1,21 @@
+.top{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    padding: 20px;
+}
+
+.ProfileBar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+}
+
+.nav-item{
+    background-color: #ccc;
+}
+.nav-link{
+    color: black;
+}
+

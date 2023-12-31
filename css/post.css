@@ -1,0 +1,22 @@
+
+main {
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+
+main>a {
+    margin: 30px;
+    text-align: center;
+}
+
+main li a {
+    text-decoration: none;
+}
+
+li{
+    list-style-type: none;
+}
+
+
+

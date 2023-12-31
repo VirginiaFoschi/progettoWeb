@@ -7,3 +7,11 @@
 .heart-icon.active {
     color: red;
 }
+
+.article {
+    margin: 20px 20px;
+}
+
+.image{
+    width:30%;
+}

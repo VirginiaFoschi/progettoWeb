@@ -1,0 +1,16 @@
+.footer {
+    position: fixed; 
+    bottom: 0;
+    width: 100%;
+    clear: both;
+}
+
+.content {
+    margin-bottom: 40px;
+}
+
+.icon {
+    width: 30px;
+    height: 30px;
+    fill: currentColor;
+}

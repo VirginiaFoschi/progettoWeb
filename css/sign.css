@@ -1,3 +1,10 @@
+h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    color: blue;
+    font-size: 250%;
+    margin: 5% 0;
+}
+
 .footer {
     position: fixed; 
     bottom: 0;

@@ -2,3 +2,22 @@
     margin: 10px 50px;
     justify-content: center;
 }
+
+.flex-container {
+    display: flex;
+}
+
+.flex-container > div {
+    margin: 10px;
+}
+
+img {
+    width:150px;
+}
+
+.top {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    padding: 10px;
+}

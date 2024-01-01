@@ -12,6 +12,21 @@
     margin: 20px 20px;
 }
 
-.image{
-    width:30%;
+.flex-container {
+    display: flex;
+}
+
+.flex-container > div {
+    margin: 10px;
+}
+
+img {
+    width:130px;
+}
+
+.top {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    padding: 20px;
 }

@@ -40,6 +40,17 @@
     margin-left: 100px;
 }
 
+.profile-name{
+    flex-basis: 100%;
+    box-sizing: border-box;
+}
+
+#nome-utente{
+    text-align: center;
+    font-weight: bold;
+    font-size: medium;
+    width: 100%;
+}
 
 .information-item1,
 .information-item2 {
@@ -57,11 +68,13 @@
     text-align: center;
     font-weight: bold;
     font-size: medium;
+    width: 100%;
 }
 
 #num-follow,
 #num-follower {
     text-align: center;
+    width: 100%;
 }
 
 .heart-icon {

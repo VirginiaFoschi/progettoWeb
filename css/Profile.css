@@ -1,0 +1,95 @@
+.top {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    padding: 20px;
+}
+
+.ProfileBar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 20vh;
+    align-self: center;
+}
+
+.nav-item {
+    background-color: #ccc;
+}
+
+.nav-link {
+    color: black;
+}
+
+.top-inf {
+    display: flex;
+    align-items: center;
+}
+
+#Profilo {
+    height: 150px;
+    width: 150px;
+    border-radius: 5px;
+    margin: 20px 20px 0px 50px;
+}
+
+.Informazioni {
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 100px;
+}
+
+.profile-name{
+    flex-basis: 100%;
+    box-sizing: border-box;
+}
+
+#nome-utente{
+    text-align: center;
+    font-weight: bold;
+    font-size: medium;
+    width: 100%;
+}
+
+.information-item1,
+.information-item2 {
+    flex-basis: 50%;
+    box-sizing: border-box;
+}
+
+.information-item1 {
+    padding-right: 50px;
+}
+
+
+#follow,
+#follower {
+    text-align: center;
+    font-weight: bold;
+    font-size: medium;
+    width: 100%;
+}
+
+#num-follow,
+#num-follower {
+    text-align: center;
+    width: 100%;
+}
+
+.heart-icon {
+    color: #aaa;
+    width: 20px;
+    height: 20px;
+}
+
+.heart-icon.active {
+    color: red;
+}
+
+.bg-body {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}

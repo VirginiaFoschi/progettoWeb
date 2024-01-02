@@ -99,6 +99,7 @@
     width:130px;
 }
 
+/*Titotlo e autore nell annuncio del titolo*/
 .informazioni-libro{
     text-align: center;
 }
@@ -116,6 +117,7 @@
     margin-right: 10px;
 }
 
+/*Immagine di chi ha postato*/
 .img-post{
     width: 30px;
 }

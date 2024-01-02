@@ -94,17 +94,19 @@
     margin-bottom: 20px;
 }
 
+/*Immagine libro nel post*/
 .image {
     width:130px;
 }
 
-.article {
-    display: flex;
-   justify-content: space-between;
-}
-
 .informazioni-libro{
     text-align: center;
+}
+
+.article-annuncio{
+    display: flex;
+   justify-content: space-between;
+   flex-wrap: wrap;
 }
 
 .button-delete{
@@ -112,12 +114,6 @@
     box-sizing: border-box;
     margin-bottom: 10px;
     margin-right: 10px;
-}
-
-.article-annuncio{
-    display: flex;
-   justify-content: space-between;
-   flex-wrap: wrap;
 }
 
 .img-post{
@@ -128,6 +124,10 @@
     margin-top: 20px;
 }
 
+.profilo-nome-foto{
+    align-self: flex-start;
+}
+
 .nome-evento{
     margin-right: 60px;
 }
@@ -135,6 +135,7 @@
 .descrizione-annuncio{
     text-align: center;
 }
+
 
 
 

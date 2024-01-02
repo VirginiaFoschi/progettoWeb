@@ -138,6 +138,28 @@
     text-align: center;
 }
 
+.informazione-scambio{
+    display: flex;
+    align-items: center;
+}
+
+.info-libro-scambio{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.nome-scambio, .data-scadenza{
+    flex-basis: 50%;
+    box-sizing: border-box;
+}
+
+.bottom-scambi{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
 
 
 

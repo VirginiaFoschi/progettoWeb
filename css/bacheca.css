@@ -16,6 +16,14 @@
     display: flex;
 }
 
+#head {
+    text-align: end;
+}
+
+#notifiche {
+    margin: 10px;
+}
+
 .flex-container > div {
     margin: 10px;
 }

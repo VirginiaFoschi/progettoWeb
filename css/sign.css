@@ -16,3 +16,13 @@ form {
     margin: 10px 50px;
     justify-content: center;
 }
+
+img {
+    width: 130px;
+    margin-right: 10px;
+}
+
+.top-inf {
+    display: flex;
+    align-items: center;
+}

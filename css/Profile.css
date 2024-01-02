@@ -94,7 +94,7 @@
     margin-bottom: 20px;
 }
 
-img {
+.image {
     width:130px;
 }
 
@@ -113,6 +113,31 @@ img {
     margin-bottom: 10px;
     margin-right: 10px;
 }
+
+.article-annuncio{
+    display: flex;
+   justify-content: space-between;
+   flex-wrap: wrap;
+}
+
+.img-post{
+    width: 30px;
+}
+
+.profilo-nome-foto, .nome-evento{
+    margin-top: 20px;
+}
+
+.nome-evento{
+    margin-right: 60px;
+}
+
+.descrizione-annuncio{
+    text-align: center;
+}
+
+
+
 
 
 

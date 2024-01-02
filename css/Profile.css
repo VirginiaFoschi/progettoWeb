@@ -1,3 +1,4 @@
+/*Bottoni nella parte superiore*/
 .top {
     display: flex;
     justify-content: space-between;
@@ -5,12 +6,20 @@
     padding: 20px;
 }
 
+/*Barra degli strumenti del profilo*/
 .profileBar {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 20vh;
     align-self: center;
+}
+
+.nav-link.active2 {
+    background-color: #3498db;
+    /* Colore di sfondo quando il bottone è attivo */
+    color: #fff;
+    /* Colore del testo quando il bottone è attivo */
 }
 
 .nav-item {
@@ -21,6 +30,7 @@
     color: black;
 }
 
+/*Informazioni prima della barra strumenti del profilo*/
 .top-inf {
     display: flex;
     align-items: center;
@@ -39,12 +49,12 @@
     flex-wrap: wrap;
 }
 
-.profile-name{
+.profile-name {
     flex-basis: 100%;
     box-sizing: border-box;
 }
 
-#nome-utente{
+#nome-utente {
     text-align: center;
     font-weight: bold;
     font-size: medium;
@@ -76,16 +86,7 @@
     width: 100%;
 }
 
-.heart-icon {
-    color: #aaa;
-    width: 20px;
-    height: 20px;
-}
-
-.heart-icon.active {
-    color: red;
-}
-
+/*Post grandezza nella pagina*/
 .bg-body {
     max-width: 500px;
     margin-left: auto;
@@ -93,7 +94,24 @@
     margin-bottom: 20px;
 }
 
-.nav-link.active2 {
-    background-color: #3498db; /* Colore di sfondo quando il bottone è attivo */
-    color: #fff; /* Colore del testo quando il bottone è attivo */
-  }
+img {
+    width:130px;
+}
+
+.article {
+    display: flex;
+   justify-content: space-between;
+}
+
+.informazioni-libro{
+    text-align: center;
+}
+
+.button-delete{
+    align-self: flex-end;
+}
+
+
+
+
+

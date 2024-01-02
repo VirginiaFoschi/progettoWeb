@@ -5,7 +5,7 @@
     padding: 20px;
 }
 
-.ProfileBar {
+.profileBar {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -26,18 +26,17 @@
     align-items: center;
 }
 
-#Profilo {
+#profilo-image {
     height: 150px;
     width: 150px;
     border-radius: 5px;
     margin: 20px 20px 0px 50px;
 }
 
-.Informazioni {
+.informazioni {
     font-family: 'Courier New', Courier, monospace;
     display: flex;
     flex-wrap: wrap;
-    margin-left: 100px;
 }
 
 .profile-name{
@@ -88,8 +87,13 @@
 }
 
 .bg-body {
-    max-width: 700px;
+    max-width: 500px;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 20px;
 }
+
+.nav-link.active2 {
+    background-color: #3498db; /* Colore di sfondo quando il bottone è attivo */
+    color: #fff; /* Colore del testo quando il bottone è attivo */
+  }

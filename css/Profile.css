@@ -109,6 +109,9 @@ img {
 
 .button-delete{
     align-self: flex-end;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    margin-right: 10px;
 }
 
 

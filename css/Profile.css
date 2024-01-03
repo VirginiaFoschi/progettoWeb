@@ -138,6 +138,7 @@
     text-align: center;
 }
 
+/*Post scambio attivo*/
 .informazione-scambio{
     display: flex;
     align-items: center;
@@ -157,6 +158,7 @@
     display: flex;
     justify-content: space-between;
 }
+
 
 
 

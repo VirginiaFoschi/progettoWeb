@@ -61,6 +61,18 @@
     width: 100%;
 }
 
+/*Bottone follow nella pagina account*/
+.follow, .scambio{
+    box-sizing: border-box;
+    color:black;
+    width: 100%;
+}
+
+.follow.clicked{
+    background-color: #28a745;
+    color: #fff;
+}
+
 .information-item1,
 .information-item2 {
     flex-basis: 50%;
@@ -159,12 +171,20 @@
     justify-content: space-between;
 }
 
+/*Cuore per post di account*/
+.heart-icon {
+    color: #aaa;
+    width: 20px;
+    height: 20px;
+}
 
+.heart-icon.active {
+    color: red;
+}
 
-
-
-
-
+.scambio{
+    align-items: flex-end;
+}
 
 
 

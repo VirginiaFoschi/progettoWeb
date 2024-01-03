@@ -20,6 +20,17 @@
     text-align: end;
 }
 
+.follow{
+    float:right;
+    background-color: rgba(128, 128, 128, 0.245);
+    color:black;
+}
+
+.follow.clicked {
+    background-color: #28a745;
+    color: #fff;
+}
+
 #notifiche {
     margin: 10px;
 }
@@ -32,9 +43,6 @@ img {
     width:130px;
 }
 
-.top {
-    display: flex;
-    justify-content: space-between;
-    text-align: center;
-    padding: 20px;
+#img_profile{
+    width:10%;
 }

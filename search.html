@@ -21,19 +21,26 @@
                 </svg>
               </span>
               <input type="text" class="form-control" id="input-group-1" name="input-group-1" placeholder="Cerca...">
+              <select class="form-select" id="select-type" name="select-type">
+                <option value="all">All</option>
+                <option value="utenti">Account</option>
+                <option value="post">Posts</option>
+            </select>
             </div>
           </div>
     </header>
       <div class="row justify-content-center content">
-        <div class="col-12">
+        <div class="col-md-6">
           <!-- Articoli -->
           <article class="article bg-body border mx-3">
+            <header class="px-3  mt-3 mb-3">
+              <img src="img/immagineProfilo.png" alt="" id="img_profile">
+              <a href="#">Utente autore evento</a>
+              <input class="follow" type="button" value="Follow">
+            </header>
             <section class="px-3 flex-container">
                 <div class="top-inf"><img src="img/html5-js-css3.png" alt="" id="Profilo" class="image"></div>
-                <div class="Informazioni">
-                  <p>Libro di </p>
-                  <p id="description">come mai ha scelto di scambiare questo libro e le sue considerazioni sul libro, come mai ha scelto di scambiare questo libro e le sue considerazioni sul libro, come mai ha scelto di scambiare questo libro e le sue considerazioni sul libro</p>
-              </div>
+                <p id="description">come mai ha scelto di scambiare questo libro e le sue considerazioni sul libro, come mai ha scelto di scambiare questo libro e le sue considerazioni sul libro, come mai ha scelto di scambiare questo libro e le sue considerazioni sul libro</p>
             </section>
             <footer class="text-end mb-3 px-3">
               <input type="submit" class="btn btn-sm btn-outline-dark" value="Proponi scambio"/>
@@ -42,8 +49,42 @@
         </div>
       </div>
       <div class="row justify-content-center content">
-        <div class="col-12">
-          <!-- Articoli -->
+        <div class="col-md-6">
+          <article class="article bg-body border mx-3">
+            <section class="px-3 flex-container">
+                <div class="top-inf"><img src="img/immagineProfilo.png" alt="" id="Profilo" class="imagePerson"></div>
+                <div class="container">
+                  <div class="row mb-3 text-center">
+                    <a href="#">Utente autore evento</a>
+                  </div>
+                  <div class="row mb-3">
+                    <div class="col-md-6 text-center">
+                      <p class="information-item1" id="follow">Follow</p>
+                    </div>
+                    <div class="col-md-6 text-center">
+                      <p class="information-item2" id="follower">Follower</p>
+                    </div>
+                  </div>
+                  <div class="row mb-3">
+                    <div class="col-md-6 text-center">
+                      <p class="information-item1" id="num-follow">100</p>
+                    </div>
+                    <div class="col-md-6 text-center">
+                      <p class="information-item2" id="num-follower">1</p>
+                    </div>
+                  </div>
+                  <div class="row mb-3 justify-content-center">
+                    <div class="col-md-3">
+                      <input type="button" class="follow" value="Follow"/>
+                    </div>
+                  </div>
+                </div>
+            </section>
+          </article>
+        </div>
+      </div>
+      <!--<div class="row justify-content-center content">
+        <div class="col-md-6">
           <article class="article bg-body border mx-3">
             <section class="px-3 flex-container">
                 <div class="top-inf"><img src="img/html5-js-css3.png" alt="" id="Profilo" class="imagePerson"></div>
@@ -69,7 +110,7 @@
             </section>
           </article>
         </div>
-      </div>
+      </div>-->
     <div class="row">
         <div class="col-12">
             <footer class="bg-white footer">

@@ -8,3 +8,17 @@ for (let i = 0; i < el.length; i++) {
         }
     });
 };
+
+let buttons= document.getElementsByClassName('follow');
+for(let i=0; i<buttons.length; i++) {
+    buttons[i].addEventListener('click', function() {
+            if(this.classList.contains('clicked')) {
+                this.classList.remove('clicked');
+                this.value="Follow";
+            } else {
+                this.classList.add('clicked');
+                this.value = 'Follow ✓'; // Carattere di spunta, puoi personalizzarlo
+            }
+            
+        });
+}

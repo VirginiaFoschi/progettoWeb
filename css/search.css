@@ -3,6 +3,10 @@
     justify-content: center;
 }
 
+.form-group .input-group input {
+    width: 80%;
+}
+
 .flex-container {
     display: flex;
 }
@@ -15,9 +19,17 @@ img {
     width:150px;
 }
 
-.top {
-    display: flex;
-    justify-content: space-between;
-    text-align: center;
-    padding: 10px;
+#img_profile{
+    width:5%;
+}
+
+.follow{
+    float: right;
+    background-color: rgba(128, 128, 128, 0.245);
+    color:black;
+}
+
+.follow.clicked {
+    background-color: #28a745;
+    color: #fff;
 }

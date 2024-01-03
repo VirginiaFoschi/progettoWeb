@@ -1,0 +1,22 @@
+.etichetta-stampare > p:nth-child(-n+2) {
+    /* Stile per i primi due paragrafi */
+    box-sizing: border-box;
+    flex-basis: 50%;
+}
+
+.etichetta-stampare > p:nth-last-child(-n+2) {
+    /* Stile per gli ultimi due paragrafi */
+    flex-basis: 50%;
+    box-sizing: border-box;
+}
+
+.etichetta-stampare{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.label-nome, .label-ind{
+    font-weight: bold;
+    box-sizing: border-box;
+}
+

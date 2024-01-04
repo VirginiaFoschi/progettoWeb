@@ -13,3 +13,7 @@ function caricaArticoli(file) {
 document.getElementById('impostazioni').addEventListener('click', function () {
   window.location.href = "impostazioni.html";
 })
+
+function scaricaEtichetta(){
+  window.location.href = "etichetta.html";
+}

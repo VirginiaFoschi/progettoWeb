@@ -1,16 +1,18 @@
-let el = document.querySelector(".icon");
+let inputElement =document.getElementById('cerca');
+let btn = document.getElementById('btnannulla');
+let btn2=document.getElementById('btnsearch');
 
-el.addEventListener('click', function() {
-    document.getElementById('loader').style.display = 'none';
+btn.addEventListener('click', function(){
+    this.style.display='none';
+    inputElement.style.width='90%';
 });
 
-document.getElementById('input-group-1').addEventListener('focus', function() {
-    document.getElementById('loader').style.display = 'block';
+inputElement.addEventListener("focus", function() {
+    btn.style.display='block';
+    inputElement.style.width="70%";
 });
 
-document.getElementById('input-group-1').addEventListener('blur', function() {
-    document.getElementById('loader').style.display = 'none';
-});
+
 
 let buttons= document.getElementsByClassName('follow');
 for(let i=0; i<buttons.length; i++) {

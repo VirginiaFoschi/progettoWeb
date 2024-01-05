@@ -1,11 +1,46 @@
-.form-group{
+#search {
     margin: 10px 50px;
-    justify-content: center;
 }
 
-.form-group .input-group input {
-    width: 80%;
-}
+  form{
+    margin:auto;
+    max-width:100%;
+  }
+  
+  form.example input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    float: left;
+    width: 90%;
+    background: #f1f1f1;
+  }
+  
+  form.example button {
+    font-size: 17px;
+    cursor: pointer;
+  }
+
+  #btnsearch{
+    padding: 10px;
+    width: 10%;
+    background: #2196F3;
+    color: white;
+    border: 1px solid grey;
+    border-left: none;
+    float: left;
+  }
+  
+  form.example #btnsearch:hover {
+    background: #0b7dda;
+  }
+  
+  form.example::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
 
 .flex-container {
     display: flex;
@@ -15,6 +50,16 @@
     margin: 10px;
 }
 
+.follow{
+    float:right;
+    background-color: rgba(128, 128, 128, 0.245);
+    color:black;
+}
+
+.follow.clicked {
+    background-color: #28a745;
+    color: #fff;
+} 
 img {
     width:150px;
 }
@@ -23,13 +68,23 @@ img {
     width:5%;
 }
 
-.follow{
-    float: right;
-    background-color: rgba(128, 128, 128, 0.245);
-    color:black;
+#btnannulla{
+    display: none;
+    padding: 10px;
+    width:18%;
+    background: none;
+    border: none;
 }
 
-.follow.clicked {
-    background-color: #28a745;
-    color: #fff;
+table{
+    border-spacing: 10px;
+}
+
+th,td {
+      text-align: center !important;
+      padding: 8px;
+}
+
+td .follow {
+    float: none;
 }

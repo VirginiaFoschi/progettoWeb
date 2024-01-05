@@ -31,3 +31,14 @@ img {
     align-items: center;
 }
 
+ul{
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+}
+
+li{
+    flex-basis: 33%;
+    box-sizing: border-box;
+    text-align: center;
+}

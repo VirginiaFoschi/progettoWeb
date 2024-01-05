@@ -1,14 +1,13 @@
 input{
     margin-bottom: 10%;
-    margin-right: 10%;
-    margin-left: 10%;
+   
 }
 textarea{
-    margin:0 10% 10% ;
+    margin-bottom: 10%;
 }
 
 select{
-    margin: 0 5%  10% 0;
+    margin-bottom: 10%;
 }
 
 button{
@@ -17,9 +16,9 @@ button{
     margin-top:10%;
 }
 
-#addImg {
-    margin: 20px 40%;
-   
+img {
+    width: 130px;
+    height: 130px;
 }
 
 

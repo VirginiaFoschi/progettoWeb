@@ -22,3 +22,5 @@ stars.forEach((star, index) => {
         }
     });
 });
+
+

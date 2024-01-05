@@ -15,9 +15,6 @@
 
 <body class="bg-light">
   <div class="container-fluid p-0 overflow-hidden">
-    <header>
-    </header>
-
     <div class="top">
       <input class="button" type="button" value="Impostazioni" name="impostazioni" id="impostazioni" onclick="">
       <input class="button" type="button" value="Notifiche" name="notifiche" id="notifiche" onclick="">
@@ -25,13 +22,13 @@
     <div class="top-inf">
       <img src="img/immagineProfilo.png" alt="" id="profilo-image">
 
-      <div class="informazioni">
-        <p class="profile-name" id="nome-utente">Mario.rossi23</p>
+      <section class="informazioni">
+        <p id="nome-utente">Mario.rossi23</p>
         <p class="information-item1" id="follow">Follow</p>
         <p class="information-item2" id="follower">Follower</p>
         <p class="information-item1" id="num-follow">100</p>
         <p class="information-item2" id="num-follower">1</p>
-      </div>
+      </section>
     </div>
 
 
@@ -111,6 +108,8 @@
   <script src="js/bacheca.js" type="text/javascript"></script>
   <script src="js/base.js" type="text/javascript"></script>
   <script src="js/profile-post.js" type="text/javascript"></script>
+
+
   <script>
     // Carica articoli di default al caricamento della pagina
     document.addEventListener('DOMContentLoaded', function () {
@@ -119,6 +118,8 @@
       caricaArticoli('profilo-post.html');
     });
   </script>
+
+
 </body>
 
 </html>

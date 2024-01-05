@@ -88,3 +88,7 @@ th,td {
 td .follow {
     float: none;
 }
+
+#options a.active3 {
+  text-decoration: underline;
+}

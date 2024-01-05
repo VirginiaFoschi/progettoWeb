@@ -12,9 +12,14 @@
 
 .etichetta-stampare {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    flex-direction: column; /* Imposta la direzione della flessione su colonna */
+    align-items: center; /* Allinea al centro lungo l'asse trasversale (verticale) */
     text-align: center;
+}
+
+.etichetta-stampare > fieldset {
+    width: 80%; /* Larghezza del fieldset, regolabile a tuo piacimento */
+    margin-bottom: 20px; /* Margine inferiore tra i fieldset */
 }
 
 .label-nome,

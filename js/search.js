@@ -1,16 +1,29 @@
-let el = document.querySelector(".icon");
+let inputElement =document.getElementById('cerca');
+let btn = document.getElementById('btnannulla');
+let btn2=document.getElementById('btnsearch');
+let nav = document.getElementById('options');
 
-el.addEventListener('click', function() {
-    document.getElementById('loader').style.display = 'none';
+btn.addEventListener('click', function(){
+    this.style.display='none';
+    inputElement.style.width='90%';
+    nav.innerHTML="";
 });
 
-document.getElementById('input-group-1').addEventListener('focus', function() {
-    document.getElementById('loader').style.display = 'block';
+inputElement.addEventListener("focus", function() {
+    btn.style.display='block';
+    inputElement.style.width="70%";
+    nav.innerHTML=`<li class="nav-item">
+    <a class="nav-link active3" aria-current="page" href="#" onclick="cambiaTab3(this)">All</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#" onclick="cambiaTab3(this)">Users</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#" onclick="cambiaTab3(this)">Posts</a>
+  </li>`;
 });
 
-document.getElementById('input-group-1').addEventListener('blur', function() {
-    document.getElementById('loader').style.display = 'none';
-});
+
 
 let buttons= document.getElementsByClassName('follow');
 for(let i=0; i<buttons.length; i++) {

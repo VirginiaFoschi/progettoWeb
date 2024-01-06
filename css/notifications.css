@@ -1,3 +1,19 @@
 img {
     width:50px;
 }
+.article-annuncio {
+    height: auto;  /* Imposta l'altezza automaticamente in base al contenuto */
+}
+
+.informazione-libro h3, .informazione-libro p {
+    /* Riduci le dimensioni del testo */
+    font-size: 0.8em;  /* Riduci le dimensioni del testo dell'80% */
+}
+
+.modal-body {
+    /* Imposta la barra di scorrimento solo se il contenuto supera l'altezza massima */
+    overflow-y: auto;
+    /* Imposta l'altezza massima del corpo del modal */
+    max-height: 300px;
+  }
+  

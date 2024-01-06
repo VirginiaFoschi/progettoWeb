@@ -18,12 +18,13 @@
         <div class="row justify-content-center">
             <div class="col-md-4">
                 <section>
-                    <form action="">
+                    <form action="bacheca.html" method="POST">
                         <div class="mb-3 top-inf">
                             <img src="img/immagineProfilo.png" alt="" id="profilo" class="image">
                             <label for="input">Seleziona foto profilo:
                             <input type="file" id="input" accept="image/*"></label>
                         </div>
+                        <div id="liveAlertPlaceholder" class="mb-3"></div>
                         <div class="mb-3">
                             <label for="name" class="form-label">Nome</label>
                             <input type="text" class="form-control" id="name">
@@ -46,7 +47,7 @@
                         </div>
                         <div class="mb-3">
                             <label for="genres" class="mb-2">Generi preferiti</label>
-                            <select class="form-select" size="3" multiple>
+                            <select class="form-select" size="3" id="genres" multiple>
                                 <option value="1">One</option>
                                 <option value="2">Two</option>
                                 <option value="3">Three</option>
@@ -60,7 +61,7 @@
                         <div class="mb-3">
                             <div class="col-12 text-end">
                                 <input id="backbtn" type="button" class="btn btn-outline-primary" value="Back"/>
-                                <input type="submit" class="btn btn-outline-primary" value="Sign In"/>
+                                <input id="signbtn" type="button" class="btn btn-outline-primary" value="Sign In" onclick="appendAlert()"/>
                             </div>
                         </div>
                     </form>

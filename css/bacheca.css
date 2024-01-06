@@ -12,8 +12,17 @@
     margin: 20px 20px;
 }
 
+h2 {
+    font-size:larger;
+}
+
+p,h2{
+    word-wrap: break-word;
+}
+
 .flex-container {
     display: flex;
+    text-overflow: ellipsis;
 }
 
 #head {
@@ -34,10 +43,9 @@
 #notifiche {
     margin: 10px;
 }
-
-.flex-container > div {
+/*.flex-container > div {
     margin: 10px;
-}
+}*/
 
 img {
     width:130px;
@@ -45,4 +53,16 @@ img {
 
 .img_profile{
     width:10%;
+}
+
+section>ul>li, div>ul>li{
+    margin:10px 10px 10px 0;
+}
+
+svg {
+    margin-right: 5px;
+}
+
+ul {
+    list-style-type: none;
 }

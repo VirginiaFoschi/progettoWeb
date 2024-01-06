@@ -29,7 +29,8 @@
                     </div>
                     </section>
                     <footer class="text-end my-3 px-3">
-                        <a class="btn btn-primary m-3 " href="#" role="button">Scambia</a>
+                        <a class="btn btn-primary m-3 " href="#" role="button"  data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            Scambia</a>
                     </footer>
                 </article>
                 <article class="article bg-body border mb-3">
@@ -68,7 +69,37 @@
             </div>
          
         </div>
-
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">Libri di nome.utente</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <article class="article-annuncio bg-body border mb-3">
+                        <section class="informazione-libro">
+                            <h3 class="nome-evento">Titolo Libro</h3>  
+                            <p>Autore Libro</p>
+                          </section>
+                          
+                          <section class="px-3 mb-4">
+                              <img src="img/html5-js-css3.png" alt="" class="image">
+                                  <p id="descrizione-libro">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore aperiam,
+                                      facilis iusto accusantium, veniam eos eligendi laboriosam magnam assumenda quibusdam placeat illum
+                                      esse
+                                      dolores. Ullam molestias exercitationem consequuntur enim a?</p>
+                          </section>
+                              <input type="button" value="Seleziona" name="seleziona-libro" id="seleziona-libro" onclick="" >
+                    </article>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annulla</button>
+                  <button type="button" class="btn btn-primary">Conferma</button>
+                </div>
+              </div>
+            </div>
+          </div>
 
     </div>
 

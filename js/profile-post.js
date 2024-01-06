@@ -14,6 +14,10 @@ document.getElementById('impostazioni').addEventListener('click', function () {
   window.location.href = "impostazioni.html";
 })
 
+document.getElementById('notifiche').addEventListener('click', function () {
+  window.location.href = "notifications.html";
+})
+
 function scaricaEtichetta(){
   window.location.href = "etichetta.html";
 }

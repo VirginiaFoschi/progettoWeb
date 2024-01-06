@@ -46,11 +46,12 @@
     display: flex;
 }
 
-.flex-container > div {
+.flex-container > img {
     margin: 10px;
 }
 
 .follow{
+    margin:10px;
     float:right;
     background-color: rgba(128, 128, 128, 0.245);
     color:black;
@@ -62,6 +63,7 @@
 } 
 img {
     width:150px;
+    margin:10px;
 }
 
 #img_profile{
@@ -92,3 +94,4 @@ td .follow {
 #options a.active3 {
   text-decoration: underline;
 }
+

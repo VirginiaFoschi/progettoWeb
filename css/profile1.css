@@ -34,7 +34,7 @@ body header:first-child {
     box-sizing: border-box;
 }
 
-section>p {
+.top-inf>section>p {
     flex-basis: 50%;
     box-sizing: border-box;
     text-align: center;
@@ -42,7 +42,7 @@ section>p {
 }
 
 /* Regole CSS per i primi due elementi p nella section */
-section p:nth-of-type(-n+2) {
+.top-inf>section p:nth-of-type(-n+2) {
     text-align: center;
     font-weight: bold;
     font-size: medium;
@@ -50,7 +50,7 @@ section p:nth-of-type(-n+2) {
 }
 
 /* Regole CSS per gli elementi p con un indice pari nella section */
-section p:nth-of-type(even) {
+.top-inf>section p:nth-of-type(even) {
     padding-right: 50px;
 }
 
@@ -113,3 +113,29 @@ section p:nth-of-type(even) {
     margin-left: 20px;
 }
 /*-------------------------------------------------------------------------*/
+/*Profilo post libro-scambio*/
+.article-libro>header>a>img {
+    width: 10%;
+    margin-right: 10px;
+}
+
+.article-libro>header>a {
+   display: flex;
+}
+
+.image {
+    width: 130px;
+}
+
+ul {
+    list-style: none;
+}
+
+.article-libro > footer {
+    display: flex;
+    justify-content: flex-end;
+}
+/*-------------------------------------------------------------------*/
+
+
+

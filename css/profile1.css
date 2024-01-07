@@ -1,10 +1,11 @@
 /*Bottoni nella parte superiore*/
-header {
+body header:first-child {
     display: flex;
     justify-content: space-between;
     text-align: center;
     padding: 20px;
 }
+
 /*--------------------------------------------------------------------------------*/
 /*Informazioni prima della barra strumenti del profilo*/
 .top-inf {
@@ -19,12 +20,12 @@ header {
     margin: 20px 20px 0px 50px;
 }
 
-section {
+.top-inf>section {
     display: flex;
     flex-wrap: wrap;
 }
 
-section > h2 {
+.top-inf>section>h2 {
     text-align: center;
     font-weight: bold;
     font-size: medium;
@@ -33,11 +34,11 @@ section > h2 {
     box-sizing: border-box;
 }
 
-section > p{
+section>p {
     flex-basis: 50%;
     box-sizing: border-box;
     text-align: center;
-    width: 100%;  
+    width: 100%;
 }
 
 /* Regole CSS per i primi due elementi p nella section */
@@ -47,6 +48,7 @@ section p:nth-of-type(-n+2) {
     font-size: medium;
     width: 100%;
 }
+
 /* Regole CSS per gli elementi p con un indice pari nella section */
 section p:nth-of-type(even) {
     padding-right: 50px;
@@ -76,5 +78,38 @@ section p:nth-of-type(even) {
 .nav-link {
     color: black;
 }
+
 /*-------------------------------------------------------------------*/
 
+.bg-body {
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
+/*----------------------------------------------------------------------------------*/
+/*Articoli scambio attivo*/
+.article-scambi>header>img {
+    width: 130px;
+}
+
+.article-scambi>header>section {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.article-scambi>header>section>h3,
+.article-scambi>header>section>p {
+    flex-basis: 50%;
+    box-sizing: border-box;
+}
+
+.article-scambi > footer {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.article-scambi > footer input:last-child{
+    margin-left: 20px;
+}
+/*-------------------------------------------------------------------------*/

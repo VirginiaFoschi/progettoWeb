@@ -1,18 +1,67 @@
 /*Bottoni nella parte superiore*/
-.top {
+body header:first-child {
     display: flex;
     justify-content: space-between;
     text-align: center;
     padding: 20px;
 }
 
+/*--------------------------------------------------------------------------------*/
+/*Informazioni prima della barra strumenti del profilo*/
+.top-inf {
+    display: flex;
+    align-items: center;
+}
+
+#profilo-image {
+    height: 150px;
+    width: 150px;
+    border-radius: 5px;
+    margin: 20px 20px 0px 50px;
+}
+
+.top-inf>section {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.top-inf>section>h2 {
+    text-align: center;
+    font-weight: bold;
+    font-size: medium;
+    width: 100%;
+    flex-basis: 100%;
+    box-sizing: border-box;
+}
+
+.top-inf>section>p {
+    flex-basis: 50%;
+    box-sizing: border-box;
+    text-align: center;
+    width: 100%;
+}
+
+/* Regole CSS per i primi due elementi p nella section */
+.top-inf>section p:nth-of-type(-n+2) {
+    text-align: center;
+    font-weight: bold;
+    font-size: medium;
+    width: 100%;
+}
+
+/* Regole CSS per gli elementi p con un indice pari nella section */
+.top-inf>section p:nth-of-type(even) {
+    padding-right: 50px;
+}
+
+/*---------------------------------------------------------------------------*/
 /*Barra degli strumenti del profilo*/
 .profileBar {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 20vh;
     align-self: center;
+    min-height: 10vh;
 }
 
 .nav-link.active2 {
@@ -30,67 +79,8 @@
     color: black;
 }
 
-/*Informazioni prima della barra strumenti del profilo*/
-.top-inf {
-    display: flex;
-    align-items: center;
-}
+/*-------------------------------------------------------------------*/
 
-#profilo-image {
-    height: 150px;
-    width: 150px;
-    border-radius: 5px;
-    margin: 20px 20px 0px 50px;
-}
-
-.informazioni {
-    font-family: 'Courier New', Courier, monospace;
-    display: flex;
-    flex-wrap: wrap;
-}
-
-#nome-utente {
-    text-align: center;
-    font-weight: bold;
-    font-size: medium;
-    width: 100%;
-    flex-basis: 100%;
-    box-sizing: border-box;
-}
-
-/*Bottone follow nella pagina account*/
-.follow, .scambio{
-    box-sizing: border-box;
-    color:black;
-    width: 100%;
-}
-
-.follow.clicked{
-    background-color: #28a745;
-    color: #fff;
-}
-
-.information-item1,
-.information-item2 {
-    flex-basis: 50%;
-    box-sizing: border-box;
-    text-align: center;
-    width: 100%;
-}
-
-.information-item1 {
-    padding-right: 50px;
-}
-
-#follow,
-#follower {
-    text-align: center;
-    font-weight: bold;
-    font-size: medium;
-    width: 100%;
-}
-
-/*Post grandezza nella pagina*/
 .bg-body {
     max-width: 500px;
     margin-left: auto;
@@ -98,87 +88,87 @@
     margin-bottom: 20px;
 }
 
-/*Immagine libro nel post*/
-.image {
-    width:130px;
+/*----------------------------------------------------------------------------------*/
+/*Articoli scambio attivo*/
+.article-scambi>header>img {
+    width: 130px;
 }
 
-/*Titotlo e autore nell annuncio del titolo*/
-.informazioni-libro{
-    text-align: center;
-}
-
-.article-annuncio{
-    display: flex;
-   justify-content: space-between;
-   flex-wrap: wrap;
-}
-
-.button-delete{
-    align-self: flex-end;
-    box-sizing: border-box;
-    margin-bottom: 10px;
-    margin-right: 10px;
-}
-
-/*Immagine di chi ha postato*/
-.img-post{
-    width: 30px;
-}
-
-.profilo-nome-foto, .nome-evento{
-    margin-top: 20px;
-}
-
-.profilo-nome-foto{
-    align-self: flex-start;
-}
-
-.nome-evento{
-    margin-right: 60px;
-}
-
-.descrizione-annuncio{
-    text-align: center;
-}
-
-/*Post scambio attivo*/
-.informazione-scambio{
-    display: flex;
-    align-items: center;
-}
-
-.info-libro-scambio{
+.article-scambi>header>section {
     display: flex;
     flex-wrap: wrap;
 }
 
-.nome-scambio, .data-scadenza{
+.article-scambi>header>section>h3,
+.article-scambi>header>section>p {
     flex-basis: 50%;
     box-sizing: border-box;
 }
 
-.bottom-scambi{
+.article-scambi > footer {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
+    margin-bottom: 20px;
 }
 
-/*Cuore per post di account*/
-.heart-icon {
-    color: #aaa;
-    width: 20px;
-    height: 20px;
+.article-scambi > footer input:last-child{
+    margin-left: 20px;
+}
+/*-------------------------------------------------------------------------*/
+/*Profilo post libro-scambio*/
+.article-libro>header>a>img {
+    width: 10%;
+    margin-right: 10px;
 }
 
-.heart-icon.active {
-    color: red;
+.article-libro>header>a {
+   display: flex;
 }
 
-.scambio{
-    align-items: flex-end;
+.image {
+    width: 130px;
 }
 
+ul {
+    list-style: none;
+}
 
+.article-libro > footer {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+/*-------------------------------------------------------------------*/
+/*Profilo post annuncio*/
 
+.article-annuncio>header>a>img {
+    width: 10%;
+    margin-right: 10px;
+}
 
+.article-annuncio>header>a {
+    display: flex;
+}
+
+.article-annuncio > section > ul > li {
+    margin-bottom: 10px;
+}
+/*-------------------------------------------------------------------------*/
+
+/*Profilo post recensione*/
+
+.article-recensione>header>a>img {
+    width: 10%;
+    margin-right: 10px;
+}
+
+.article-recensione>header>a {
+    display: flex;
+}
+
+.article-recensione > section > ul > li {
+    margin-bottom: 10px;
+}
+
+/*-----------------------------------------------------------------------------*/
 

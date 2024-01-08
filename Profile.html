@@ -15,48 +15,42 @@
 
 <body class="bg-light">
   <div class="container-fluid p-0 overflow-hidden">
-    <div class="top">
+    <header class="top">
       <input class="button" type="button" value="Impostazioni" name="impostazioni" id="impostazioni" onclick="">
       <input class="button" type="button" value="Notifiche" name="notifiche" id="notifiche" onclick="">
-    </div>
-    <div class="top-inf">
-      <img src="img/immagineProfilo.png" alt="" id="profilo-image">
+    </header>
+  </div>
 
-      <section class="informazioni">
-        <p id="nome-utente">Mario.rossi23</p>
-        <p class="information-item1" id="follow">Follow</p>
-        <p class="information-item2" id="follower">Follower</p>
-        <p class="information-item1" id="num-follow">100</p>
-        <p class="information-item2" id="num-follower">1</p>
-      </section>
-    </div>
-
-
-    <!--Barra del profilo-->
-    <div class="profileBar">
-      <div class="col-12">
-        <ul class="nav nav-pills nav-fill">
-          <li class="nav-item">
-            <a class="nav-link active2" href="#"
-              onclick="cambiaTab2(this); caricaArticoli('profilo-post.html');">Post</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#" onclick="cambiaTab2(this); caricaArticoli('profilo-lista-libri.html');">Lista
-              Libri</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#"
-              onclick="cambiaTab2(this); caricaArticoli('profilo-scambi-attivi.html');">Scambi Attivi</a>
-          </li>
-        </ul>
-      </div>
+  <div class="top-inf">
+    <img src="img/immagineProfilo.png" alt="" id="profilo-image">
+    <section>
+      <h2 id="nome-utente">Mario.rossi23</h2>
+      <p id="follow">Follow</p>
+      <p id="follower">Follower</p>
+      <p id="num-follow">100</p>
+      <p id="num-follower">1</p>
+    </section>
+  </div>
+  <div class="profileBar">
+    <div class="col-12">
+      <ul class="nav nav-pills nav-fill">
+        <li class="nav-item">
+          <a class="nav-link active2" href="#" onclick="cambiaTab2(this); caricaArticoli('profilo-post.html');">Post</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" onclick="cambiaTab2(this); caricaArticoli('profilo-lista-libri.html');">Lista
+            Libri</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" onclick="cambiaTab2(this); caricaArticoli('profilo-scambi-attivi.html');">Scambi
+            Attivi</a>
+        </li>
+      </ul>
     </div>
   </div>
-  <!--Post-->
-  <div id="contenitore-post" class="container-articles">
-    <!--Gli articoli vengono caricati dinamicamente-->
-  </div>
-  <!-- Footer con bottoni-->
+  <main id="contenitore-post">
+    
+  </main>
   <div class="row">
     <div class="col-12">
       <footer class="bg-white footer">
@@ -102,6 +96,7 @@
     </div>
   </div>
   </div>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
     crossorigin="anonymous"></script>
@@ -118,8 +113,6 @@
       caricaArticoli('profilo-post.html');
     });
   </script>
-
-
 </body>
 
 </html>

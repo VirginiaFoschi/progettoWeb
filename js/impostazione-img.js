@@ -1,7 +1,3 @@
-document.getElementById('back').addEventListener('click', function() {
-    window.location.href = "impostazioni.html";
-})
-
 document.getElementById("addImg").addEventListener('click', function() {
   // Simula un click sull'input file quando l'icona viene cliccata
   fileInput.click();

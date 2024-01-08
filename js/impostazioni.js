@@ -1,5 +1,5 @@
 document.getElementById('indietro').addEventListener('click', function() {
-    window.location.href = "profile.html";
+    window.location.href = "profilo.html";
 })
 
 document.getElementById('log-out').addEventListener('click', function() {

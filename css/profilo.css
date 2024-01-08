@@ -71,14 +71,6 @@ body header:first-child {
     /* Colore del testo quando il bottone è attivo */
 }
 
-.nav-item {
-    background-color: #ccc;
-}
-
-.nav-link {
-    color: black;
-}
-
 /*-------------------------------------------------------------------*/
 
 .bg-body {

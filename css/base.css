@@ -14,3 +14,11 @@
     height: 30px;
     fill: currentColor;
 }
+
+.nav-item {
+    background-color: #ccc;
+}
+
+.nav-link {
+    color: black;
+}

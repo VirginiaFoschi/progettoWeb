@@ -1,3 +1,4 @@
+/*Nav generico */
 function cambiaTab(elemento) {
     // Rimuovi la classe "active" dall'elemento corrente
     let elementiAttivi = document.querySelectorAll('a.active');
@@ -8,6 +9,8 @@ function cambiaTab(elemento) {
     // Aggiungi la classe "active" all'elemento cliccato
     elemento.classList.add('active');
 } 
+
+/*Nav del profilo */
 function cambiaTab2(elemento) {
   // Rimuovi la classe "active" dall'elemento corrente
   let elementiAttivi = document.querySelectorAll('a.active2');
@@ -19,6 +22,7 @@ function cambiaTab2(elemento) {
   elemento.classList.add('active2');
 } 
 
+/*Nav della search */
 function cambiaTab3(elemento) {
   // Rimuovi la classe "active" dall'elemento corrente
   let elementiAttivi = document.querySelectorAll('a.active3');
@@ -29,3 +33,4 @@ function cambiaTab3(elemento) {
   // Aggiungi la classe "active" all'elemento cliccato
   elemento.classList.add('active3');
 } 
+

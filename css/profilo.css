@@ -145,6 +145,22 @@ ul {
 .article-annuncio > section > ul > li {
     margin-bottom: 10px;
 }
+
+.heart-icon {
+    color: #aaa;
+    width: 20px;
+    height: 20px;
+}
+
+.article-annuncio > footer , .article-recensione > footer{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.article-annuncio > footer > p , .article-recensione > footer > p{
+    box-sizing: border-box;
+    margin-left: 10px;
+}
 /*-------------------------------------------------------------------------*/
 
 /*Profilo post recensione*/

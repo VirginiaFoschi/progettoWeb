@@ -97,15 +97,16 @@ body header:first-child {
     box-sizing: border-box;
 }
 
-.article-scambi > footer {
+.article-scambi>footer {
     display: flex;
     justify-content: flex-end;
     margin-bottom: 20px;
 }
 
-.article-scambi > footer input:last-child{
+.article-scambi>footer input:last-child {
     margin-left: 20px;
 }
+
 /*-------------------------------------------------------------------------*/
 /*Profilo post libro-scambio*/
 .article-libro>header>a>img {
@@ -114,7 +115,7 @@ body header:first-child {
 }
 
 .article-libro>header>a {
-   display: flex;
+    display: flex;
 }
 
 .image {
@@ -125,11 +126,12 @@ ul {
     list-style: none;
 }
 
-.article-libro > footer {
+.article-libro>footer {
     display: flex;
     justify-content: flex-end;
     margin-bottom: 20px;
 }
+
 /*-------------------------------------------------------------------*/
 /*Profilo post annuncio*/
 
@@ -142,7 +144,7 @@ ul {
     display: flex;
 }
 
-.article-annuncio > section > ul > li {
+.article-annuncio>section>ul>li {
     margin-bottom: 10px;
 }
 
@@ -152,15 +154,18 @@ ul {
     height: 20px;
 }
 
-.article-annuncio > footer , .article-recensione > footer{
+.article-annuncio>footer,
+.article-recensione>footer {
     display: flex;
     justify-content: flex-end;
 }
 
-.article-annuncio > footer > p , .article-recensione > footer > p{
+.article-annuncio>footer>p,
+.article-recensione>footer>p {
     box-sizing: border-box;
     margin-left: 10px;
 }
+
 /*-------------------------------------------------------------------------*/
 
 /*Profilo post recensione*/
@@ -174,9 +179,38 @@ ul {
     display: flex;
 }
 
-.article-recensione > section > ul > li {
+.article-recensione>section>ul>li {
     margin-bottom: 10px;
 }
 
 /*-----------------------------------------------------------------------------*/
 
+/*Account*/
+
+.top-inf>section>input {
+    text-align: center;
+    margin: 0 auto;
+    float:right;
+    background-color: rgba(128, 128, 128, 0.245);
+    color:black;
+}
+
+
+.top-inf>section>input.clicked {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.heart-icon {
+    color: #aaa;
+    width: 20px;
+    height: 20px;
+}
+
+.heart-icon.active {
+    color: red;
+}
+
+footer>svg {
+    margin-bottom: 10px;
+}

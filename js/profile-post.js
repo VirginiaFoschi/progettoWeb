@@ -9,15 +9,18 @@ function caricaArticoli(file) {
     .catch(error => console.error('Errore nel caricamento degli articoli:', error));
 }
 
-
-document.getElementById('impostazioni').addEventListener('click', function () {
+function impostazioni() {
   window.location.href = "impostazioni.html";
-})
+}
 
-document.getElementById('notifiche').addEventListener('click', function () {
+function notifiche() {
   window.location.href = "notifications.html";
-})
+}
 
 function scaricaEtichetta(){
   window.location.href = "etichetta.html";
+}
+
+function backHome() {
+  window.location.href = "bacheca.html"
 }

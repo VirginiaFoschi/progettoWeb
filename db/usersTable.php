@@ -9,7 +9,15 @@ class UsersTable{
     /*query che mi permetteranno di andare a recuperare i vari post nel mio db-> saranno quelle che andrò ad utilizzare nella pagina di index*/
     
     
-    public function checkLogin($n){ 
+    public function checkLogin($u, $p){ 
+        $stmt = $this->db->prepare("SELECT * FROM utente WHERE username=? AND `password`=? ");
+        $stmt->bind_param('ss',$u, $p);  
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);    
+    }
+
+    public function checkIfExists($n){ 
         $stmt = $this->db->prepare("SELECT * FROM utente WHERE username=? ");
         $stmt->bind_param('s',$n);  
         $stmt->execute();

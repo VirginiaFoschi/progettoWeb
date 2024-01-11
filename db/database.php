@@ -8,8 +8,8 @@ class DatabaseHelper{
     private $genresTable;
     private $userTable;
     private $preferencesTable;
-
     private $postTable;
+    private $currentUsername; /*Utente che ha effettuato il login*/
 
     public function __construct($servername, $username, $password, $dbname){
         $this->db = new mysqli($servername,$username,$password,$dbname); /*this variabile che fa riferimento all'oggetto in questione*/
@@ -39,6 +39,15 @@ class DatabaseHelper{
 
     public function getPostTable() {
         return $this->postTable;
+    }
+
+    /*Funzione che salva l'username dell'attuale utente che ha effettuato l'accesso */
+    public function setCurrentUsername($username) {
+        $this->currentUsername = $username;
+    }
+
+    public function getCurrentUsername() {
+        return $this->currentUsername;
     }
 }
 ?>

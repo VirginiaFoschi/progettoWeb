@@ -1,32 +1,60 @@
-.etichetta-stampare>p:nth-child(-n+2) {
-    /* Stile per i primi due paragrafi */
-    box-sizing: border-box;
-    flex-basis: 50%;
-}
-
-.etichetta-stampare>p:nth-last-child(-n+2) {
-    /* Stile per gli ultimi due paragrafi */
-    flex-basis: 50%;
-    box-sizing: border-box;
-}
-
-.etichetta-stampare {
+header {
     display: flex;
-    flex-direction: column; /* Imposta la direzione della flessione su colonna */
-    align-items: center; /* Allinea al centro lungo l'asse trasversale (verticale) */
+    flex-wrap: wrap;
+}
+
+legend{
+    margin-left: 10px;
+    font-size: large;
+}
+
+header>h1 {
+    font-family: monospace;
+    color: blue;
+    font-size: 250%;
+    margin: 5% 0;
+    flex-basis: 100%;
     text-align: center;
 }
 
-.etichetta-stampare > fieldset {
-    width: 80%; /* Larghezza del fieldset, regolabile a tuo piacimento */
-    margin-bottom: 20px; /* Margine inferiore tra i fieldset */
-}
-
-.label-nome,
-.label-ind {
-    text-align: center;
-    font-weight: bold;
+header>div {
+    display: flex;
     box-sizing: border-box;
+    text-align: center;
+    width: 100%;
+    justify-content: center;
+}
+
+header>div>p {
+    margin-left: 20px;
+}
+
+.bg-body {
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
+
+fieldset>ul {
+    list-style: none;
+}
+
+fieldset>ul>li{
+    display: flex;
+}
+
+fieldset>ul>li>p {
+    margin-left: 20px;
+}
+
+fieldset>ul>li p:first-child , header p:first-child{
+    font-weight: bold;
+}
+
+main>div>input {
+    margin-right: 20px;
+    align-items: end;
 }
 
 @media print {
@@ -35,3 +63,5 @@
         display: none;
     }
 }
+
+

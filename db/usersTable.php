@@ -38,5 +38,31 @@ class UsersTable{
         return $result->fetch_all(MYSQLI_ASSOC); 
     }
 
+    /*Ritorna il numero di follower di un utente*/
+    public function getFollower($username) {
+        $stmt = $this->db->prepare("SELECT COUNT(*) AS follower_count FROM segue WHERE Usurname_Seguito = ?");
+        $stmt->bind_param('s', $username);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+    
+    /*Ritorna il numero di follow di un utente*/
+    public function getFollow($username) {
+        $stmt = $this->db->prepare("SELECT COUNT(*) AS follow_count FROM segue WHERE Usurname_SeguitoDa = ?");
+        $stmt->bind_param('s', $username);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    /*Ritorna l'immagine di profilo di un utente*/
+    public function getImageProfile($username) {
+        $stmt = $this->db->prepare("SELECT Immagine FROM utente WHERE Usurname = ?");
+        $stmt->bind_param('s', $username);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
 }
 ?>

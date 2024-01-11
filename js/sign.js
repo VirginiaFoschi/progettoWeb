@@ -1,5 +1,5 @@
-document.getElementById("input").addEventListener("change", function(event) {
-    let input = event.target;
+document.getElementById("input").addEventListener("change", function (event) {
+    const input = event.target;
     let immagine = document.getElementById('profilo');
 
     if (input.files && input.files[0]) {
@@ -23,7 +23,11 @@ function appendAlert(){
   let address=document.getElementById('address');
   let genres=document.getElementById('genres').selectedOptions;
   if(name && surname && username && password && address && genres.length>0) {
-    document.querySelector('form').submit();
+    if(password.value.length < 5) {
+      alertMessage("La password contiene meno di 5 caratteri");
+    } else {
+      document.querySelector('form').submit();
+    }
   } else {
     alertMessage("Please fill all fields!");
   }
@@ -32,7 +36,7 @@ function appendAlert(){
 function alertMessage(message) {
   let alertPlaceholder = document.getElementById('liveAlertPlaceholder');
   
-  let type='success';
+  let type='danger';
   alertPlaceholder.innerHTML = [
     `<div class="alert alert-${type} alert-dismissible" role="alert">`,
     `   <div>${message}</div>`,

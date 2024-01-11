@@ -1,18 +1,11 @@
 h1 {
     font-family: Arial, Helvetica, sans-serif;
     color: blue;
-    font-size: 250%;
-    margin: 5% 0;
+    font-size:xx-large;
+    margin: 20px 0;
 }
 
-.footer {
-    position: fixed; 
-    bottom: 0;
-    width: 100%;
-    clear: both;
-}
-
-form {
+section {
     margin: 10px 50px;
     justify-content: center;
 }
@@ -24,7 +17,7 @@ img {
     border-radius: 50%;
 }
 
-.top-inf {
+#select-image {
     display: flex;
     align-items: center;
 }

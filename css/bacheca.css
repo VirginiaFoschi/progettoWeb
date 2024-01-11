@@ -1,14 +1,14 @@
-.heart-icon {
+footer>button>svg {
     color: #aaa;
     width: 20px;
     height: 20px;
 }
 
-.heart-icon.active {
+footer>button>svg.active {
     color: red;
 }
 
-.article {
+article {
     margin: 20px 20px;
 }
 
@@ -20,22 +20,22 @@ p,h2{
     word-wrap: break-word;
 }
 
-.flex-container {
+/*.flex-container {
     display: flex;
     text-overflow: ellipsis;
-}
+}*/
 
-#head {
+body>header{
     text-align: end;
 }
 
-.follow{
+header>input{
     float:right;
     background-color: rgba(128, 128, 128, 0.245);
     color:black;
 }
 
-.follow.clicked {
+header>input.clicked {
     background-color: #28a745;
     color: #fff;
 }
@@ -51,7 +51,7 @@ img {
     width:130px;
 }
 
-.img_profile{
+article>header>img{
     width:10%;
 }
 
@@ -59,10 +59,15 @@ section>ul>li, div>ul>li{
     margin:10px 10px 10px 0;
 }
 
-svg {
+section>ul>li>svg {
     margin-right: 5px;
 }
 
 ul {
     list-style-type: none;
+}
+
+button {
+    border: none;
+    background-color: #fff;
 }

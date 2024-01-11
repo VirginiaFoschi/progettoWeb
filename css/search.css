@@ -1,4 +1,4 @@
-#search {
+body>header {
     margin: 10px 50px;
 }
 
@@ -7,7 +7,7 @@
     max-width:100%;
   }
   
-  form.example input[type=text] {
+  form input[type=text] {
     padding: 10px;
     font-size: 17px;
     border: 1px solid grey;
@@ -16,7 +16,7 @@
     background: #f1f1f1;
   }
   
-  form.example button {
+  form button {
     font-size: 17px;
     cursor: pointer;
   }
@@ -31,27 +31,23 @@
     float: left;
   }
   
-  form.example #btnsearch:hover {
+  form #btnsearch:hover {
     background: #0b7dda;
   }
   
-  form.example::after {
+  form::after {
     content: "";
     clear: both;
     display: table;
   }
 
 
-.flex-container {
+/*.flex-container {
     display: flex;
-}
-
-.flex-container > img {
-    margin: 10px;
-}
+}*/
 
 .follow{
-    margin:10px;
+    margin:2%;
     float:right;
     background-color: rgba(128, 128, 128, 0.245);
     color:black;
@@ -61,12 +57,14 @@
     background-color: #28a745;
     color: #fff;
 } 
+
 img {
-    width:150px;
-    margin:10px;
+    width:30%;
+    margin:2%;
+    /*object-fit: contain;*/
 }
 
-#img_profile{
+article>header>img{
     width:5%;
 }
 
@@ -78,20 +76,37 @@ img {
     border: none;
 }
 
-table{
+/*table{
     border-spacing: 10px;
 }
 
 th,td {
-      text-align: center !important;
+      text-align: center;
       padding: 8px;
 }
 
 td .follow {
     float: none;
-}
+}*/
 
 #options a.active3 {
   text-decoration: underline;
+}
+
+#imagePerson2 {
+  width: 20%;
+  object-fit: contain;
+}
+
+section>ul {
+  margin-top: 2%;
+}
+
+section> ul>li {
+  margin: 1% 0;
+}
+
+ul {
+  list-style: none;
 }
 

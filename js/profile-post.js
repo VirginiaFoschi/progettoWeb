@@ -10,7 +10,7 @@ function caricaArticoli(file) {
 }
 
 function impostazioni() {
-  window.location.href = "impostazioni.html";
+  window.location.href = "impostazioni.php";
 }
 
 function notifiche() {

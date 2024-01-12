@@ -2,6 +2,7 @@
 require_once("genresTable.php");
 require_once("preferencesTable.php");
 require_once("usersTable.php");
+require_once("postTable.php");
 
 class DatabaseHelper{
     private $db;

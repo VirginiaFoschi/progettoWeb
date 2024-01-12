@@ -82,30 +82,73 @@ body header:first-child {
 
 /*----------------------------------------------------------------------------------*/
 /*Articoli scambio attivo*/
-.article-scambi>header>img {
-    width: 130px;
+.article-scambi>header :first-child{
+    margin-left: 50px;
 }
 
-.article-scambi>header>section {
+.article-scambi>header :last-child{
+    margin-right: 50px;
+}
+
+.article-scambi>div>img {
+    width: 100px;
+}
+
+.article-scambi>header{
     display: flex;
     flex-wrap: wrap;
-}
-
-.article-scambi>header>section>h3,
-.article-scambi>header>section>p {
+    justify-content: space-around;
     flex-basis: 50%;
     box-sizing: border-box;
 }
 
-.article-scambi>footer {
+.article-scambi>div{
     display: flex;
-    justify-content: flex-end;
-    margin-bottom: 20px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-basis: 50%;
+    box-sizing: border-box;
 }
 
-.article-scambi>footer input:last-child {
-    margin-left: 20px;
+.article-scambi>div :first-child {
+    margin-left: 70px;
 }
+
+.article-scambi>div :last-child{
+    margin-right: 70px;
+}
+
+.article-scambi>section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-basis: 50%;
+    text-align: center;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+.article-scambi>section :first-child{
+    margin-left: 60px;
+}
+
+.article-scambi>section :last-child{
+    margin-right: 60px;
+}
+
+.article-scambi>footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-basis: 50%;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.article-scambi>footer :first-child {
+    margin-right: 5px;
+}
+
 
 /*-------------------------------------------------------------------------*/
 /*Profilo post libro-scambio*/

@@ -11,7 +11,7 @@ function changeImg() {
 }
 
 function backProfilo() {
-    window.location.href = "profilo.html"
+    window.location.href = "profilo.php"
 }
 
 function changeInd() {

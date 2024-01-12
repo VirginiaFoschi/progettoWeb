@@ -1,11 +1,16 @@
 <?php
-require_once("bootstrap.php");
 
-$templateparams["annunciProfilo"] = $dbh->getPostTable()->getAnnuncioProfilo($dbh->getCurrentUsername());
-$templateparams["recensioneProfilo"] = $dbh->getPostTable()->getRecensioneProfilo($dbh->getCurrentUsername());
-$templateparams["libroProfilo"] = $dbh->getPostTable()->getPostLibroProfilo($dbh->getCurrentUsername());
-$templateparams["profiloImmagine"] = $dbh->getUsersTable()->getImageProfile($dbh->getCurrentUsername());
-$templateparams["follower"] = $dbh->getUsersTable()->getFollower($dbh->getCurrentUsername());
-$templateparams["follow"] = $dbh->getUsersTable()->getFollow($dbh->getCurrentUsername());
+require_once("bootstrap.php");
+$templateparams["nome"] = "profilo.php";
+$templateparams["js"] = array("profile-post.js", "bacheca.js");
+$templateparams["css"] = array("profilo.css");
+session_start();
+/*$username = $_SESSION['username']; Attuale username */
+$templateparams["img-profilo"] = $dbh->getUsersTable()->getImgProfile("chiaCasti6");
+$templateparams["follower"] = $dbh->getUsersTable()->getFollower("chiaCasti6");
+$templateparams["follow"] = $dbh->getUsersTable()->getFollow("chiaCasti6");
+$templateparams["nome-profilo"] = "chiaCasti6";
+
+require("template/base-home.php");
 
 ?>

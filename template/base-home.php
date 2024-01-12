@@ -17,7 +17,7 @@
     <title>Progetto Tecnologie Web</title>
 </head>
 
-<body>
+<body class="bg-light">
     <?php
     require($templateparams["nome"]);
     ?>
@@ -75,6 +75,7 @@
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
     <script src="js/base.js" type="text/javascript"></script>
+    
 </body>
 
 </html>

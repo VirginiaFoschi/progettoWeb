@@ -5,20 +5,9 @@ h1 {
     margin: 5% 0;
 }
 
-.footer {
-    position: fixed; 
-    bottom: 0;
-    width: 100%;
-    clear: both;
-}
-
 form {
     margin: 10px 50px;
     justify-content: center;
-}
-
-input{
-    margin: 10% 0;
 }
 
 img {
@@ -26,19 +15,32 @@ img {
     margin-right: 10px;
 }
 
-.top-inf {
-    display: flex;
-    align-items: center;
-}
-
-ul{
+/*Lista dei generi*/
+.genere > ul {
     display: flex;
     flex-wrap: wrap;
     list-style: none;
 }
 
-li{
+.genere > ul > li {
     flex-basis: 33%;
     box-sizing: border-box;
     text-align: center;
+}
+
+/*Lista bottoni nella pagina base*/
+
+.base > ul {
+    list-style: none;
+}
+
+.base > ul > li > input {
+    width: 200px;
+    margin-bottom: 60px;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    margin-left: 35px;
 }

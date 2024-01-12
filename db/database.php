@@ -10,6 +10,7 @@ class DatabaseHelper{
     private $userTable;
     private $preferencesTable;
     private $postTable;
+    private $scambiTable;
 
     public function __construct($servername, $username, $password, $dbname){
         $this->db = new mysqli($servername,$username,$password,$dbname); /*this variabile che fa riferimento all'oggetto in questione*/
@@ -22,6 +23,7 @@ class DatabaseHelper{
         $this->usersTable = new UsersTable($this->db);
         $this->preferencesTable = new PreferencesTable($this->db);
         $this->postTable = new PostTable($this->db);
+        $this->scambiTable = new ScambiTable($this->db);
 
     }
 
@@ -39,6 +41,10 @@ class DatabaseHelper{
 
     public function getPostTable() {
         return $this->postTable;
+    }
+
+    public function getScambioTable() {
+        return $this->scambiTable;
     }
 
 }

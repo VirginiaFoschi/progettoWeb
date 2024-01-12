@@ -1,5 +1,5 @@
 function backImp() {
-    window.location.href = "impostazioni.html"
+    window.location.href = "impostazioni.php"
 }
 
 function logout() {

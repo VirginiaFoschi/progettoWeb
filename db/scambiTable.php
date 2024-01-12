@@ -33,8 +33,8 @@ class ScambiTable
             $resultLibro = $stmt->get_result();
             $rowLibro = $resultLibro->fetch_assoc(); //Una riga del risultato
 
-            // Esegui la query per trovare tutti i libri2 associati al libro corrente
-            $stmt = $this->db->prepare("SELECT ID_Libro2 FROM scambio WHERE ID_Libro1 = ?");
+            // Esegui la query per trovare tutti i libri2 associati al libro corrente e la data di scadenza
+            $stmt = $this->db->prepare("SELECT ID_Libro2, Data_Fine FROM scambio WHERE ID_Libro1 = ?");
             $stmt->bind_param('s', $id_libro);
             $stmt->execute();
             $result = $stmt->get_result();
@@ -53,7 +53,8 @@ class ScambiTable
                 if ($row2) {
                     $resultPerLibro[] = array(
                         'Libro1' => array('ID_Libro1' => $id_libro, 'DettagliLibro1' => $rowLibro),
-                        'Libro2' => array('ID_Libro2' => $libro2, 'DettagliLibro2' => $row2)
+                        'Libro2' => array('ID_Libro2' => $libro2, 'DettagliLibro2' => $row2),
+                        'Data_Fine' => $row['Data_Fine']
                     );
                 }
 
@@ -61,8 +62,8 @@ class ScambiTable
 
             $risultatoTotale = array_merge($risultatoTotale, $resultPerLibro);
 
-            // Esegui la query per trovare tutti i libri1 associati al libro corrente
-            $stmt = $this->db->prepare("SELECT ID_Libro1 FROM scambio WHERE ID_Libro2 = ?");
+            // Esegui la query per trovare tutti i libri2 associati al libro corrente e la data di scadenza
+            $stmt = $this->db->prepare("SELECT ID_Libro1, Data_Fine FROM scambio WHERE ID_Libro2 = ?");
             $stmt->bind_param('s', $id_libro);
             $stmt->execute();
             $resultLibro1 = $stmt->get_result();
@@ -81,7 +82,8 @@ class ScambiTable
                 if ($row2) {
                     $resultPerLibro[] = array(
                         'Libro1' => array('ID_Libro1' => $id_libro, 'DettagliLibro1' => $rowLibro),
-                        'Libro2' => array('ID_Libro2' => $libro1, 'DettagliLibro2' => $row2)
+                        'Libro2' => array('ID_Libro2' => $libro1, 'DettagliLibro2' => $row2),
+                        'Data_Fine' => $row['Data_Fine']
                     );
                 }
 

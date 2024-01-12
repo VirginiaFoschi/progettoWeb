@@ -64,8 +64,8 @@ class UsersTable{
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
-    /*Ritorna l'immagine di profilo di un utente*/
-    public function getImageProfile($username) {
+    /*Ritorna immagine profilo di un utente*/
+    public function getImgProfile($username) {
         $stmt = $this->db->prepare("SELECT Immagine FROM utente WHERE Usurname = ?");
         $stmt->bind_param('s', $username);
         $stmt->execute();

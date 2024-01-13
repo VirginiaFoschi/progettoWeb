@@ -54,13 +54,7 @@
 </div>
 
 <main id="contenitore-post">
-
+    <?php
+    require($templateparams["nome-articolo"]);
+    ?>
 </main>
-<script>
-    // Carica articoli di default al caricamento della pagina
-    document.addEventListener('DOMContentLoaded', function () {
-        // Imposta il pulsante di default e carica gli articoli corrispondenti
-        document.querySelector('.nav-link.active2').click();
-        caricaArticoli('profilo-post.php');
-    });
-</script>

@@ -22,5 +22,5 @@ function scaricaEtichetta(){
 }
 
 function backHome() {
-  window.location.href = "bacheca.html"
+  window.location.href = "bacheca.php"
 }

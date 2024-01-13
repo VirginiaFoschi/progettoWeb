@@ -1,5 +1,5 @@
 <h2>Crea un account</h2>
-<form action="#" method="POST">
+<form action="#" method="POST" enctype="multipart/form-data">
     <div class="mb-3" id="select-image">
         <img src="img/immagineProfilo.png" alt="" id="profilo" class="image">
         <label for="input">Seleziona foto profilo:
@@ -7,7 +7,7 @@
     </div>
     <?php if($templateparams["erroreSignIn"]): ?>
         <div id="liveAlertPlaceholder" class=" mb-3 alert alert-danger alert-dismissible" role="alert">
-        <div id="message">Errore! Esiste già un utente con lo stesso username</div>
+        <div id="message"><?php echo $templateparams["errormsg"]; ?></div>
         <button type="button" class="btn-close" id="btnclose" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>  
     <?php else: ?>

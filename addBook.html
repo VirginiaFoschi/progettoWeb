@@ -40,9 +40,11 @@
                         <img src="img/2200720.png" alt="" class="img_profile" id="profilo">
                         <input type="file" id="fileInput" style="display: none;">
                         <a class="nav-link" href="#">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16" id="addImg">
-                                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
-                                <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                class="bi bi-plus-circle" viewBox="0 0 16 16" id="addImg">
+                                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+                                <path
+                                    d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4" />
                             </svg>
                         </a>
                     </div>
@@ -50,70 +52,79 @@
             </header>
             <div class="container">
                 <div class="row justify-content-center">
-                   
+                    <div class="row">
+                        <div class="col">
+                            <form class="text-center" action="#">
+                                <ul>
+                                    <li>
+                                        <input type="text" class="form-control" id="floatingLibro"
+                                            placeholder="Nome Libro">
+                                    </li>
+                                    <li>
+                                        <input type="text" class="form-control" id="floatingAutore"
+                                            placeholder="Autore">
+                                    </li>
+                                    <li>
+                                        <input type="text" class="form-control" id="floatingEditore"
+                                            placeholder="Casa Editrice">
+                                    </li>
+                                </ul>
 
-                </div>
 
-                <div class="row">
-                    <div class="col">
-                        <form class="text-center" action="">
-                        </form>
-                        <div class="d-grid gap-2 col-6 mx-auto ">
-                            <input type="text" class="form-control" id="floatingLibro" placeholder="Nome Libro">
+
+
+                            </form>
+
+
+
+
                         </div>
-                        <div class="d-grid gap-2 col-6 mx-auto ">
-                            <input type="text" class="form-control" id="floatingAutore" placeholder="Autore">
-                        </div>
-                        <div class="d-grid gap-2 col-6 mx-auto ">
-                            <input type="text" class="form-control" id="floatingEditore" placeholder="Casa Editrice">
-                        </div>
-
-
-
-                    </div>
-                    <!--Menù a tendina-->
-                    <div class="col">
-                        <div class="form-floating">
-                            <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
-                                <option selected>Ottime</option>
-                                <option value="1">Buone</option>
-                                <option value="2">Un po' rovinato</option>
-                                <option value="3">Molto rovinato</option>
-                            </select>
-                            <label for="floatingSelect">Condizioni</label>
-                        </div>
-                        <div class="form-floating">
-                            <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
-                                <option selected>seleziona</option>
-                                <option value="1">Uno</option>
-                                <option value="2">Due</option>
-                                <option value="3">Tre</option>
-                            </select>
-                            <label for="floatingSelect">Genere</label>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="row justify-content-center">
-                    <div class="col-md-6 d-flex flex-column">
-
-                        <form class="text-center" action="">
-                            <div class="d-grid gap-2 col-6 mx-auto">
-                                <textarea class="form-control" placeholder="Leave a comment here"
-                                    id="floatingTextarea"></textarea>
+                        <!--Menù a tendina-->
+                        <div class="col">
+                            <div class="form-floating">
+                                <select class="form-select" id="floatingSelectCondizioni"
+                                    aria-label="Floating label select example">
+                                    <option selected>Ottime</option>
+                                    <option value="1">Buone</option>
+                                    <option value="2">Un po' rovinato</option>
+                                    <option value="3">Molto rovinato</option>
+                                </select>
+                                <label for="floatingSelectCondizioni">Condizioni</label>
                             </div>
-                        </form>
+                            <div class="form-floating">
+                                <select class="form-select" id="floatingSelectGenere"
+                                    aria-label="Floating label select example">
+                                    <option selected>seleziona</option>
+                                    <option value="1">Uno</option>
+                                    <option value="2">Due</option>
+                                    <option value="3">Tre</option>
+                                </select>
+                                <label for="floatingSelectGenere">Genere</label>
+                            </div>
 
-                        <div class="d-grid gap-2 col-3 mx-auto">
-                            <button type="button" class="btn btn-lg btn-outline-primary">Send</button>
                         </div>
                     </div>
+                    <div class="row justify-content-center">
+                        <div class="col-md-6 d-flex flex-column">
 
+                            <form class="text-center" action="#">
+                                <div class="d-grid gap-2 col-6 mx-auto">
+                                    <textarea class="form-control" placeholder="Leave a comment here"
+                                        id="floatingTextarea"></textarea>
+                                </div>
+                            </form>
+
+                            <div class="d-grid gap-2 col-3 mx-auto">
+                                <button type="button" class="btn btn-lg btn-outline-primary">Send</button>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
             </div>
 
         </main>
-       
+
 
 
 
@@ -169,7 +180,7 @@
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
     <script src="js/base.js" type="text/javascript"></script>
-    <script src="js/post.js" type="text/javascript"></script>
+    <script src="js/changeImg.js" type="text/javascript"></script>
 </body>
 
 </html>

@@ -1,3 +1,4 @@
+<div class="container-fluid p-0 overflow-hidden">  
 <div class="row text-end">
     <div class="col-12">
         <header>

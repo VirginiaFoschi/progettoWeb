@@ -32,18 +32,17 @@ class UsersTable{
         $result = $stmt->get_result();
     }
 
-    public function saveUserFavouriteGenre($s, $username) {
-        $stmt = $this->db->prepare("INSERT INTO preferenze(nome_genere, username) VALUES(?,?)");
-        $stmt->bind_param('ss',$s, $username);  
+    public function getUserByInitialLetters($text){
+        if($text == "") {
+            $stmt = $this->db->prepare("SELECT username, immagine FROM utente ");
+        } else {
+            $stmt = $this->db->prepare("SELECT username, immagine FROM utente WHERE username LIKE ? ");
+            $str = $text . "%";
+            $stmt->bind_param('s', $str);
+        }
         $stmt->execute();
         $result = $stmt->get_result();
-    }
-
-    public function getGenres() {
-        $stmt = $this->db->prepare("SELECT nome FROM genere "); 
-        $stmt->execute();
-        $result = $stmt->get_result();
-        return $result->fetch_all(MYSQLI_ASSOC); 
+        return $result->fetch_all(MYSQLI_ASSOC);
     }
 
     /*Ritorna il numero di follower di un utente*/

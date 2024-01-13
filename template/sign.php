@@ -7,7 +7,7 @@
     </div>
     <?php if($templateparams["erroreSignIn"]): ?>
         <div id="liveAlertPlaceholder" class=" mb-3 alert alert-danger alert-dismissible" role="alert">
-        <div id="message">Errore! Esiste già un utente con lo stesso username</div>
+        <div id="message"><?php echo $templateparams["errormsg"]; ?></div>
         <button type="button" class="btn-close" id="btnclose" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>  
     <?php else: ?>

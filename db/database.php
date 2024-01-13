@@ -11,6 +11,7 @@ class DatabaseHelper{
     private $preferencesTable;
     private $postTable;
     private $scambiTable;
+    private $notificationsTable;
 
     public function __construct($servername, $username, $password, $dbname){
         $this->db = new mysqli($servername,$username,$password,$dbname); /*this variabile che fa riferimento all'oggetto in questione*/
@@ -24,6 +25,7 @@ class DatabaseHelper{
         $this->preferencesTable = new PreferencesTable($this->db);
         $this->postTable = new PostTable($this->db);
         $this->scambiTable = new ScambiTable($this->db);
+        $this->notificationsTable = new NotificationsTable($this->db);
 
     }
 

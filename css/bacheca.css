@@ -1,10 +1,10 @@
-footer>button>svg {
+footer>svg {
     color: #aaa;
     width: 20px;
     height: 20px;
 }
 
-footer>button>svg.active {
+footer>svg.active {
     color: red;
 }
 
@@ -25,9 +25,9 @@ p,h2{
     text-overflow: ellipsis;
 }*/
 
-body>header{
+/*body>header{
     text-align: end;
-}
+}*/
 
 header>input{
     float:right;
@@ -35,10 +35,10 @@ header>input{
     color:black;
 }
 
-header>input.clicked {
+/*header>input.clicked {
     background-color: #28a745;
     color: #fff;
-}
+}*/
 
 #notifiche {
     margin: 10px;
@@ -51,17 +51,19 @@ img {
     width:130px;
 }
 
-article>header>img{
-    width:10%;
+article>header>img {
+    width:50px;
+    height: 50px;
+    border-radius: 50%;
 }
 
 section>ul>li, div>ul>li{
     margin:10px 10px 10px 0;
 }
 
-section>ul>li>svg {
+/*section>ul>li>svg {
     margin-right: 5px;
-}
+}*/
 
 ul {
     list-style-type: none;

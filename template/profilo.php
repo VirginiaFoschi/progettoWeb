@@ -36,17 +36,17 @@
     <div class="col-12">
         <ul class="nav nav-pills nav-fill">
             <li class="nav-item">
-                <a class="nav-link active2" title="Post" href="#"
-                    onclick="cambiaTab2(this); caricaArticoli('profilo-post.html');">Post</a>
+                <a class="nav-link <?php echo ($postCorrente == 'post') ? 'active2' : ''; ?>" title="Post" href="profilo-post.php"
+                    onclick="">Post</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" title="Lista libri" href="#"
-                    onclick="cambiaTab2(this); caricaArticoli('profilo-lista-libri.html');">Lista
+                <a class="nav-link <?php echo ($postCorrente == 'libri') ? 'active2' : ''; ?>" title="Lista libri" href="profilo-lista-libri.php"
+                    onclick="">Lista
                     Libri</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" title="Scambi in corso" href="#"
-                    onclick="cambiaTab2(this); caricaArticoli('profilo-scambi-attivi.html');">Scambi
+                <a class="nav-link <?php echo ($postCorrente == 'scambi') ? 'active2' : ''; ?>" title="Scambi in corso" href="profilo-scambi.php"
+                    onclick="">Scambi
                     Attivi</a>
             </li>
         </ul>

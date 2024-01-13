@@ -9,7 +9,7 @@ class NotificationsTable{
 
     /*funzione per inserire una nuova notifica*/
     public function addNotification( $idLibro ,$usernameInt, $tipo, $data){
-        $stmt = $this->db->prepare("INSERT INTO NOTIFICA(ID_Libro, Username_Int, Tipo, Data) VALUES (?, ?, ?, ?)");
+        $stmt = $this->db->prepare("INSERT INTO NOTIFICA(ID_Libro, Username_Int, Tipo, Data_Notifica) VALUES (?, ?, ?, ?)");
         $stmt->bind_param('isss', $idLibro ,$usernameInt, $tipo, $data);
         $stmt->execute();
         $result = $stmt->get_result();
@@ -17,7 +17,7 @@ class NotificationsTable{
     /*funzione per visualizzare le notifiche*/
 
     public function getNotifications($username) {
-        $stmt = $this->db->prepare("SELECT N.* FROM NOTIFICHE N JOIN LIBRO_POSTATO L ON N.ID_Libro = L.ID_Libro WHERE L.Usurname_Autore = ?;"); 
+        $stmt = $this->db->prepare("SELECT N.* FROM NOTIFICHE N JOIN LIBRO_POSTATO L ON N.ID_Libro = L.ID_Libro WHERE L.Usurname_Autore = ?"); 
         $stmt->bind_param('s', $username);
         $stmt->execute();
         $result = $stmt->get_result();

@@ -20,7 +20,9 @@ img {
     width: 130px;
     height: 130px;
 }
-
+ul {
+    list-style-type: none;
+}
 
 
 

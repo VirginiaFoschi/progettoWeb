@@ -27,7 +27,7 @@ body>header {
     background: #2196F3;
     color: white;
     border: 1px solid grey;
-    border-left: none;
+    border-right: none;
     float: left;
   }
   
@@ -108,5 +108,9 @@ section> ul>li {
 
 ul {
   list-style: none;
+}
+
+body>ul>li {
+  background-color: transparent;
 }
 

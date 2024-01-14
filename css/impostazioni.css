@@ -16,25 +16,36 @@ img {
 }
 
 /*Lista dei generi*/
-.genere > ul {
+
+.genere>ul {
     display: flex;
     flex-wrap: wrap;
     list-style: none;
 }
 
-.genere > ul > li {
+.genere>ul>li {
     flex-basis: 33%;
     box-sizing: border-box;
+}
+
+.genere>h2,
+.indirizzo>h4 {
+    margin-bottom: 100px;
     text-align: center;
+}
+
+.genere>div,
+.indirizzo>div {
+    margin-top: 100px;
 }
 
 /*Lista bottoni nella pagina base*/
 
-.base > ul {
+.base>ul {
     list-style: none;
 }
 
-.base > ul > li > input {
+.base>ul>li>input {
     width: 200px;
     margin-bottom: 60px;
 }

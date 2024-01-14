@@ -15,9 +15,9 @@ function backProfilo() {
 }
 
 function changeInd() {
-    window.location.href = "impostazioni-indirizzo.html"
+    window.location.href = "impostazioni-indirizzo.php"
 }
 
 function changeGenere() {
-    window.location.href = "impostazioni-genere.html"
+    window.location.href = "impostazioni-genere.php"
 }

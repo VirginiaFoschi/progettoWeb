@@ -24,7 +24,7 @@
                 <?php echo $follower["follower_count"]; ?>
             </p>
         <?php endforeach; ?>
-        <input class="follow" type="submit" value="Follow">
+        <input class="follow" type="submit" value="<?php if(in_array($templateparams["nome-profilo"],$templateparams["follows"])): echo "Segui Già"; else: echo "Segui"; endif; ?>" onClick="sendAjaxRequest('follow.php', {username: '<?php echo $templateparams["nome-profilo"]; ?>'})" />
     </section>
 </div>
 

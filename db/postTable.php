@@ -79,7 +79,7 @@ class PostTable
 
     public function pubblicaAnnuncio($dataEvento, $luogo, $descrizione, $immagine, $usernameAutore ){
         $stmt = $this->db->prepare("INSERT INTO EVENTO(ID_Evento, Data_Evento, Luogo, Descrizione, Immagine, Usurname_Autore) VALUES (?, ?, ?, ?, ?, ?)");
-        $stmt->bind_param('isssss', $data, $luogo, $descrizione, $immagine, $usernameAutore);
+        $stmt->bind_param('isssss', $dataEvento, $luogo, $descrizione, $immagine, $usernameAutore);
         $stmt->execute();
         $result = $stmt->get_result();
     }

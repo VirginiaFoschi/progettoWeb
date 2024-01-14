@@ -11,7 +11,7 @@ class ScambiTable
 
     private function getLibriUtente($username)
     {
-        $stmt = $this->db->prepare("SELECT ID_Libro FROM libro_postato WHERE Usurname_Autore=? ");
+        $stmt = $this->db->prepare("SELECT ID_Libro FROM libro_postato WHERE Username_Autore=? ");
         $stmt->bind_param('s', $username);
         $stmt->execute();
         $result = $stmt->get_result();
@@ -29,7 +29,7 @@ class ScambiTable
             $resultPerLibro = array();
 
             // Titolo, Immagine e Usurname_Utente del libro corrente
-            $stmt = $this->db->prepare("SELECT Titolo, Immagine, Usurname_Autore FROM libro_postato WHERE ID_Libro = ?");
+            $stmt = $this->db->prepare("SELECT Titolo, Immagine, Username_Autore FROM libro_postato WHERE ID_Libro = ?");
             $stmt->bind_param('i', $id_libro["ID_Libro"]);
             $stmt->execute();
             $resultLibro = $stmt->get_result();
@@ -45,7 +45,7 @@ class ScambiTable
                 $libro2 = $row['ID_Libro2'];
 
                 // Titolo, Immagine e Usurname_Utente del libro corrente
-                $stmt = $this->db->prepare("SELECT Titolo, Immagine, Usurname_Autore FROM libro_postato WHERE ID_Libro = ?");
+                $stmt = $this->db->prepare("SELECT Titolo, Immagine, Username_Autore FROM libro_postato WHERE ID_Libro = ?");
                 $stmt->bind_param('i', $libro2);
                 $stmt->execute();
                 $resultLibro2 = $stmt->get_result();
@@ -74,7 +74,7 @@ class ScambiTable
                 $libro1 = $row['ID_Libro1'];
 
                 // Titolo, Immagine e Usurname_Utente del libro corrente
-                $stmt = $this->db->prepare("SELECT Titolo, Immagine, Usurname_Autore FROM libro_postato WHERE ID_Libro = ?");
+                $stmt = $this->db->prepare("SELECT Titolo, Immagine, Username_Autore FROM libro_postato WHERE ID_Libro = ?");
                 $stmt->bind_param('i', $libro1);
                 $stmt->execute();
                 $resultLibroUno = $stmt->get_result();

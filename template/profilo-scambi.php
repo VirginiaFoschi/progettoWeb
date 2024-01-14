@@ -3,10 +3,10 @@
         <article class="article-scambi bg-body border mb-3">
             <header>
                 <a href="#">
-                    <?php echo $coppiaLibri['Libro1']['DettagliLibro1']['Usurname_Autore']; ?>
+                    <?php echo $coppiaLibri['Libro1']['DettagliLibro1']['Username_Autore']; ?>
                 </a>
                 <a href="#">
-                    <?php echo $coppiaLibri['Libro2']['DettagliLibro2']['Usurname_Autore']; ?>
+                    <?php echo $coppiaLibri['Libro2']['DettagliLibro2']['Username_Autore']; ?>
                 </a>
             </header>
             <div>

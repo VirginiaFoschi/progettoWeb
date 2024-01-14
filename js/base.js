@@ -59,7 +59,6 @@ function sendAjaxRequest(php,params) {
   }
   };
   // Invia la richiesta a url (deve essere un file .php)
-  console.log(parametri);
   xhr.send(parametri);
 }
 

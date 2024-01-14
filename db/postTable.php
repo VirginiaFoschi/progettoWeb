@@ -13,7 +13,7 @@ class PostTable
 
     public function getAnnuncioProfilo($username)
     {
-        $stmt = $this->db->prepare("SELECT ID_Evento, dataEvento, luogo, nomeEvento, descrizione, immagine FROM evento WHERE Usurname_Autore = ?");
+        $stmt = $this->db->prepare("SELECT ID_Evento, Data_Evento, luogo, Nome_Evento, descrizione, DataPubblicazione FROM evento WHERE Username_Autore = ?");
         $stmt->bind_param('s', $username);
         $stmt->execute();
         $result = $stmt->get_result();
@@ -67,7 +67,7 @@ class PostTable
 
     public function getPostLibroProfilo($username)
     {
-        $stmt = $this->db->prepare("SELECT Titolo, Autore, Casa_Editrice, Trama, Condizioni, Immagine, Nome_Genere FROM libro_postato WHERE Usurname_Autore = ? ");
+        $stmt = $this->db->prepare("SELECT * FROM libro_postato WHERE Username_Autore = ? ");
         $stmt->bind_param('s', $username);
         $stmt->execute();
         $result = $stmt->get_result();

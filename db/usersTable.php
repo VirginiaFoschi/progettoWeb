@@ -47,7 +47,7 @@ class UsersTable{
 
     /*Ritorna il numero di follower di un utente*/
     public function getFollower($username) {
-        $stmt = $this->db->prepare("SELECT COUNT(*) AS follower_count FROM segue WHERE Usurname_Seguito = ?");
+        $stmt = $this->db->prepare("SELECT COUNT(*) AS follower_count FROM segue WHERE Username_Seguito = ?");
         $stmt->bind_param('s', $username);
         $stmt->execute();
         $result = $stmt->get_result();
@@ -56,7 +56,7 @@ class UsersTable{
     
     /*Ritorna il numero di follow di un utente*/
     public function getFollow($username) {
-        $stmt = $this->db->prepare("SELECT COUNT(*) AS follow_count FROM segue WHERE Usurname_SeguitoDa = ?");
+        $stmt = $this->db->prepare("SELECT COUNT(*) AS follow_count FROM segue WHERE Username_SeguitoDa = ?");
         $stmt->bind_param('s', $username);
         $stmt->execute();
         $result = $stmt->get_result();
@@ -65,7 +65,7 @@ class UsersTable{
 
     /*Ritorna immagine profilo di un utente*/
     public function getImgProfile($username) {
-        $stmt = $this->db->prepare("SELECT Immagine FROM utente WHERE Usurname = ?");
+        $stmt = $this->db->prepare("SELECT Immagine FROM utente WHERE Username = ?");
         $stmt->bind_param('s', $username);
         $stmt->execute();
         $result = $stmt->get_result();

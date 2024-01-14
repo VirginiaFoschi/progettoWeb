@@ -82,11 +82,11 @@ body header:first-child {
 
 /*----------------------------------------------------------------------------------*/
 /*Articoli scambio attivo*/
-.article-scambi>header :first-child{
+.article-scambi>header :first-child {
     margin-left: 50px;
 }
 
-.article-scambi>header :last-child{
+.article-scambi>header :last-child {
     margin-right: 50px;
 }
 
@@ -94,7 +94,7 @@ body header:first-child {
     width: 100px;
 }
 
-.article-scambi>header{
+.article-scambi>header {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -102,7 +102,7 @@ body header:first-child {
     box-sizing: border-box;
 }
 
-.article-scambi>div{
+.article-scambi>div {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -114,7 +114,7 @@ body header:first-child {
     margin-left: 70px;
 }
 
-.article-scambi>div :last-child{
+.article-scambi>div :last-child {
     margin-right: 70px;
 }
 
@@ -128,11 +128,11 @@ body header:first-child {
     margin-bottom: 10px;
 }
 
-.article-scambi>section :first-child{
+.article-scambi>section :first-child {
     margin-left: 60px;
 }
 
-.article-scambi>section :last-child{
+.article-scambi>section :last-child {
     margin-right: 60px;
 }
 
@@ -169,20 +169,22 @@ ul {
     list-style: none;
 }
 
-.article-libro>section>ul>li>div>ul>li p:first-of-type{
+.article-libro>section>ul>li>div>ul>li p:first-of-type,
+.article-recensione>section>ul>li>div>ul>li p:first-of-type {
     font-weight: bold;
 }
 
-.article-libro>section>ul>li>div>ul>li p:last-of-type{
+.article-libro>section>ul>li>div>ul>li p:last-of-type,
+.article-recensione>section>ul>li>div>ul>li p:last-of-type {
     margin-left: 5px;
 }
 
-.article-libro>section>ul>li>div>ul>li {
+.article-libro>section>ul>li>div>ul>li,
+.article-recensione>section>ul>li>div>ul>li {
     display: flex;
     flex-wrap: wrap;
 
 }
-
 
 .article-libro>footer {
     display: flex;
@@ -248,9 +250,9 @@ ul {
 .top-inf>section>input {
     text-align: center;
     margin: 0 auto;
-    float:right;
+    float: right;
     background-color: rgba(128, 128, 128, 0.245);
-    color:black;
+    color: black;
 }
 
 

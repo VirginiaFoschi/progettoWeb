@@ -6,6 +6,7 @@
     $templateparams["css"] = array("search.css", "likes-follow.css"); //, "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
     $templateparams["js"] = array("search.js", "likes-follow.js");
     $templateparams["users"] = $dbh->getUsersTable()->getUserByInitialLetters($_SESSION["username"],$_SESSION["text"]);
+    $templateparams["genere"] = $dbh->getGenresTable()->getGenres();
     $templateparams["generi"] = $dbh->getPreferencesTable()->getGenres();
     $templateparams["follows"] = array_column($dbh->getFollowsTable()->getFollows($_SESSION["username"]), "username_seguito");
     $templateparams["posts"] = $dbh->getPostTable()->getPosts($_SESSION["username"],$_SESSION["text"]);

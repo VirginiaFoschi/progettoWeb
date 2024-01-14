@@ -9,19 +9,21 @@
                     <?php echo $coppiaLibri['Libro2']['DettagliLibro2']['Username_Autore']; ?>
                 </a>
             </header>
-            <div>
-                <img src="<?php echo UPLOAD_DIR . $coppiaLibri['Libro1']['DettagliLibro1']['Immagine']; ?>"
-                    alt="Copertina Libro1" class="image">
-                <img src="<?php echo UPLOAD_DIR . $coppiaLibri['Libro2']['DettagliLibro2']['Immagine']; ?>"
-                    alt="Copertina Libro2" class="image">
-            </div>
             <section>
-                <h4>
-                    <?php echo $coppiaLibri['Libro1']['DettagliLibro1']['Titolo']; ?>
-                </h4>
-                <h4>
-                    <?php echo $coppiaLibri['Libro2']['DettagliLibro2']['Titolo']; ?>
-                </h4>
+                <ul>
+                    <li>
+                        <img src="<?php echo UPLOAD_DIR . $coppiaLibri['Libro1']['DettagliLibro1']['Immagine']; ?>"
+                            alt="Copertina Libro1" class="image">
+                        <h4>
+                            <?php echo $coppiaLibri['Libro1']['DettagliLibro1']['Titolo']; ?>
+                        </h4>
+                        <img src="<?php echo UPLOAD_DIR . $coppiaLibri['Libro2']['DettagliLibro2']['Immagine']; ?>"
+                            alt="Copertina Libro2" class="image">
+                        <h4>
+                            <?php echo $coppiaLibri['Libro2']['DettagliLibro2']['Titolo']; ?>
+                        </h4>
+                    </li>
+                </ul>
             </section>
             <footer class="bottom-scambi">
                 <p>Data di scadenza:</p>

@@ -98,42 +98,23 @@ body header:first-child {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    flex-basis: 50%;
     box-sizing: border-box;
 }
 
-.article-scambi>div {
+.article-scambi>section>ul>li{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    flex-basis: 50%;
-    box-sizing: border-box;
+    justify-content: space-around;
 }
 
-.article-scambi>div :first-child {
-    margin-left: 70px;
+.article-scambi>section>ul>li>img{
+    width: 80px;
 }
 
-.article-scambi>div :last-child {
-    margin-right: 70px;
-}
-
-.article-scambi>section {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    flex-basis: 50%;
+.article-scambi>section>ul>li>h4{
     text-align: center;
-    box-sizing: border-box;
-    margin-bottom: 10px;
-}
-
-.article-scambi>section :first-child {
-    margin-left: 60px;
-}
-
-.article-scambi>section :last-child {
-    margin-right: 60px;
+    word-wrap: break-word;
+    max-width: 5em;
 }
 
 .article-scambi>footer,

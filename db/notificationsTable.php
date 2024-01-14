@@ -8,9 +8,9 @@ class NotificationsTable{
     }
 
     /*funzione per inserire una nuova notifica*/
-    public function addNotification( $idLibro ,$usernameInt, $tipo, $data){
-        $stmt = $this->db->prepare("INSERT INTO NOTIFICA(ID_Libro, Username_Int, Tipo, Data_Notifica) VALUES (?, ?, ?, ?)");
-        $stmt->bind_param('isss', $idLibro ,$usernameInt, $tipo, $data);
+    public function addNotification( $idLibro ,$usernameInt, $tipo, $dataNotifica){
+        $stmt = $this->db->prepare("INSERT INTO NOTIFICA(ID_Libro, Username_Int, Tipo, Data) VALUES (?, ?, ?, ?)");
+        $stmt->bind_param('isss', $idLibro ,$usernameInt, $tipo, $dataNotifica);
         $stmt->execute();
         $result = $stmt->get_result();
     }

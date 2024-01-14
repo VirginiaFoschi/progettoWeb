@@ -14,7 +14,7 @@ require_once("notificationsTable.php");
 class DatabaseHelper{
     private $db;
     private $genresTable;
-    private $userTable;
+    private $usersTable;
     private $preferencesTable;
     private $postTable;
     private $scambiTable;

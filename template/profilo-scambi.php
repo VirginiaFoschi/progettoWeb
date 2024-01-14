@@ -1,12 +1,12 @@
-<div class="row justify-content-center content">
-    <?php foreach ($templateparams["scambio"] as $coppiaLibri): ?>
+<?php foreach ($templateparams["scambio"] as $coppiaLibri): ?>
+    <div class="row justify-content-center content">
         <article class="article-scambi bg-body border mb-3">
             <header>
                 <a href="#">
-                    <?php echo $coppiaLibri['Libro1']['DettagliLibro1']['Username_Utente']; ?>
+                    <?php echo $coppiaLibri['Libro1']['DettagliLibro1']['Usurname_Autore']; ?>
                 </a>
                 <a href="#">
-                    <?php echo $coppiaLibri['Libro2']['DettagliLibro2']['Username_Utente']; ?>
+                    <?php echo $coppiaLibri['Libro2']['DettagliLibro2']['Usurname_Autore']; ?>
                 </a>
             </header>
             <div>
@@ -16,12 +16,12 @@
                     alt="Copertina Libro2" class="image">
             </div>
             <section>
-                <h3>
+                <h4>
                     <?php echo $coppiaLibri['Libro1']['DettagliLibro1']['Titolo']; ?>
-                </h3>
-                <h3>
+                </h4>
+                <h4>
                     <?php echo $coppiaLibri['Libro2']['DettagliLibro2']['Titolo']; ?>
-                </h3>
+                </h4>
             </section>
             <footer class="bottom-scambi">
                 <p>Data di scadenza:</p>
@@ -30,5 +30,5 @@
                 </p>
             </footer>
         </article>
-    <?php endforeach; ?>
-</div>
+    </div>
+<?php endforeach; ?>

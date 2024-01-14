@@ -1,8 +1,6 @@
 <div class="container-fluid p-0 overflow-hidden">
     <header class="top">
-        <input class="button" type="button" value="Impostazioni" name="impostazioni" id="impostazioni"
-            onclick="impostazioni()" />
-        <input class="button" type="button" value="Notifiche" name="notifiche" id="notifiche" onclick="notifiche()" />
+        <input class="button" type="button" value="Indietro" name="indietro" title="Home" onclick="backHome()" />
     </header>
 </div>
 
@@ -10,9 +8,7 @@
     <?php foreach ($templateparams["img-profilo"] as $image): ?>
         <img src="<?php echo UPLOAD_DIR . $image["Immagine"]; ?>" alt="Immagine-Profilo" id="profilo-image" />
     <?php endforeach; ?>
-
     <section>
-
         <h2 id="nome-utente">
             <?php echo $templateparams["nome-profilo"]; ?>
         </h2>
@@ -28,31 +24,32 @@
                 <?php echo $follower["follower_count"]; ?>
             </p>
         <?php endforeach; ?>
-
+        <input class="follow" type="submit" value="Follow">
     </section>
 </div>
 
+
+<!--Barra del profilo-->
 <div class="profileBar">
     <div class="col-12">
         <ul class="nav nav-pills nav-fill">
             <li class="nav-item">
-                <a class="nav-link <?php echo ($postCorrente == 'post') ? 'active2' : ''; ?>" title="Post" href="profilo-post.php"
-                    onclick="">Post</a>
+                <a class="nav-link <?php echo ($postCorrente == 'post') ? 'active2' : ''; ?>" title="Post"
+                    href="account-post.php" onclick="">Post</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link <?php echo ($postCorrente == 'libri') ? 'active2' : ''; ?>" title="Lista libri" href="profilo-lista-libri.php"
-                    onclick="">Lista
+                <a class="nav-link <?php echo ($postCorrente == 'libri') ? 'active2' : ''; ?>" title="Lista libri"
+                    href="account-lista-libri.php" onclick="">Lista
                     Libri</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link <?php echo ($postCorrente == 'scambi') ? 'active2' : ''; ?>" title="Scambi in corso" href="profilo-scambi.php"
-                    onclick="">Scambi
+                <a class="nav-link <?php echo ($postCorrente == 'scambi') ? 'active2' : ''; ?>" title="Scambi in corso"
+                    href="account-scambi.php" onclick="">Scambi
                     Attivi</a>
             </li>
         </ul>
     </div>
 </div>
-
 <main id="contenitore-post">
     <?php
     require($templateparams["nome-articolo"]);

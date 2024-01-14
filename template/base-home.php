@@ -9,6 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <?php foreach ($templateparams["css"] as $css): ?>
         <link rel="stylesheet" href="css/<?php echo $css ?>">
@@ -29,7 +30,7 @@
             <footer class="bg-white footer">
                 <ul class="nav nav-pills nav-fill">
                     <li class="nav-item">
-                        <a class="nav-link" title="bacheca" href="bacheca.html" onclick="cambiaTab(this)">
+                        <a class="nav-link <?php echo ($paginaCorrente == 'bacheca') ? 'active' : ''; ?>" title="bacheca" href="bacheca.php" onclick="cambiaTab(this)">
                             <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-clipboard icon" viewBox="0 0 16 16">
                                 <path
                                     d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1z" />
@@ -39,7 +40,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" title="cerca" href="search.html" onclick="cambiaTab(this)">
+                        <a class="nav-link <?php echo ($paginaCorrente == 'search') ? 'active' : ''; ?>" title="cerca" href="search-all.php" onclick="cambiaTab(this)">
                             <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-search icon" viewBox="0 0 16 16">
                                 <path
                                     d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
@@ -47,7 +48,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" title="post" href="addBook.html" onclick="cambiaTab(this)">
+                        <a class="nav-link <?php echo ($paginaCorrente == 'post') ? 'active' : ''; ?>" title="post" href="addBook.html" onclick="cambiaTab(this)">
                             <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-plus-square icon" viewBox="0 0 16 16">
                                 <path
                                     d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z" />
@@ -57,7 +58,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" title="profilo" href="profilo.php" onclick="cambiaTab(this)">
+                        <a class="nav-link <?php echo ($paginaCorrente == 'profilo') ? 'active' : ''; ?>" title="profilo" href="profilo-post.php" onclick="cambiaTab(this)">
                             <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-person icon" viewBox="0 0 16 16">
                                 <path
                                     d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664z" />

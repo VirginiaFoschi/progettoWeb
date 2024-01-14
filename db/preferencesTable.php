@@ -13,5 +13,12 @@ class PreferencesTable{
         $result = $stmt->get_result();
     }
 
+    public function getGenres() {
+        $stmt = $this->db->prepare("SELECT nome_genere, username FROM preferenze ");
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
 }
 ?>

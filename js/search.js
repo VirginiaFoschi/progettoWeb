@@ -43,3 +43,7 @@ function showMore(dotID) {
         hiddenText.style.display = 'inline';
     }
 }
+
+function sendSelectedValue(){
+    document.getElementById('formPost').submit();
+}

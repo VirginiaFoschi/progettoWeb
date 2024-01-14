@@ -74,6 +74,33 @@ class PostTable
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
+    public function getPosts($user, $text){
+        $stmt = $this->db->prepare("SELECT L.id_libro, L.titolo, L.autore, L.trama, L.casa_editrice, L.condizioni, U.immagine AS fotoProfilo, L.immagine AS copertina, U.username, L.nome_genere 
+                FROM libro_postato L 
+                JOIN utente U ON L.Username_Autore = U.username
+                LEFT JOIN scambio S ON L.id_libro = S.id_libro1 OR L.id_libro = S.id_libro2 
+                WHERE U.username <> ? AND (S.data_fine IS NULL OR S.data_fine > NOW()) AND (L.autore LIKE ? OR L.titolo LIKE ?)");
+        $str = $text . "%";
+        $stmt->bind_param('sss', $user, $str, $str);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function getEvents() {
+        $stmt = $this->db->prepare("SELECT id_evento, nome_evento, data_evento, luogo, descrizione, username, utente.immagine AS userImage, dataPubblicazione FROM evento, utente WHERE username_autore=username "); 
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC); 
+    }
+
+    public function getReviews() {
+        $stmt = $this->db->prepare("SELECT voto, titolo_libro, autore_libro, autore_recensione, recensione.immagine, recensione, username, utente.immagine AS userImage, dataPubblicazione FROM recensione, utente WHERE autore_recensione=username "); 
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC); 
+    }
+
     /*funzioni che permettono di pubblicare un post */
 
     public function pubblicaAnnuncio($dataEvento, $luogo, $descrizione, $usernameAutore ){
@@ -95,6 +122,52 @@ class PostTable
         $stmt->bind_param('issssssss',$titolo, $autore, $casaEditrice, $trama, $condizioni , $Immagine, $usernameAutore, $genere);
         $stmt->execute();
         $result = $stmt->get_result();
+    }
+
+    public function deleteLibro($id_libro)
+    {
+        $stmt = $this->db->prepare("DELETE FROM libro_postato WHERE ID_Libro = ? ");
+        $stmt->bind_param('i', $id_libro);
+        $stmt->execute();
+    }
+
+    public function getScambiUtente($account)
+    {
+        $libri = $this->getPostLibroProfilo($account);
+        
+        $resultTotale = array();
+        foreach ($libri as $libro) {
+            $id_libro = $libro["ID_Libro"];
+            $stmt = $this->db->prepare("SELECT Data_Fine
+                                        FROM scambio 
+                                        WHERE ID_Libro1 = ? AND Data_Fine > NOW()");
+            $stmt->bind_param('i', $id_libro);
+            $stmt->execute();
+            $result = $stmt->get_result();
+            $row = $result->fetch_assoc();
+            if ($row) {
+                $resultTotale[] = array(
+                    'Libro' => $libro,
+                    'DataFine' => $row["Data_Fine"]
+                );
+            }
+
+            $stmt = $this->db->prepare("SELECT Data_Fine
+                                        FROM scambio 
+                                        WHERE ID_Libro2 = ? AND Data_Fine > NOW()");
+            $stmt->bind_param('i', $id_libro);
+            $stmt->execute();
+            $result = $stmt->get_result();
+            $row = $result->fetch_assoc();
+            if ($row) {
+                $resultTotale[] = array(
+                    'Libro' => $libro,
+                    'DataFine' => $row["Data_Fine"]
+                );
+            }
+        }
+
+        return $resultTotale;
     }
 }
 ?>

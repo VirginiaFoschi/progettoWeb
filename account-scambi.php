@@ -3,15 +3,14 @@
 require_once("bootstrap.php");
 
 
-$postCorrente = 'post';
-$templateparams["nome-articolo"] = "account-post.php";
+$postCorrente = 'scambi';
+$templateparams["nome-articolo"] = "account-scambi.php";
 
 $idAccount = -1;
 if(isset($_GET["id"])){
     $idAccount = $_GET["id"];
 }
-$templateparams["annuncio"] = $dbh->getPostTable()->getAnnuncioProfilo("virgi.foschi02");
-$templateparams["recensione"] = $dbh->getPostTable()->getRecensioneProfilo("virgi.foschi02");
+$templateparams["scambi"] = $dbh->getPostTable()->getScambiUtente("virgi.foschi02");
 
 $templateparams["img-profilo"] = $dbh->getUsersTable()->getImgProfile("virgi.foschi02");
 $templateparams["follower"] = $dbh->getUsersTable()->getFollower("virgi.foschi02");

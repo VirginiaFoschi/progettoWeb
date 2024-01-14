@@ -14,7 +14,7 @@ for(let i=0; i<buttons.length; i++) {
     buttons[i].addEventListener('click', function() {
         let value = this.value;
         if(value == "Segui") {
-            this.value='Segui già';
+            this.value='Segui Già';
         } else {
             this.value = 'Segui';
         }

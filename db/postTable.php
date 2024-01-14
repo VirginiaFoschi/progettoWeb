@@ -107,5 +107,44 @@ class PostTable
         $stmt->bind_param('i', $id_libro);
         $stmt->execute();
     }
+
+    public function getScambiUtente($account)
+    {
+        $libri = $this->getPostLibroProfilo($account);
+        
+        $resultTotale = array();
+        foreach ($libri as $libro) {
+            $id_libro = $libro["ID_Libro"];
+            $stmt = $this->db->prepare("SELECT Data_Fine
+                                        FROM scambio 
+                                        WHERE ID_Libro1 = ? AND Data_Fine > NOW()");
+            $stmt->bind_param('i', $id_libro);
+            $stmt->execute();
+            $result = $stmt->get_result();
+            $row = $result->fetch_assoc();
+            if ($row) {
+                $resultTotale[] = array(
+                    'Libro' => $libro,
+                    'DataFine' => $row["Data_Fine"]
+                );
+            }
+
+            $stmt = $this->db->prepare("SELECT Data_Fine
+                                        FROM scambio 
+                                        WHERE ID_Libro2 = ? AND Data_Fine > NOW()");
+            $stmt->bind_param('i', $id_libro);
+            $stmt->execute();
+            $result = $stmt->get_result();
+            $row = $result->fetch_assoc();
+            if ($row) {
+                $resultTotale[] = array(
+                    'Libro' => $libro,
+                    'DataFine' => $row["Data_Fine"]
+                );
+            }
+        }
+
+        return $resultTotale;
+    }
 }
 ?>

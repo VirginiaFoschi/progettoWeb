@@ -136,7 +136,8 @@ body header:first-child {
     margin-right: 60px;
 }
 
-.article-scambi>footer {
+.article-scambi>footer,
+.article-account>footer {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -145,7 +146,8 @@ body header:first-child {
     box-sizing: border-box;
 }
 
-.article-scambi>footer :first-child {
+.article-scambi>footer :first-child,
+.article-account>footer :first-child {
     margin-right: 5px;
 }
 
@@ -170,17 +172,20 @@ ul {
 }
 
 .article-libro>section>ul>li>div>ul>li p:first-of-type,
-.article-recensione>section>ul>li>div>ul>li p:first-of-type {
+.article-recensione>section>ul>li>div>ul>li p:first-of-type,
+.article-account>section>ul>li>div>ul>li p:first-of-type {
     font-weight: bold;
 }
 
 .article-libro>section>ul>li>div>ul>li p:last-of-type,
-.article-recensione>section>ul>li>div>ul>li p:last-of-type {
+.article-recensione>section>ul>li>div>ul>li p:last-of-type,
+.article-account>section>ul>li>div>ul>li p:last-of-type {
     margin-left: 5px;
 }
 
 .article-libro>section>ul>li>div>ul>li,
-.article-recensione>section>ul>li>div>ul>li {
+.article-recensione>section>ul>li>div>ul>li,
+.article-account>section>ul>li>div>ul>li {
     display: flex;
     flex-wrap: wrap;
 
@@ -255,12 +260,6 @@ ul {
     color: black;
 }
 
-
-.top-inf>section>input.clicked {
-    background-color: #28a745;
-    color: #fff;
-}
-
 .heart-icon {
     color: #aaa;
     width: 20px;
@@ -274,3 +273,6 @@ ul {
 footer>svg {
     margin-bottom: 10px;
 }
+
+/*---------------------------------------------------------------------------------*/
+

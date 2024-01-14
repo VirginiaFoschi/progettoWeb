@@ -77,5 +77,13 @@ class UsersTable{
         $stmt->bind_param('ss', $img, $username);
         $stmt->execute();
     }
+
+    public function getIndirizzo($username) {
+        $stmt = $this->db->prepare("SELECT Indirizzo FROM utente WHERE Username = ?");
+        $stmt->bind_param('s', $username);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
 }
 ?>

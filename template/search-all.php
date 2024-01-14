@@ -33,12 +33,21 @@
                             </div>
                         </li>
                         <li>
-                            <p id="description"><?php echo $templateparams["posts"][$i]["trama"]; ?></p>
+                            <?php
+                            $words = str_word_count($templateparams["posts"][$i]["trama"], 1); // Ottieni un array di parole dalla stringa
+                            $str=explode(" ", $templateparams["posts"][$i]["trama"]);
+                            ?>
+                            <p><?php echo implode(' ', array_slice($str, 0, 40)); ?>
+                                <?php if($words > 40): ?>
+                                    <span class="dots" id="dots<?php echo $i; ?>" onclick="showMore('dots<?php echo $i; ?>')"> ...altro</span>
+                                    <span class="hidden-text" id="text<?php echo $i; ?>" ><?php echo implode(' ', array_slice($str, 40)); ?></span>
+                                <?php endif; ?>
+                            </p>
                         </li>
                     </ul>
                 </section>
                 <footer class="text-end mb-3 px-3">
-                    <input type="submit" class="btn btn-sm btn-outline-dark" value="Proponi scambio">
+                    <input type="submit" class="btn btn-sm btn-outline-dark" value="Proponi scambio" onClick="sendAjaxRequest('proposta-scambio.php', {id_libro: '<?php echo $templateparams["posts"][$i]["id_libro"]; ?>', username: '<?php echo $templateparams["posts"][$i]["username"]; ?>'})">
                 </footer>
             </article>
         </div>
@@ -106,12 +115,21 @@
                                 </div>
                             </li>
                             <li>
-                                <p id="description"><?php echo $templateparams["posts"][$i]["trama"]; ?></p>
+                                <?php
+                                $words = str_word_count($templateparams["posts"][$i]["trama"], 1); // Ottieni un array di parole dalla stringa
+                                $str=explode(" ", $templateparams["posts"][$i]["trama"]);
+                                ?>
+                                <p><?php echo implode(' ', array_slice($str, 0, 40)); ?>
+                                    <?php if($words > 40): ?>
+                                        <span class="dots" id="dots<?php echo $i; ?>" onclick="showMore('dots<?php echo $i; ?>')"> ...altro</span>
+                                        <span class="hidden-text" id="text<?php echo $i; ?>" ><?php echo implode(' ', array_slice($str, 40)); ?></span>
+                                    <?php endif; ?>
+                                </p>
                             </li>
                         </ul>
                     </section>
                     <footer class="text-end mb-3 px-3">
-                        <input type="submit" class="btn btn-sm btn-outline-dark" value="Proponi scambio">
+                        <input type="submit" class="btn btn-sm btn-outline-dark" value="Proponi scambio" onClick="sendAjaxRequest('proposta-scambio.php', {id_libro: '<?php echo $templateparams["posts"][$i]["id_libro"]; ?>', username: '<?php echo $templateparams["posts"][$i]["username"]; ?>'})">
                     </footer>
                 </article>
             </div>

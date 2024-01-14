@@ -1,27 +1,28 @@
-<?php foreach($templateparams["users"] as $u): ?>
+<?php $i=0; foreach($templateparams["users"] as $u): $i++;?>
     <div class="row justify-content-center mb-3">
         <div class="col-md-6">
-            <article class="bg-body border mx-3">
-                <section class="px-3 d-flex justify-content-center">
-                    <img src="<?php echo UPLOAD_DIR.$u["immagine"]; ?>" alt="" id="imagePerson2">
-                    <ul>
-                        <li>
-                            <a href="#"><?php echo $u["username"] ?></a>
-                        </li>
-                        <li>
-                            <?php $generi="";
-                            foreach($templateparams["generi"] as $genere) {
-                                if($genere["username"] == $u["username"]) {
-                                    $generi .= ($generi !== '' ? ', ' : '') . $genere["nome_genere"];
-                                }
-                            } 
-                            ?>
-                            <p>Generi preferiti: <?php echo $generi; ?></p>
-                        </li>
-                        <li>
-                            <input class="follow" type="button" value="<?php if(in_array($u["username"],$templateparams["follows"])): echo "Segui Già"; else: echo "Segui"; endif; ?>" onClick="sendAjaxRequest('follow.php', {username: '<?php echo $u['username']; ?>'})" title="followbtn">
-                        </li>
-                    </ul>
+            <article class="article bg-body border mx-3">
+                <header class="px-3 mt-3 mb-1">
+                    <img src="<?php echo UPLOAD_DIR.$u["immagine"]; ?>" alt="">
+                    <a href="#"><?php echo $u["username"] ?></a>
+                    <input class="follow" type="button" value="<?php if(in_array($u["username"],$templateparams["follows"])): echo "Segui Già"; else: echo "Segui"; endif; ?>" onClick="sendAjaxRequest('follow.php', {username: '<?php echo $u['username']; ?>'})" title="followbtn">
+                </header>
+                <section class="px-3 justify-content-center">
+                    <?php $generi="";
+                    $arrGeneri=array();
+                    foreach($templateparams["generi"] as $genere) {
+                        if($genere["username"] == $u["username"]) {
+                            array_push($arrGeneri,$genere["nome_genere"]);
+                            //$generi .= ($generi !== '' ? ', ' : '') . $genere["nome_genere"];
+                        }
+                    } 
+                    ?>
+                    <p>Generi preferiti: <?php echo implode(', ', array_slice($arrGeneri, 0, 2)); if(count($arrGeneri) > 2): echo ','; endif; ?>
+                        <?php if(count($arrGeneri) > 2): ?>
+                            <span class="dots text-truncate" id="dots<?php echo $i; ?>" onclick="showMore('dots<?php echo $i; ?>')"> ...altro</span>
+                            <span class="hidden-text" id="text<?php echo $i; ?>" ><?php echo implode(', ', array_slice($arrGeneri, 2)); ?></span>
+                        <?php endif; ?>
+                    </p>
                 </section>
             </article>
         </div>

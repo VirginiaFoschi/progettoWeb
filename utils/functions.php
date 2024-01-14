@@ -3,7 +3,11 @@
         $_SESSION["username"] = $username;
     }
 
-    function formatData($data) {
+    function registerLastResearch($text){
+        $_SESSION["text"] = $text;
+    }
+
+    function formatDataOra($data) {
         $dataOra = new DateTime($data);
 
         // Formatta la data e l'ora nel formato desiderato

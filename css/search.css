@@ -1,5 +1,5 @@
 body>header {
-    margin: 10px 50px;
+    margin: 10px 50px 0 50px;
 }
 
   form{
@@ -46,7 +46,7 @@ body>header {
     display: flex;
 }*/
 
-.follow{
+/*.follow{
     margin:2%;
     float:right;
     background-color: rgba(128, 128, 128, 0.245);
@@ -56,26 +56,32 @@ body>header {
 .follow.clicked {
     background-color: #28a745;
     color: #fff;
-} 
+} */
 
 img {
-    width:30%;
-    margin:2%;
+    width:24%;
     /*object-fit: contain;*/
 }
 
-article>header>img{
+/*article>header>img{
     width:5%;
-}
+}*/
 
 #btnannulla{
     display: none;
     padding: 10px;
-    width:18%;
     background: none;
     border: none;
 }
 
+form input.restore {
+  width:70%;
+}
+
+#btnannulla.restore{
+  width:18%;
+  display:block;
+}
 /*table{
     border-spacing: 10px;
 }
@@ -93,24 +99,30 @@ td .follow {
   text-decoration: underline;
 }
 
-#imagePerson2 {
-  width: 20%;
-  object-fit: contain;
-}
-
-section>ul {
+/*section>ul {
   margin-top: 2%;
 }
 
 section> ul>li {
   margin: 1% 0;
-}
+}*/
 
 ul {
   list-style: none;
 }
 
 body>ul>li {
-  background-color: transparent;
+  background-color: transparent !important; 
 }
+
+.hidden-text {
+  display: none;
+}
+
+.dots {
+  cursor:pointer;
+  color: #777;
+}
+
+
 

@@ -2,17 +2,24 @@
     require_once("bootstrap.php");
 
     $paginaCorrente="search";
-    $text="";
     $templateparams["nome"] = "base-search.php";
-    $templateparams["css"] = array("search.css"); //, "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
-    $templateparams["js"] = array("search.js");
-    $templateparams["users"] = $dbh->getUsersTable()->getUserByInitialLetters($text);
+    $templateparams["css"] = array("search.css", "likes-follow.css"); //, "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+    $templateparams["js"] = array("search.js", "likes-follow.js");
+    $templateparams["users"] = $dbh->getUsersTable()->getUserByInitialLetters($_SESSION["username"],$_SESSION["text"]);
     $templateparams["generi"] = $dbh->getPreferencesTable()->getGenres();
     $templateparams["follows"] = array_column($dbh->getFollowsTable()->getFollows($_SESSION["username"]), "username_seguito");
+    $templateparams["posts"] = $dbh->getPostTable()->getPosts($_SESSION["username"],$_SESSION["text"]);
 
     if(isset($_POST["search"])) {
-        $text=$_POST["search"];
-        $templateparams["users"] = $dbh->getUsersTable()->getUserByInitialLetters($text);
+        registerLastResearch($_POST["search"]);
+        $templateparams["users"] = $dbh->getUsersTable()->getUserByInitialLetters($_SESSION["username"],$_SESSION["text"]);
+        $templateparams["posts"] = $dbh->getPostTable()->getPosts($_SESSION["username"],$_SESSION["text"]);
+    }
+
+    if(isset($_POST["annulla"])) {
+        registerLastResearch("");
+        $templateparams["users"] = $dbh->getUsersTable()->getUserByInitialLetters($_SESSION["username"],$_SESSION["text"]);
+        $templateparams["posts"] = $dbh->getPostTable()->getPosts($_SESSION["username"],$_SESSION["text"]);
     }
 
     require("template/base-home.php");

@@ -1,4 +1,4 @@
-let el=document.querySelectorAll(".heart-icon");
+/*let el=document.querySelectorAll(".heart-icon");
 for (let i = 0; i < el.length; i++) {
     el[i].addEventListener('click', function(){
         if (this.classList.contains('active')) {
@@ -20,4 +20,4 @@ for(let i=0; i<buttons.length; i++) {
         }
         
     });
-}
+}*/

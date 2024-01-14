@@ -1,4 +1,4 @@
-footer>svg {
+/*footer>svg {
     color: #aaa;
     width: 20px;
     height: 20px;
@@ -6,10 +6,10 @@ footer>svg {
 
 footer>svg.active {
     color: red;
-}
+}*/
 
 article {
-    margin: 20px 20px;
+    margin: 0 20px;
 }
 
 h2 {
@@ -29,11 +29,11 @@ p,h2{
     text-align: end;
 }*/
 
-header>input{
+/*header>input{
     float:right;
     background-color: rgba(128, 128, 128, 0.245);
     color:black;
-}
+}*/
 
 /*header>input.clicked {
     background-color: #28a745;
@@ -42,20 +42,21 @@ header>input{
 
 #notifiche {
     margin: 10px;
+    float:right;
 }
 /*.flex-container > div {
     margin: 10px;
 }*/
 
 img {
-    width:130px;
+    width:100px;
 }
 
-article>header>img {
+/*article>header>img {
     width:50px;
     height: 50px;
     border-radius: 50%;
-}
+}*/
 
 section>ul>li, div>ul>li{
     margin:10px 10px 10px 0;

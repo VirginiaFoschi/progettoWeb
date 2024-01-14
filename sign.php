@@ -34,15 +34,15 @@
                     $templateparams["erroreSignIn"] = true;
                     $templateparams["errormsg"] = $msg;
                 }
+            } else {
+                $dbh->getUsersTable()->registerLoggedUser($_POST["name"], $_POST["surname"], $_POST["username"], $_POST["password"], $_POST["address"],$image);
+                $genres=$_POST["genres"];
+                foreach($genres as $genre) {
+                    $dbh->getPreferencesTable()->saveUserFavouriteGenre($genre,$_POST["username"]);
+                }
+                registerLoggedUser($_POST["username"]);
+                header('Location: bacheca.php');
             }
-
-            /*$dbh->getUsersTable()->registerLoggedUser($_POST["name"], $_POST["surname"], $_POST["username"], $_POST["password"], $_POST["address"],$image);
-            $genres=$_POST["genres"];
-            foreach($genres as $genre) {
-                $dbh->getPreferencesTable()->saveUserFavouriteGenre($genre,$_POST["username"]);
-            }
-            registerLoggedUser($_POST["username"]);*/
-            //header('Location: bacheca.php');
         }
     }
 

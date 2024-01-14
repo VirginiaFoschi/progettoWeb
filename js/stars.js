@@ -1,10 +1,16 @@
-
 // Seleziona tutti gli elementi SVG con la classe 'star-icon'
 let stars = document.querySelectorAll('.star-icon');
 
 // Aggiungi un evento click a ciascuna icona stella
 stars.forEach((star, index) => {
-    star.addEventListener('click', function() {
+    star.addEventListener('click', function(ev) {
+        var span = ev.currentTarget;
+        var rating = star.dataset.value; // Modifica qui
+    
+        // Imposta il valore del campo nascosto
+        document.getElementById('voto').value = rating;
+        //console.log('Il valore di voto è: ', rating);
+        
         // Se l'icona stella è già gialla, cambia il suo colore in nero
         // e cambia il colore di tutte le stelle alla sua destra in nero
         if (this.style.fill === 'yellow') {
@@ -22,5 +28,3 @@ stars.forEach((star, index) => {
         }
     });
 });
-
-

@@ -23,6 +23,11 @@ img {
 ul {
     list-style-type: none;
 }
-
-
+.row {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  
+  
 

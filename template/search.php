@@ -1,11 +1,11 @@
 <div class="row mx-3 my-2">
     <div class="col-12"> 
         <header>
-        <form action="#" method="POST">
-            <button id="btnsearch" type="submit"><strong class="fa fa-search"></strong></button>
-            <input id="cerca" type="text" placeholder="Search.." name="search" title="searchbtn">
-            <button id="btnannulla" type="button">Annulla</button>
-        </form>
+            <form action="#" method="POST">
+                <button id="btnsearch" type="submit"><strong class="fa fa-search"></strong></button>
+                <input id="cerca" type="text" placeholder="Search.." name="search" title="searchbtn">
+                <button id="btnannulla" type="button">Annulla</button>
+            </form>
         </header>
     </div>
 </div>

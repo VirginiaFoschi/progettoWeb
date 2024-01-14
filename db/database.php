@@ -4,8 +4,6 @@ require_once("preferencesTable.php");
 require_once("usersTable.php");
 require_once("postTable.php");
 require_once("scambiTable.php");
-require_once("reviewsTable.php");
-require_once("eventsTable.php");
 require_once("followsTable.php");
 require_once("interactionsTable.php");
 require_once("interestsTable.php");
@@ -14,13 +12,11 @@ require_once("notificationsTable.php");
 class DatabaseHelper{
     private $db;
     private $genresTable;
-    private $userTable;
+    private $usersTable;
     private $preferencesTable;
     private $postTable;
     private $scambiTable;
     private $notificationsTable;
-    private $reviewsTable;
-    private $eventsTable;
     private $followsTable;
     private $interactionsTable;
     private $interestsTable;
@@ -39,11 +35,10 @@ class DatabaseHelper{
         $this->scambiTable = new ScambiTable($this->db);
         $this->notificationsTable = new NotificationsTable($this->db);
 
-        $this->reviewsTable = new ReviewsTable($this->db);
-        $this->eventsTable = new EventsTable($this->db);
         $this->followsTable = new FollowsTable($this->db);
         $this->interactionsTable = new InteractionsTable($this->db);
         $this->interestsTable = new InterestsTable($this->db);
+        $this->notificationsTable = new NotificationsTable($this->db);
     }
 
     public function getUsersTable(){
@@ -66,14 +61,6 @@ class DatabaseHelper{
         return $this->scambiTable;
     }
 
-    public function getReviewsTable() {
-        return $this->reviewsTable;
-    }
-
-    public function getEventsTable() {
-        return $this->eventsTable;
-    }
-
     public function getFollowsTable(){
         return $this->followsTable;
     }
@@ -84,6 +71,10 @@ class DatabaseHelper{
 
     public function getInterestsTable(){
         return $this->interestsTable;
+    }
+
+    public function getNotificationsTable() {
+        return $this->notificationsTable;
     }
 
 }

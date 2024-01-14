@@ -8,9 +8,9 @@ class NotificationsTable{
     }
 
     /*funzione per inserire una nuova notifica*/
-    public function addNotification( $idLibro ,$usernameInt, $tipo, $dataNotifica){
-        $stmt = $this->db->prepare("INSERT INTO NOTIFICA(ID_Libro, Username_Int, Tipo, Data) VALUES (?, ?, ?, ?)");
-        $stmt->bind_param('isss', $idLibro ,$usernameInt, $tipo, $dataNotifica);
+    public function addNotification( $idLibro ,$usernameInt, $tipo){
+        $stmt = $this->db->prepare("INSERT INTO NOTIFICHE(ID_Libro, Username_Int, Tipo, data_notifica) VALUES (?, ?, ?, NOW())");
+        $stmt->bind_param('iss', $idLibro ,$usernameInt, $tipo);
         $stmt->execute();
         $result = $stmt->get_result();
     }
@@ -23,5 +23,11 @@ class NotificationsTable{
         $result = $stmt->get_result();
         return $result->fetch_all(MYSQLI_ASSOC); 
     }
+     /*funzione per visualizzare le notifiche*/
+    public function removeNotification() {
+        $stmt = $this->db->prepare("DELETE FROM NOTIFICA WHERE Tipo = 'rifiutata' ");
+        $stmt->execute();
+    }
+    
 }
 ?>

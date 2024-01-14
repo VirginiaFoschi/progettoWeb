@@ -32,13 +32,14 @@ class UsersTable{
         $result = $stmt->get_result();
     }
 
-    public function getUserByInitialLetters($text){
+    public function getUserByInitialLetters($user, $text){
         if($text == "") {
-            $stmt = $this->db->prepare("SELECT username, immagine FROM utente ");
+            $stmt = $this->db->prepare("SELECT username, immagine FROM utente WHERE username <> ? ");
+            $stmt->bind_param('s', $user);
         } else {
-            $stmt = $this->db->prepare("SELECT username, immagine FROM utente WHERE username LIKE ? ");
+            $stmt = $this->db->prepare("SELECT username, immagine FROM utente WHERE username <> ? AND username LIKE ? ");
             $str = $text . "%";
-            $stmt->bind_param('s', $str);
+            $stmt->bind_param('ss', $user, $str);
         }
         $stmt->execute();
         $result = $stmt->get_result();

@@ -5,6 +5,11 @@ require_once("bootstrap.php");
 
 $postCorrente = 'post';
 $templateparams["nome-articolo"] = "account-post.php";
+
+$idAccount = -1;
+if(isset($_GET["id"])){
+    $idAccount = $_GET["id"];
+}
 $templateparams["annuncio"] = $dbh->getPostTable()->getAnnuncioProfilo("virgi.foschi02");
 $templateparams["recensione"] = $dbh->getPostTable()->getRecensioneProfilo("virgi.foschi02");
 

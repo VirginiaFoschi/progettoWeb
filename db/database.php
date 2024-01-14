@@ -85,6 +85,7 @@ class DatabaseHelper{
     public function getInterestsTable(){
         return $this->interestsTable;
     }
+    
 
 }
 ?>

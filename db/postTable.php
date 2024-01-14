@@ -10,19 +10,18 @@ class PostTable
         $this->db = $db;
     }
 
+
     public function getAnnuncioProfilo($username)
     {
-        $stmt = $this->db->prepare("SELECT ID_Evento, dataEvento, luogo, nomeEvento, descrizione FROM evento WHERE Usurname_Autore = ?");
+        $stmt = $this->db->prepare("SELECT ID_Evento, dataEvento, luogo, nomeEvento, descrizione, immagine FROM evento WHERE Usurname_Autore = ?");
         $stmt->bind_param('s', $username);
         $stmt->execute();
         $result = $stmt->get_result();
         $annunci = $result->fetch_all(MYSQLI_ASSOC);
 
-
         $risultatoFinale = array();
 
         foreach ($annunci as $annuncio) {
-
 
             $stmt = $this->db->prepare("SELECT COUNT(*) AS numLike FROM interesse WHERE ID_Evento = ?");
             $stmt->bind_param('i', $annuncio["ID_Evento"]);
@@ -68,7 +67,7 @@ class PostTable
 
     public function getPostLibroProfilo($username)
     {
-        $stmt = $this->db->prepare("SELECT * FROM libro_postato WHERE Usurname_Autore = ? ");
+        $stmt = $this->db->prepare("SELECT Titolo, Autore, Casa_Editrice, Trama, Condizioni, Immagine, Nome_Genere FROM libro_postato WHERE Usurname_Autore = ? ");
         $stmt->bind_param('s', $username);
         $stmt->execute();
         $result = $stmt->get_result();
@@ -77,9 +76,9 @@ class PostTable
 
     /*funzioni che permettono di pubblicare un post */
 
-    public function pubblicaAnnuncio($dataEvento, $luogo, $descrizione, $immagine, $usernameAutore ){
-        $stmt = $this->db->prepare("INSERT INTO EVENTO(ID_Evento, Data, Luogo, Descrizione, Immagine, Usurname_Autore) VALUES (?, ?, ?, ?, ?, ?)");
-        $stmt->bind_param('isssss', $dataEvento, $luogo, $descrizione, $immagine, $usernameAutore);
+    public function pubblicaAnnuncio($dataEvento, $luogo, $descrizione, $usernameAutore ){
+        $stmt = $this->db->prepare("INSERT INTO EVENTO(ID_Evento, Data_Evento, Luogo, Descrizione, Usurname_Autore) VALUES (?, ?, ?, ?, ?, ?)");
+        $stmt->bind_param('isssss', $dataEvento, $luogo, $descrizione, $usernameAutore);
         $stmt->execute();
         $result = $stmt->get_result();
     }

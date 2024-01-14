@@ -2,8 +2,8 @@
     require_once("bootstrap.php");
 
     $paginaCorrente='bacheca';
-    $templateparams["eventi"] = $dbh->getEventsTable()->getEvents();
-    $templateparams["recensioni"] = $dbh->getReviewsTable()->getReviews();
+    $templateparams["eventi"] = $dbh->getPostTable()->getEvents();
+    $templateparams["recensioni"] = $dbh->getPostTable()->getReviews();
     $templateparams["nome"] = "bacheca.php";
     $templateparams["css"] = array("bacheca.css", "likes-follow.css");
     $templateparams["js"] = array("likes-follow.js");

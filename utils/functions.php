@@ -7,6 +7,10 @@
         $_SESSION["text"] = $text;
     }
 
+    function registerGenre($genre) {
+        $_SESSION["genere"] = $genre;
+    }
+
     function formatDataOra($data) {
         $dataOra = new DateTime($data);
 

@@ -57,7 +57,7 @@
                 </ul>
             </section>
             <footer>
-                <input type="button" value="Elimina" name="elimina-libro" id="elimina-libro" onclick="" />
+                <input value="Elimina" type="submit" name="elimina-libro"  onClick="sendAjaxRequest('profilo-lista-libri.php', {id_libro: '<?php echo $postLibro['ID_Libro']; ?>'})" />
             </footer>
         </article>
     </div>

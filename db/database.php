@@ -44,6 +44,7 @@ class DatabaseHelper{
         $this->followsTable = new FollowsTable($this->db);
         $this->interactionsTable = new InteractionsTable($this->db);
         $this->interestsTable = new InterestsTable($this->db);
+        $this->notificationsTable = new NotificationsTable($this->db);
     }
 
     public function getUsersTable(){
@@ -86,5 +87,8 @@ class DatabaseHelper{
         return $this->interestsTable;
     }
 
+    public function getNotificationstable(){
+        return $this->notificationsTable;
+    }
 }
 ?>

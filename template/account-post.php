@@ -12,7 +12,7 @@
             </header>
             <section class="px-3 mb-4">
                 <h2>
-                    <?php echo $annuncio["Evento"]["nomeEvento"] ?>
+                    <?php echo $annuncio["Evento"]["Nome_Evento"] ?>
                 </h2>
                 <ul>
                     <li>
@@ -22,7 +22,7 @@
                                 <path
                                     d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z" />
                             </svg>
-                            <?php echo $annuncio["Evento"]["dataEvento"] ?>
+                            <?php echo $annuncio["Evento"]["Data_Evento"] ?>
                         </span>
                     </li>
                     <li>

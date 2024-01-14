@@ -68,7 +68,7 @@ class PostTable
 
     public function getPostLibroProfilo($username)
     {
-        $stmt = $this->db->prepare("SELECT * FROM libro_postato WHERE Usurname_Autore = ? ");
+        $stmt = $this->db->prepare("SELECT * FROM libro_postato WHERE Username_Autore = ? ");
         $stmt->bind_param('s', $username);
         $stmt->execute();
         $result = $stmt->get_result();

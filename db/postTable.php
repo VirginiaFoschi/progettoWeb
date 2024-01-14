@@ -12,7 +12,7 @@ class PostTable
 
     public function getAnnuncioProfilo($username)
     {
-        $stmt = $this->db->prepare("SELECT ID_Evento, dataEvento, luogo, nomeEvento, descrizione FROM evento WHERE Usurname_Autore = ?");
+        $stmt = $this->db->prepare("SELECT ID_Evento, Data_Evento, luogo, Nome_Evento, descrizione, DataPubblicazione FROM evento WHERE Username_Autore = ?");
         $stmt->bind_param('s', $username);
         $stmt->execute();
         $result = $stmt->get_result();

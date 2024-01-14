@@ -88,6 +88,20 @@ class PostTable
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
+    public function getEvents() {
+        $stmt = $this->db->prepare("SELECT id_evento, nome_evento, data_evento, luogo, descrizione, username, utente.immagine AS userImage, dataPubblicazione FROM evento, utente WHERE username_autore=username "); 
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC); 
+    }
+
+    public function getReviews() {
+        $stmt = $this->db->prepare("SELECT voto, titolo_libro, autore_libro, autore_recensione, recensione.immagine, recensione, username, utente.immagine AS userImage, dataPubblicazione FROM recensione, utente WHERE autore_recensione=username "); 
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC); 
+    }
+
     /*funzioni che permettono di pubblicare un post */
 
     public function pubblicaAnnuncio($dataEvento, $luogo, $descrizione, $immagine, $usernameAutore ){

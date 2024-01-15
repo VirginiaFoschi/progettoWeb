@@ -52,25 +52,18 @@
         }
     
         //Controllo se esiste file con stesso nome ed eventualmente lo rinomino
-        if (file_exists($fullPath)) {
-            $i = 1;
-            do{
-                $i++;
-                $imageName = pathinfo(basename($image["name"]), PATHINFO_FILENAME)."_$i.".$imageFileType;
+        if (!file_exists($fullPath)) {
+            if(strlen($msg)==0){
+                if(!move_uploaded_file($image["tmp_name"], $fullPath)){
+                    $msg.= "Errore nel caricamento dell'immagine.";
+                }
+                else{
+                    $result = 1;
+                    $msg = $imageName;
+                }
             }
-            while(file_exists($path.$imageName));
-            $fullPath = $path.$imageName;
-        }
-    
-        //Se non ci sono errori, sposto il file dalla posizione temporanea alla cartella di destinazione
-        if(strlen($msg)==0){
-            if(!move_uploaded_file($image["tmp_name"], $fullPath)){
-                $msg.= "Errore nel caricamento dell'immagine.";
-            }
-            else{
-                $result = 1;
-                $msg = $imageName;
-            }
+        } else {
+            $result=1;
         }
         return array($result, $msg);
     }

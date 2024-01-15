@@ -44,8 +44,10 @@
                 </ul>
             </section>
             <footer>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-heart-fill heart-icon"
-                    viewBox="0 0 16 16">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-heart-fill heart-icon <?php if (in_array($annuncio["Evento"]["id_evento"], $templateparams["likes-events"])):
+                    echo "active";
+                endif; ?>" viewBox="0 0 16 16"
+                    onClick="sendAjaxRequest('likes-events.php', {evento: '<?php echo $annuncio["Evento"]['id_evento']; ?>'})">
                     <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314" />
                 </svg>
                 <p>
@@ -75,8 +77,8 @@
                 <ul>
                     <li>
                         <div class="d-flex align-items-center">
-                            <img src="<?php echo UPLOAD_DIR . $recensione["Recensione"]["Immagine"]; ?>" alt="Copertina libro"
-                                class="image" />
+                            <img src="<?php echo UPLOAD_DIR . $recensione["Recensione"]["Immagine"]; ?>"
+                                alt="Copertina libro" class="image" />
                             <ul>
                                 <li>
                                     <h2>
@@ -118,8 +120,12 @@
                 </ul>
             </section>
             <footer>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-heart-fill heart-icon"
-                    viewBox="0 0 16 16">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-heart-fill heart-icon <?php
+                $a = array("autore_recensione" => $templateparams["nome-profilo"], "titolo_libro" => $recensione["Recensione"]["Titolo_Libro"], "autore_libro" => $recensione["Recensione"]["Autore_Libro"]);
+                if (array_search($a, $templateparams["likes-reviews"]) !== false) {
+                    echo "active";
+                } ?>" viewBox="0 0 16 16"
+                    onClick="sendAjaxRequest('likes-reviews.php', {autore_rec: '<?php echo $templateparams["nome-profilo"]; ?>', autore_lib: '<?php echo $recensione["Recensione"]["Autore_Libro"]; ?>', titolo: '<?php echo $recensione["Recensione"]["Titolo_Libro"]; ?>'})">
                     <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314" />
                 </svg>
                 <p>

@@ -241,15 +241,6 @@ ul {
     color: black;
 }
 
-.heart-icon {
-    color: #aaa;
-    width: 20px;
-    height: 20px;
-}
-
-.heart-icon.active {
-    color: red;
-}
 
 footer>svg {
     margin-bottom: 10px;

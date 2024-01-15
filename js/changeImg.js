@@ -1,7 +1,7 @@
-document.getElementById("addImg").addEventListener('click', function() {
+function addImg() {
     // Simula un click sull'input file quando l'icona viene cliccata
     fileInput.click();
-});
+}
 
 // Aggiungi un evento change all'input file
 fileInput.addEventListener('change', function(event) {
@@ -12,7 +12,7 @@ fileInput.addEventListener('change', function(event) {
   
 
     if (input.files && input.files[0]) {
-        var reader = new FileReader();
+        let reader = new FileReader();
 
         reader.onload = function (e) {
           if (immagine) {

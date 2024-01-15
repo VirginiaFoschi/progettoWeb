@@ -7,7 +7,7 @@ function logout() {
 }
 
 function changeImg() {
-    window.location.href = "impostazioni-immagine.html"
+    window.location.href = "impostazioni-immagine.php"
 }
 
 function backProfilo() {

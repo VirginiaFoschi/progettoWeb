@@ -13,7 +13,7 @@ class PostTable
 
     public function getAnnuncioProfilo($username)
     {
-        $stmt = $this->db->prepare("SELECT ID_Evento, Data_Evento, luogo, Nome_Evento, descrizione, DataPubblicazione FROM evento WHERE Username_Autore = ?");
+        $stmt = $this->db->prepare("SELECT id_evento, Data_Evento, luogo, Nome_Evento, descrizione, DataPubblicazione FROM evento WHERE Username_Autore = ?");
         $stmt->bind_param('s', $username);
         $stmt->execute();
         $result = $stmt->get_result();
@@ -24,7 +24,7 @@ class PostTable
         foreach ($annunci as $annuncio) {
 
             $stmt = $this->db->prepare("SELECT COUNT(*) AS numLike FROM interesse WHERE ID_Evento = ?");
-            $stmt->bind_param('i', $annuncio["ID_Evento"]);
+            $stmt->bind_param('i', $annuncio["id_evento"]);
             $stmt->execute();
             $result1 = $stmt->get_result();
             $row = $result1->fetch_assoc();

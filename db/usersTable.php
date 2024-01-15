@@ -26,7 +26,7 @@ class UsersTable{
     }
 
     public function registerLoggedUser($name, $surname, $username, $password, $address, $image) {
-        $stmt = $this->db->prepare("INSERT INTO utente (nome, cognome, username, `password`, indirizzo, immagine, follower, follow) VALUES (?,?,?,?,?,?,0,0) ");
+        $stmt = $this->db->prepare("INSERT INTO utente (nome, cognome, username, `password`, indirizzo, immagine) VALUES (?,?,?,?,?,?) ");
         $stmt->bind_param('ssssss',$name, $surname, $username, $password, $address, $image);  
         $stmt->execute();
         $result = $stmt->get_result();

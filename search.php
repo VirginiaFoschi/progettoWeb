@@ -10,6 +10,7 @@
     $templateparams["generi"] = $dbh->getPreferencesTable()->getGenres();
     $templateparams["follows"] = array_column($dbh->getFollowsTable()->getFollows($_SESSION["username"]), "username_seguito");
     $templateparams["posts"] = $dbh->getPostTable()->getPosts($_SESSION["username"],$_SESSION["text"]);
+    $templateparams["notifiche"] = $dbh->getNotificationsTable()->getSuspendNotify($_SESSION["username"]);
 
     if(isset($_POST["search"])) {
         registerLastResearch($_POST["search"]);

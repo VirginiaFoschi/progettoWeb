@@ -5,7 +5,7 @@
                 <a href="profilo-post.php">
                     <?php echo $coppiaLibri['Libro1']['DettagliLibro1']['Username_Autore']; ?>
                 </a>
-                <a href="account-post.php?id=<?php echo $coppiaLibri['Libro2']['DettagliLibro2']['Username_Autore'];?>">
+                <a href="account-post.php?id=<?php echo $coppiaLibri['Libro2']['DettagliLibro2']['Username_Autore']; ?>">
                     <?php echo $coppiaLibri['Libro2']['DettagliLibro2']['Username_Autore']; ?>
                 </a>
             </header>
@@ -23,13 +23,16 @@
                             <?php echo $coppiaLibri['Libro2']['DettagliLibro2']['Titolo']; ?>
                         </h4>
                     </li>
+                    <li>
+                        <p>Data di scadenza:</p>
+                        <p>
+                            <?php echo $coppiaLibri['Data_Fine']; ?>
+                        </p>
+                    </li>
                 </ul>
             </section>
             <footer class="bottom-scambi">
-                <p>Data di scadenza:</p>
-                <p>
-                    <?php echo $coppiaLibri['Data_Fine']; ?>
-                </p>
+                <input type="button" value="Scarica Etichetta" onclick="scaricaEtichetta()" />
             </footer>
         </article>
     </div>

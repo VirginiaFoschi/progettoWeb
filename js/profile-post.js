@@ -9,3 +9,7 @@ function notifiche() {
 function backHome() {
   window.location.href = "bacheca.php"
 }
+
+function scaricaEtichetta(){
+  window.location.href = "etichetta.html";
+}

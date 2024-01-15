@@ -36,7 +36,7 @@ class ScambiTable
             $rowLibro = $resultLibro->fetch_assoc(); //Una riga del risultato
 
             // Esegui la query per trovare tutti i libri2 associati al libro corrente e la data di scadenza
-            $stmt = $this->db->prepare("SELECT ID_Libro2, Data_Fine FROM scambio WHERE ID_Libro1 = ?");
+            $stmt = $this->db->prepare("SELECT ID_Libro2, Data_Fine FROM scambio WHERE ID_Libro1 = ? AND Data_Fine > NOW()");
             $stmt->bind_param('i', $id_libro["ID_Libro"]);
             $stmt->execute();
             $result = $stmt->get_result();
@@ -65,7 +65,7 @@ class ScambiTable
             $risultatoTotale += $resultPerLibro;
 
             // Esegui la query per trovare tutti i libri2 associati al libro corrente e la data di scadenza
-            $stmt = $this->db->prepare("SELECT ID_Libro1, Data_Fine FROM scambio WHERE ID_Libro2 = ?");
+            $stmt = $this->db->prepare("SELECT ID_Libro1, Data_Fine FROM scambio WHERE ID_Libro2 = ? AND Data_Fine > NOW()");
             $stmt->bind_param('i', $id_libro["ID_Libro"]);
             $stmt->execute();
             $resultLibro1 = $stmt->get_result();

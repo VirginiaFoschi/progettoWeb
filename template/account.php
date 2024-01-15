@@ -35,16 +35,16 @@
         <ul class="nav nav-pills nav-fill">
             <li class="nav-item">
                 <a class="nav-link <?php echo ($postCorrente == 'post') ? 'active2' : ''; ?>" title="Post"
-                    href="account-post.php? id= <?php echo $templateparams["nome-profilo"]; ?>" onclick="">Post</a>
+                    href="account-post.php?id=<?php echo $templateparams["nome-profilo"]; ?>" onclick="">Post</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link <?php echo ($postCorrente == 'libri') ? 'active2' : ''; ?>" title="Lista libri"
-                    href="account-lista-libri.php? id= <?php echo $templateparams["nome-profilo"]; ?>" onclick="">Lista
+                    href="account-lista-libri.php?id=<?php echo $templateparams["nome-profilo"]; ?>" onclick="">Lista
                     Libri</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link <?php echo ($postCorrente == 'scambi') ? 'active2' : ''; ?>" title="Scambi in corso"
-                    href="account-scambi.php? id= <?php echo $templateparams["nome-profilo"]; ?>" onclick="">Scambi
+                    href="account-scambi.php?id=<?php echo $templateparams["nome-profilo"]; ?>" onclick="">Scambi
                     Attivi</a>
             </li>
         </ul>

@@ -3,7 +3,7 @@
     <div class="row justify-content-center content">
         <article class="article-libro bg-body border mb-3">
             <header class="row">
-                <a href="#">
+                <a href="account-post.php?id=<?php echo $templateparams["nome-profilo"];?>">
                     <?php foreach ($templateparams["img-profilo"] as $image): ?>
                         <img src="<?php echo UPLOAD_DIR . $image["Immagine"]; ?>" alt="Immagine-Profilo" />
                     <?php endforeach; ?>

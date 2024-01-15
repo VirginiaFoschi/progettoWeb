@@ -3,7 +3,7 @@
 require_once("bootstrap.php");
 $templateparams["nome"] = "review.php";
 $templateparams["css"] = array("post.css");
-$templateparams["js"] = array("changeImg.js", "post.js");
+$templateparams["js"] = array("changeImg.js", "addPost.js", "stars.js");
 $templateparams["generi"] = $dbh->getGenresTable()->getGenres();
 $image = "img/2200720.png";
 
@@ -17,12 +17,15 @@ if (
         if ($result != 0) {
             $image = $msg;
 
-            $dbh->getPostTable()->pubblicaRecensione("autore.01", $_POST["voto"], $_POST["titolo"], $_POST["autoreLibro"], $image, $_POST["recensione"]);
+            $dbh->getPostTable()->pubblicaRecensione($_SESSION["username"], $_POST["voto"], $_POST["titolo"], $_POST["autoreLibro"], $image, $_POST["recensione"]);
 
             header('Location: bacheca.php');
         } else {
             $templateparams["errormsg"] = $msg;
-        }
+        } 
+    }else{
+        $dbh->getPostTable()->pubblicaRecensione($_SESSION["username"], $_POST["voto"], $_POST["titolo"], $_POST["autoreLibro"], $image, $_POST["recensione"]);
     }
 }
+require("template/base-home.php");
 ?>

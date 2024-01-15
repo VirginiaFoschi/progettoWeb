@@ -10,7 +10,9 @@
                 <header class="px-3  mt-3 mb-3">
                     <img src="<?php echo UPLOAD_DIR.$post["userImage"]; ?>" alt="" >
                     <a href="#"><?php echo $post["username"]; ?></a>
-                    <input class="follow" type="submit" value="<?php if(in_array($post["username"],$templateparams["follows"])): echo "Segui Già"; else: echo "Segui"; endif; ?>" onClick="sendAjaxRequest('follow.php', {username: '<?php echo $post['username']; ?>'})">
+                    <?php if($_SESSION["username"] !== $post["username"]): ?>
+                        <input class="follow" type="submit" value="<?php if(in_array($post["username"],$templateparams["follows"])): echo "Segui Già"; else: echo "Segui"; endif; ?>" onClick="sendAjaxRequest('follow.php', {username: '<?php echo $post['username']; ?>'})">
+                    <?php endif; ?>
                 </header>
                 <section class="px-3 mb-4">
                     <h2>Recensione del libro: </h2>
@@ -64,7 +66,9 @@
                 <header class="px-3  mt-3 mb-3">
                     <img src="<?php echo UPLOAD_DIR.$post["userImage"]; ?>" alt="">
                     <a href="account.html"><?php echo $post["username"]; ?></a>
-                    <input class="follow" type="submit" value="<?php if(in_array($post["username"],$templateparams["follows"])): echo "Segui Già"; else: echo "Segui"; endif; ?>" onClick="sendAjaxRequest('follow.php', {username: '<?php echo $post['username']; ?>'})">
+                    <?php if($_SESSION["username"] !== $post["username"]): ?>
+                        <input class="follow" type="submit" value="<?php if(in_array($post["username"],$templateparams["follows"])): echo "Segui Già"; else: echo "Segui"; endif; ?>" onClick="sendAjaxRequest('follow.php', {username: '<?php echo $post['username']; ?>'})">
+                    <?php endif; ?>
                 </header>
                 <section class="px-3 mb-4">
                     <h2><?php echo $post["nome_evento"]; ?></h2>

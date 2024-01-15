@@ -9,7 +9,7 @@
             <article class="bg-body border mb-3">
                 <header class="px-3  mt-3 mb-3">
                     <img src="<?php echo UPLOAD_DIR.$post["userImage"]; ?>" alt="" >
-                    <a href="#"><?php echo $post["username"]; ?></a>
+                    <a href="<?php if($post["username"] === $_SESSION["username"]): echo "profilo-post.php"; else: echo "account-post.php";endif;?>?id=<?php echo $post["username"];?>"><?php echo $post["username"]; ?> </a>
                     <input class="follow" type="submit" value="<?php if(in_array($post["username"],$templateparams["follows"])): echo "Segui Già"; else: echo "Segui"; endif; ?>" onClick="sendAjaxRequest('follow.php', {username: '<?php echo $post['username']; ?>'})">
                 </header>
                 <section class="px-3 mb-4">
@@ -63,7 +63,7 @@
             <article class="bg-body border mb-3">
                 <header class="px-3  mt-3 mb-3">
                     <img src="<?php echo UPLOAD_DIR.$post["userImage"]; ?>" alt="">
-                    <a href="account.html"><?php echo $post["username"]; ?></a>
+                    <a href="<?php if($post["username"] === $_SESSION["username"]): echo "profilo-post.php"; else: echo "account-post.php";endif;?>?id=<?php echo $post["username"];?>"><?php echo $post["username"]; ?></a>
                     <input class="follow" type="submit" value="<?php if(in_array($post["username"],$templateparams["follows"])): echo "Segui Già"; else: echo "Segui"; endif; ?>" onClick="sendAjaxRequest('follow.php', {username: '<?php echo $post['username']; ?>'})">
                 </header>
                 <section class="px-3 mb-4">

@@ -16,7 +16,7 @@
         $dataA = strtotime($a['dataPubblicazione']);
         $dataB = strtotime($b['dataPubblicazione']);
     
-        return $dataA - $dataB;
+        return $dataB - $dataA;
     });
 
     require("template/base-home.php");

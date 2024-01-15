@@ -16,7 +16,7 @@
     </div>
     <div class="mb-5">
         <div class="col-12 text-end">
-            <input id="backbtn" type="button" class="btn btn-outline-primary" value="Back"/>
+            <input id="backbtn" type="button" class="btn btn-outline-primary" value="Back" onClick="logout()"/>
             <input type="submit" class="btn btn-outline-primary" value="Log In"/>
         </div>
     </div>

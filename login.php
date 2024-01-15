@@ -4,7 +4,7 @@
     $templateparams["erroreLogin"] = false;
     $templateparams["nome"] = "login.php";
     $templateparams["css"] = array("sign.css");
-    $templateparams["js"] = array("login.js");
+    $templateparams["js"] = array("impostazioni.js");
     
     if(isset($_POST["username"]) && isset($_POST["password"])) {
         $login_result = $dbh->getUsersTable()->checkLogin($_POST["username"], $_POST["password"]);
@@ -13,6 +13,7 @@
             $templateparams["erroreLogin"] = true;
         } else {
             registerLoggedUser($login_result[0]["Username"]);
+            registerGenre("");
             header('Location: bacheca.php');
         }
     }

@@ -5,7 +5,7 @@
     $templateparams["generi"] = $dbh->getGenresTable()->getGenres();
     $templateparams["nome"] = "sign.php";
     $templateparams["css"] = array("sign.css");
-    $templateparams["js"] = array("sign.js", "login.js");
+    $templateparams["js"] = array("sign.js", "impostazioni.js");
     $image="immagineProfilo.jpg";
     $templateparams["errormsg"] = "Errore! Esiste già un utente con lo stesso username";
 
@@ -29,6 +29,7 @@
                         $dbh->getPreferencesTable()->saveUserFavouriteGenre($genre,$_POST["username"]);
                     }
                     registerLoggedUser($_POST["username"]);
+                    registerGenre("");
                     header('Location: bacheca.php');
                 } else {
                     $templateparams["erroreSignIn"] = true;
@@ -41,6 +42,7 @@
                     $dbh->getPreferencesTable()->saveUserFavouriteGenre($genre,$_POST["username"]);
                 }
                 registerLoggedUser($_POST["username"]);
+                registerGenre("");
                 header('Location: bacheca.php');
             }
         }

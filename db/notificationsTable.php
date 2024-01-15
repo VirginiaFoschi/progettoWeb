@@ -28,6 +28,14 @@ class NotificationsTable{
         $stmt = $this->db->prepare("DELETE FROM NOTIFICA WHERE Tipo = 'rifiutata' ");
         $stmt->execute();
     }
+
+    public function getSuspendNotify($username) {
+        $stmt = $this->db->prepare("SELECT N.id_libro, L.username_autore FROM NOTIFICHE N JOIN LIBRO_POSTATO L ON N.ID_Libro = L.ID_Libro WHERE N.username_int = ? AND N.tipo = 'in_sospeso'"); 
+        $stmt->bind_param('s', $username);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC); 
+    }
     
 }
 ?>

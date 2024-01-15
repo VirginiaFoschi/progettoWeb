@@ -5,7 +5,7 @@
                 <header class="px-3 mt-3 mb-1">
                     <img src="<?php echo UPLOAD_DIR.$u["immagine"]; ?>" alt="">
                     <a href="#"><?php echo $u["username"] ?></a>
-                    <input class="follow" type="button" value="<?php if(in_array($u["username"],$templateparams["follows"])): echo "Segui Già"; else: echo "Segui"; endif; ?>" onClick="sendAjaxRequest('follow.php', {username: '<?php echo $u['username']; ?>'})" title="followbtn">
+                    <input class="follow" type="button" value="<?php if(in_array($u["username"],$templateparams["follows"])): echo "Segui già"; else: echo "Segui"; endif; ?>" onClick="sendAjaxRequest('follow.php', {username: '<?php echo $u['username']; ?>'})" title="followbtn">
                 </header>
                 <section class="px-3 justify-content-center">
                     <?php $generi="";

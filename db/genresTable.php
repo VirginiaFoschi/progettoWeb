@@ -21,5 +21,11 @@ class GenresTable{
         return $result->fetch_all(MYSQLI_ASSOC); 
     }
 
+    public function deleteGenereUtente($username) {
+        $stmt = $this->db->prepare("DELETE FROM preferenze WHERE Username = ? "); 
+        $stmt->bind_param('s', $username);
+        $stmt->execute();
+    }
+
 }
 ?>

@@ -3,7 +3,7 @@
         <!-- Annuncio -->
         <article class="article-annuncio bg-body border mb-3">
             <header class="row">
-                <a href="#">
+                <a href="profilo-post.php">
                     <?php foreach ($templateparams["img-profilo"] as $image): ?>
                         <img src="<?php echo UPLOAD_DIR . $image["Immagine"]; ?>" alt="Immagine-Profilo" />
                     <?php endforeach; ?>

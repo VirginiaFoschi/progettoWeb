@@ -2,10 +2,10 @@
     <div class="row justify-content-center content">
         <article class="article-scambi bg-body border mb-3">
             <header>
-                <a href="#">
+                <a href="profilo-post.php">
                     <?php echo $coppiaLibri['Libro1']['DettagliLibro1']['Username_Autore']; ?>
                 </a>
-                <a href="#">
+                <a href="account-post.php?id=<?php echo $coppiaLibri['Libro2']['DettagliLibro2']['Username_Autore'];?>">
                     <?php echo $coppiaLibri['Libro2']['DettagliLibro2']['Username_Autore']; ?>
                 </a>
             </header>

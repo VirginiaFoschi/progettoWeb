@@ -47,3 +47,8 @@ function showMore(dotID) {
 function sendSelectedValue(){
     document.getElementById('formPost').submit();
 }
+
+function disabledButton(button) {
+    button.disabled = true;
+    button.value = "Proposta effettuata";
+}

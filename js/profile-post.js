@@ -10,6 +10,6 @@ function backHome() {
   window.location.href = "bacheca.php"
 }
 
-function scaricaEtichetta(){
-  window.location.href = "etichetta.html";
+function scaricaEtichetta($libro1, $libro2){
+  window.location.href = "etichetta.php?libro1=" + encodeURIComponent($libro1) + "&libro2=" + encodeURIComponent($libro2);
 }

@@ -1,6 +1,6 @@
-document.getElementById('back').addEventListener('click', function () {
-    window.location.href = "profilo.html";
-})
+function backPost() {
+    window.location.href = "profilo-post.php"
+  }
 
 function stamparePagina() {
     window.print();

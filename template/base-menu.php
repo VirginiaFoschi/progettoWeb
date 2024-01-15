@@ -19,11 +19,11 @@
 <body class="bg-light">
     <div class="container-fluid p-0 overflow-hidden">
         <header class="text-center font-monospace">
-            <h1 class="py-3">Mille e Una Pagina</h1>
+            <h1 class="py-3 <?php if($templateparams["nome"] === "etichetta.php"): echo "etichetta-no-stampare"; endif;?>">Mille e Una Pagina</h1>
         </header>
         <div class="row justify-content-center">
             <div class="col-md-4">
-                <section>
+                <section class="<?php if($templateparams["nome"] === "etichetta.php"): echo "etichetta-stampare"; endif;?>">
                     <?php
                     require($templateparams["nome"]);
                     ?>

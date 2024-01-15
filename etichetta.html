@@ -21,38 +21,45 @@
             </div>
         </header>
     </div>
-    <main class="etichetta-stampare">
-        <fieldset class="bg-body">
-            <legend>Dati destinatario:</legend>
-            <ul>
-                <li>
-                    <p>Nome destinatario: </p>
-                    <p>Mario Rossi</p>
-                </li>
-                <li>
-                    <p>Indirizzo:</p>
-                    <p>Via Santa Maria In Cerreto 31/T, Rimini</p>
-                </li>
-            </ul>
-        </fieldset>
-        <fieldset class="bg-body">
-            <legend>Dati mittente:</legend>
-            <ul>
-                <li>
-                    <p>Nome Mittente: </p>
-                    <p>Mario Verdi</p>
-                </li>
-                <li>
-                    <p>Indirizzo:</p>
-                    <p>Via Roma, Cesena</p>
-                </li>
-            </ul>
-        </fieldset>
-        <div class="text-end etichetta-no-stampare">
-            <input id="back" type="button" class="btn btn-outline-primary" value="Back" />
-            <input id="print" type="button" class="btn btn-outline-primary" value="Stampa" onclick="stamparePagina()" />
+    <div class="row justify-content-center">
+        <div class="col-md-4">
+            
+                <section class="etichetta-stampare">
+                    <fieldset class="bg-body">
+                        <legend>Dati destinatario:</legend>
+                        <ul>
+                            <li>
+                                <p>Nome destinatario: </p>
+                                <p>Mario Rossi</p>
+                            </li>
+                            <li>
+                                <p>Indirizzo:</p>
+                                <p>Via Santa Maria In Cerreto 31/T, Rimini</p>
+                            </li>
+                        </ul>
+                    </fieldset>
+                    <fieldset class="bg-body">
+                        <legend>Dati mittente:</legend>
+                        <ul>
+                            <li>
+                                <p>Nome Mittente: </p>
+                                <p>Mario Verdi</p>
+                            </li>
+                            <li>
+                                <p>Indirizzo:</p>
+                                <p>Via Roma, Cesena</p>
+                            </li>
+                        </ul>
+                    </fieldset>
+                    <div class="text-end etichetta-no-stampare">
+                        <input id="back" type="button" class="btn btn-outline-primary" value="Back" />
+                        <input id="print" type="button" class="btn btn-outline-primary" value="Stampa" onclick="stamparePagina()" />
+                    </div>
+                </section>
+           
         </div>
-    </main>
+    </div>
+    
     <footer class="font-monospace text-center py-4">
         <p>From MVC</p>
     </footer>

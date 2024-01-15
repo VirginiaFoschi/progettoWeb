@@ -32,7 +32,7 @@
                 </ul>
             </section>
             <footer class="bottom-scambi">
-                <input type="button" value="Scarica Etichetta" onclick="scaricaEtichetta()" />
+                <input type="button" value="Scarica Etichetta" onclick="scaricaEtichetta(<?php echo $coppiaLibri['Libro1']['ID_Libro1']?>, <?php echo $coppiaLibri['Libro2']['ID_Libro2']?>)" />
             </footer>
         </article>
     </div>

@@ -52,9 +52,9 @@ fieldset>ul>li p:first-child , header p:first-child{
     font-weight: bold;
 }
 
-main>div>input {
-    margin-right: 20px;
-    align-items: end;
+section>div {
+    margin-right: 70px;
+    justify-content: center;
 }
 
 @media print {

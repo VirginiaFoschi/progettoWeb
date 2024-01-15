@@ -94,5 +94,29 @@ class ScambiTable
         }
         return $risultatoTotale;
     }
+
+    public function getEtichetta($libro1, $libro2) {
+        $resultTotale = array();
+        $stmt = $this->db->prepare("SELECT utente.* FROM utente JOIN libro_postato ON utente.Username = libro_postato.Username_Autore WHERE libro_postato.ID_Libro=? ");
+        $stmt->bind_param('i', $libro1);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $row = $result->fetch_assoc();
+
+        $stmt = $this->db->prepare("SELECT utente.* FROM utente JOIN libro_postato ON utente.Username = libro_postato.Username_Autore WHERE libro_postato.ID_Libro=? ");
+        $stmt->bind_param('i', $libro2);
+        $stmt->execute();
+        $result2 = $stmt->get_result();
+        $row2 = $result2->fetch_assoc();
+
+        if ($row && $row2) {
+            $resultTotale[] = array(
+                'Mittente' => $row,
+                'Destinatario' => $row2
+            );
+        }
+
+        return $resultTotale;
+    }
 }
 ?>

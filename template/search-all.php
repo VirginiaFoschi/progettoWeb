@@ -5,7 +5,7 @@
             <article class="article bg-body border mx-3">
                 <header class="px-3  mt-3 mb-3">
                     <img src="<?php echo UPLOAD_DIR.$templateparams["posts"][$i]["fotoProfilo"]; ?>" alt="">
-                    <a href="#"><?php echo $templateparams["posts"][$i]["username"]; ?></a>
+                    <a href="<?php if($templateparams["posts"][$i]["username"] === $_SESSION["username"]): echo "profilo-post.php"; else: echo "account-post.php";endif;?>?id=<?php echo $templateparams["posts"][$i]["username"];?>"><?php echo $templateparams["posts"][$i]["username"]; ?></a>
                     <input class="follow" type="button" value="<?php if(in_array($templateparams["posts"][$i]["username"],$templateparams["follows"])): echo "Segui Già"; else: echo "Segui"; endif; ?>" onClick="sendAjaxRequest('follow.php', {username: '<?php echo $templateparams["posts"][$i]['username']; ?>'})">
                 </header>
                 <section class="px-3 mb-4">
@@ -57,7 +57,7 @@
             <article class="article bg-body border mx-3">
                 <header class="px-3 mt-3 mb-1">
                     <img src="<?php echo UPLOAD_DIR.$templateparams["users"][$i]["immagine"]; ?>" alt="">
-                    <a href="#"><?php echo $templateparams["users"][$i]["username"] ?></a>
+                    <a href="<?php if($templateparams["posts"][$i]["username"] === $_SESSION["username"]): echo "profilo-post.php"; else: echo "account-post.php";endif;?>?id=<?php echo $templateparams["posts"][$i]["username"];?>"><?php echo $templateparams["users"][$i]["username"] ?></a>
                     <input class="follow" type="button" value="<?php if(in_array($templateparams["users"][$i]["username"],$templateparams["follows"])): echo "Segui Già"; else: echo "Segui"; endif; ?>" onClick="sendAjaxRequest('follow.php', {username: '<?php echo $templateparams["users"][$i]['username']; ?>'})" title="followbtn">
                 </header>
                 <section class="px-3 justify-content-center">
@@ -87,7 +87,7 @@
                 <article class="article bg-body border mx-3">
                     <header class="px-3  mt-3 mb-3">
                         <img src="<?php echo UPLOAD_DIR.$templateparams["posts"][$i]["fotoProfilo"]; ?>" alt="">
-                        <a href="#"><?php echo $templateparams["posts"][$i]["username"]; ?></a>
+                        <a href="<?php if($templateparams["posts"][$i]["username"] === $_SESSION["username"]): echo "profilo-post.php"; else: echo "account-post.php";endif;?>?id=<?php echo $templateparams["posts"][$i]["username"];?>"><?php echo $templateparams["posts"][$i]["username"]; ?></a>
                         <input class="follow" type="button" value="<?php if(in_array($templateparams["posts"][$i]["username"],$templateparams["follows"])): echo "Segui Già"; else: echo "Segui"; endif; ?>" onClick="sendAjaxRequest('follow.php', {username: '<?php echo $templateparams["posts"][$i]['username']; ?>'})">
                     </header>
                     <section class="px-3 mb-4">
@@ -142,7 +142,7 @@
                 <article class="article bg-body border mx-3">
                     <header class="px-3 mt-3 mb-1">
                         <img src="<?php echo UPLOAD_DIR.$templateparams["users"][$i]["immagine"]; ?>" alt="">
-                        <a href="#"><?php echo $templateparams["users"][$i]["username"] ?></a>
+                        <a href="<?php if($templateparams["posts"][$i]["username"] === $_SESSION["username"]): echo "profilo-post.php"; else: echo "account-post.php";endif;?>?id=<?php echo $templateparams["posts"][$i]["username"];?>"><?php echo $templateparams["users"][$i]["username"] ?></a>
                         <input class="follow" type="button" value="<?php if(in_array($templateparams["users"][$i]["username"],$templateparams["follows"])): echo "Segui Già"; else: echo "Segui"; endif; ?>" onClick="sendAjaxRequest('follow.php', {username: '<?php echo $templateparams["users"][$i]['username']; ?>'})" title="followbtn">
                     </header>
                     <section class="px-3 justify-content-center">

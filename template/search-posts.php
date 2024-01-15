@@ -61,7 +61,15 @@
                         </ul>
                     </section>
                     <footer class="text-end mb-3 px-3">
-                        <input type="submit" class="btn btn-sm btn-outline-dark" value="Proponi scambio" onClick="sendAjaxRequest('proposta-scambio.php', {id_libro: '<?php echo $post["id_libro"]; ?>', username: '<?php echo $post["username"]; ?>'})">
+                        <?php 
+                        $active=false;
+                        foreach($templateparams["notifiche"] as $n) {
+                            if($n["id_libro"] == $post["id_libro"] && $n["username_autore"] == $post["username"]) {
+                                $active=true;
+                            }
+                        }
+                        ?>
+                        <input type="submit" class="btn btn-sm btn-outline-dark" value="<?php if($active) : echo 'Proposta effettuata'; else: echo 'Proponi scambio'; endif; ?>" <?php if($active) : echo 'disabled'; endif; ?> onClick="disabledButton(this); sendAjaxRequest('proposta-scambio.php', {id_libro: '<?php echo $post["id_libro"]; ?>'})">
                     </footer>
                 </article>
             </div>

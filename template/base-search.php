@@ -7,13 +7,13 @@
 </header>
 <ul class="nav justify-content-center bg-light" id="options">
     <li class="nav-item">
-        <a class="nav-link <?php echo ($sottopagina == 'all') ? 'active3' : ''; ?>" aria-current="page" href="search-all.php" onclick="cambiaTab3(this)">Tutti</a>
+        <a class="nav-link <?php echo ($sottopagina == 'all') ? 'active3' : ''; ?>" aria-current="page" href="search-all.php" >Tutti</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link <?php echo ($sottopagina == 'posts') ? 'active3' : ''; ?>" href="search-posts.php" onclick="cambiaTab3(this)">Post</a>
+        <a class="nav-link <?php echo ($sottopagina == 'posts') ? 'active3' : ''; ?>" href="search-posts.php" >Post</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link <?php echo ($sottopagina == 'users') ? 'active3' : ''; ?>" href="search-users.php" onclick="cambiaTab3(this)">Persone</a>
+        <a class="nav-link <?php echo ($sottopagina == 'users') ? 'active3' : ''; ?>" href="search-users.php" >Persone</a>
     </li>
 </ul>
 <div class="container-fluid p-0 overflow-hidden content">

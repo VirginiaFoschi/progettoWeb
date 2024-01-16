@@ -109,7 +109,7 @@ class PostTable
     }*/
 
     public function getPosts($user, $text){
-        $stmt = $this->db->prepare("SELECT L.id_libro, L.titolo, L.autore, L.trama, L.casa_editrice, L.condizioni, U.immagine AS fotoProfilo, L.immagine AS copertina, U.username, L.nome_genere 
+        $stmt = $this->db->prepare("SELECT L.id_libro, L.titolo, L.autore, L.trama, L.casa_editrice, L.condizioni, U.immagine AS fotoProfilo, L.immagine AS copertina, U.username, L.nome_genere, L.dataPubblicazione 
                 FROM libro_postato L 
                 JOIN utente U ON L.Username_Autore = U.username
                 WHERE U.username <> ?

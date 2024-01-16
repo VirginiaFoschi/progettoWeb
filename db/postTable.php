@@ -11,6 +11,25 @@ class PostTable
     }
 
 
+    public function getLikeAnnuncio($idAnnuncio)
+    {
+        $stmt = $this->db->prepare("SELECT COUNT(*) AS numLike FROM interesse WHERE ID_Evento = ?");
+        $stmt->bind_param('i', $idAnnuncio);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+
+    public function getLikeRecensione($username, $titolo, $autore)
+    {
+        $stmt = $this->db->prepare("SELECT COUNT(*) AS numLike FROM interazione WHERE Autore_Recensione = ? AND Titolo_Libro = ? AND Autore_Libro = ?");
+        $stmt->bind_param('sss', $username, $titolo, $autore);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
     public function getAnnuncioProfilo($username)
     {
         $stmt = $this->db->prepare("SELECT id_evento, Data_Evento, luogo, Nome_Evento, descrizione, DataPubblicazione FROM evento WHERE Username_Autore = ?");
@@ -72,7 +91,7 @@ class PostTable
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
-    public function getPosts($user, $text)
+    /*public function getPosts($user, $text)
     {
         $stmt = $this->db->prepare("SELECT L.id_libro, L.titolo, L.autore, L.trama, L.casa_editrice, L.condizioni, U.immagine AS fotoProfilo, L.immagine AS copertina, U.username, L.nome_genere 
                 FROM libro_postato L 
@@ -84,9 +103,10 @@ class PostTable
         $stmt->execute();
         $result = $stmt->get_result();
         return $result->fetch_all(MYSQLI_ASSOC);
-    }
+    }*/
 
-  /*  public function getPosts($user, $text){
+    public function getPosts($user, $text)
+    {
         $stmt = $this->db->prepare("SELECT L.id_libro, L.titolo, L.autore, L.trama, L.casa_editrice, L.condizioni, U.immagine AS fotoProfilo, L.immagine AS copertina, U.username, L.nome_genere 
                 FROM libro_postato L 
                 JOIN utente U ON L.Username_Autore = U.username
@@ -102,7 +122,7 @@ class PostTable
         $result = $stmt->get_result();
         return $result->fetch_all(MYSQLI_ASSOC);
     }
-*/
+
     public function getEvents()
     {
         $stmt = $this->db->prepare("SELECT id_evento, nome_evento, data_evento, luogo, descrizione, username, utente.immagine AS userImage, dataPubblicazione FROM evento, utente WHERE username_autore=username ");

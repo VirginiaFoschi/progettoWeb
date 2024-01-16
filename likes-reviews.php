@@ -10,5 +10,6 @@
         } else {
             $dbh->getInteractionsTable()->delete($_SESSION["username"], $autore_rec, $titolo_lib, $autore_lib);
         }
+        echo ($dbh->getPostTable()->getLikeRecensione($autore_rec, $titolo_lib, $autore_lib)[0]["numLike"]);
     }
 ?>

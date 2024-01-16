@@ -84,7 +84,10 @@ class PostTable
 
     public function getPostLibroProfilo($username)
     {
-        $stmt = $this->db->prepare("SELECT * FROM libro_postato WHERE Username_Autore = ? ");
+        $stmt = $this->db->prepare("SELECT * FROM libro_postato l WHERE Username_Autore = ? AND NOT EXISTS (SELECT *
+                                                                                                          FROM scambio s
+                                                                                                          WHERE (l.ID_libro = s.ID_Libro1 OR l.ID_libro = s.ID_Libro2)
+                                                                                                          AND s.Data_Fine > NOW())");
         $stmt->bind_param('s', $username);
         $stmt->execute();
         $result = $stmt->get_result();
@@ -173,9 +176,18 @@ class PostTable
         $stmt->execute();
     }
 
+    public function getPostLibro($username)
+    {
+        $stmt = $this->db->prepare("SELECT * FROM libro_postato WHERE Username_Autore = ? ");
+        $stmt->bind_param('s', $username);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
     public function getScambiUtente($account)
     {
-        $libri = $this->getPostLibroProfilo($account);
+        $libri = $this->getPostLibro($account);
 
         $resultTotale = array();
         foreach ($libri as $libro) {

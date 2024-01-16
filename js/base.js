@@ -61,6 +61,9 @@ function sendAjaxRequest(php, params) {
         else if(php === "likes-reviews.php" && 'idLike' in params) {
           document.getElementById("recensione"+ params["idLike"]).textContent = xhr.responseText;
         }
+        else if (php === "profilo-lista-libri.php") {
+          location.reload();
+        }
         console.log(xhr.responseText); // Questo è il corpo della risposta HTTP
       } else {
         console.log('Error: ' + xhr.status); // Lo stato della HTTP response.

@@ -116,6 +116,13 @@ class PostTable
         return $commenti;
     }
 
+    public function addComment($commento, $id_evento, $autore) {
+        $stmt = $this->db->prepare("INSERT INTO commento (ID_Evento, Autore_Commento, Testo_Commento, DataPubblicazione) VALUES (?,?,?, NOW()) ");
+        $stmt->bind_param('iss', $id_evento, $autore, $commento);  
+        $stmt->execute();
+        $result = $stmt->get_result();
+    }
+
     public function getPosts($user, $text){
         $stmt = $this->db->prepare("SELECT L.id_libro, L.titolo, L.autore, L.trama, L.casa_editrice, L.condizioni, U.immagine AS fotoProfilo, L.immagine AS copertina, U.username, L.nome_genere 
                 FROM libro_postato L 

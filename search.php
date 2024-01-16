@@ -24,5 +24,12 @@
         $templateparams["posts"] = $dbh->getPostTable()->getPosts($_SESSION["username"],$_SESSION["text"]);
     }
 
+    usort($templateparams["posts"], function($a, $b) {
+        $dataA = strtotime($a['dataPubblicazione']);
+        $dataB = strtotime($b['dataPubblicazione']);
+
+        return $dataB - $dataA;
+    });
+
     require("template/base-home.php");
 ?>

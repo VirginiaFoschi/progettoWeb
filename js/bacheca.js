@@ -21,3 +21,8 @@ for(let i=0; i<buttons.length; i++) {
         
     });
 }*/
+
+document.getElementById("prova").addEventListener('click', function() {
+    let el=document.getElementById("form-commento");
+    el.style.display='inline-block';
+})

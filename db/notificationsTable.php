@@ -8,21 +8,47 @@ class NotificationsTable{
     }
 
     /*funzione per inserire una nuova notifica*/
-    public function addNotification( $idLibro ,$usernameInt, $tipo){
-        $stmt = $this->db->prepare("INSERT INTO NOTIFICHE(ID_Libro, Username_Int, Tipo, data_notifica) VALUES (?, ?, ?, NOW())");
-        $stmt->bind_param('iss', $idLibro ,$usernameInt, $tipo);
+    public function addNotification( $idLibro ,$usernameInt, $tipo,  $visualizzato){
+        $stmt = $this->db->prepare("INSERT INTO NOTIFICHE(ID_Libro, Username_Int, Tipo, data_notifica, Visualizzato) VALUES (?, ?, ?, NOW())");
+        $stmt->bind_param('issb', $idLibro ,$usernameInt, $tipo, $visualizzato);
         $stmt->execute();
         $result = $stmt->get_result();
     } 
     /*funzione per visualizzare le notifiche*/
 
     public function getNotifications($username) {
-        $stmt = $this->db->prepare("SELECT N.* FROM NOTIFICHE N JOIN LIBRO_POSTATO L ON N.ID_Libro = L.ID_Libro WHERE L.Username_Autore = ?"); 
+        $stmt = $this->db->prepare("SELECT N.*, U.Immagine as userProfileImage, L.Titolo as bookTitle FROM NOTIFICHE N JOIN LIBRO_POSTATO L ON N.ID_Libro = L.ID_Libro JOIN UTENTE U ON N.Username_Int = U.Username WHERE L.Username_Autore = ?" ); 
         $stmt->bind_param('s', $username);
         $stmt->execute();
         $result = $stmt->get_result();
         return $result->fetch_all(MYSQLI_ASSOC); 
     }
+
+    
+    public function getInterests($username) {
+        $stmt = $this->db->prepare("SELECT I.*, U.Immagine as userProfileImage FROM INTERESSE I JOIN EVENTO E ON I.ID_Evento = E.ID_Evento JOIN UTENTE U ON I.Username_Int = U.Username WHERE E.Username_Autore = ?"); 
+        $stmt->bind_param('s', $username);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC); 
+    }
+
+    public function getInteraction($username) {
+        $stmt = $this->db->prepare("SELECT I.*, U.Immagine as userProfileImage FROM INTERAZIONE I JOIN RECENSIONE R ON I.Autore_Recensione = R.Autore_Recensione AND I.Titolo_Libro = R.Titolo_Libro JOIN UTENTE U ON I.Autore_Recensione = U.Username AND I.Autore_Libro = R.Autore_Libro WHERE R.Autore_Recensione = ? "); 
+        $stmt->bind_param('s', $username);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC); 
+    }
+
+    public function getComments($username) {
+        $stmt = $this->db->prepare("SELECT C.*, U.Immagine as userProfileImage FROM COMMENTO C JOIN EVENTO E ON C.ID_Evento = E.ID_Evento JOIN UTENTE U ON C.Autore_Commento = U.Username WHERE E.Username_Autore = ? "); 
+        $stmt->bind_param('s', $username);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC); 
+    }
+
      /*funzione per visualizzare le notifiche*/
     public function removeNotification() {
         $stmt = $this->db->prepare("DELETE FROM NOTIFICA WHERE Tipo = 'rifiutata' ");

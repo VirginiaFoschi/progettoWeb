@@ -1,3 +1,4 @@
+<?php $id = 0; ?>
 <?php foreach ($templateparams["posts"] as $post): ?>
     <?php if (isset($post["Evento"]) && array_key_exists('id_evento', $post["Evento"])): ?>
         <div class="row justify-content-center content">
@@ -48,10 +49,10 @@
                     <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-heart-fill heart-icon <?php if (in_array($post["Evento"]["id_evento"], $templateparams["likes-events"])):
                         echo "active";
                     endif; ?>" viewBox="0 0 16 16"
-                        onClick="sendAjaxRequest('likes-events.php', {evento: '<?php echo $post["Evento"]['id_evento']; ?>'})">
+                        onClick="sendAjaxRequest('likes-events.php', {evento: '<?php echo $post["Evento"]['id_evento']; ?>', idLike: '<?php echo $id; ?>'})">
                         <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314" />
                     </svg>
-                    <p>
+                    <p id="evento<?php echo $id; $id+= 1;?>">
                         <?php echo $post["NumLike"] ?>
                     </p>
                 </footer>
@@ -123,10 +124,10 @@
                     if (array_search($a, $templateparams["likes-reviews"]) !== false) {
                         echo "active";
                     } ?>" viewBox="0 0 16 16"
-                        onClick="sendAjaxRequest('likes-reviews.php', {autore_rec: '<?php echo $templateparams["nome-profilo"]; ?>', autore_lib: '<?php echo $post["Recensione"]["Autore_Libro"]; ?>', titolo: '<?php echo $post["Recensione"]["Titolo_Libro"]; ?>'})">
+                        onClick="sendAjaxRequest('likes-reviews.php', {autore_rec: '<?php echo $templateparams["nome-profilo"]; ?>', autore_lib: '<?php echo $post["Recensione"]["Autore_Libro"]; ?>', titolo: '<?php echo $post["Recensione"]["Titolo_Libro"]; ?>', idLike: '<?php echo $id; ?>'})">
                         <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314" />
                     </svg>
-                    <p>
+                    <p id="recensione<?php echo $id; $id+= 1;?>">
                         <?php echo $post["NumLike"] ?>
                     </p>
                 </footer>

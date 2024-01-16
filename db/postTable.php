@@ -11,6 +11,25 @@ class PostTable
     }
 
 
+    public function getLikeAnnuncio($idAnnuncio)
+    {
+        $stmt = $this->db->prepare("SELECT COUNT(*) AS numLike FROM interesse WHERE ID_Evento = ?");
+        $stmt->bind_param('i', $idAnnuncio);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+
+    public function getLikeRecensione($username, $titolo, $autore)
+    {
+        $stmt = $this->db->prepare("SELECT COUNT(*) AS numLike FROM interazione WHERE Autore_Recensione = ? AND Titolo_Libro = ? AND Autore_Libro = ?");
+        $stmt->bind_param('sss', $username, $titolo, $autore);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
     public function getAnnuncioProfilo($username)
     {
         $stmt = $this->db->prepare("SELECT id_evento, Data_Evento, luogo, Nome_Evento, descrizione, DataPubblicazione FROM evento WHERE Username_Autore = ?");
@@ -87,7 +106,8 @@ class PostTable
         return $result->fetch_all(MYSQLI_ASSOC);
     }*/
 
-    public function getPosts($user, $text){
+    public function getPosts($user, $text)
+    {
         $stmt = $this->db->prepare("SELECT L.id_libro, L.titolo, L.autore, L.trama, L.casa_editrice, L.condizioni, U.immagine AS fotoProfilo, L.immagine AS copertina, U.username, L.nome_genere 
                 FROM libro_postato L 
                 JOIN utente U ON L.Username_Autore = U.username
@@ -104,39 +124,44 @@ class PostTable
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
-    public function getEvents() {
-        $stmt = $this->db->prepare("SELECT id_evento, nome_evento, data_evento, luogo, descrizione, username, utente.immagine AS userImage, dataPubblicazione FROM evento, utente WHERE username_autore=username "); 
+    public function getEvents()
+    {
+        $stmt = $this->db->prepare("SELECT id_evento, nome_evento, data_evento, luogo, descrizione, username, utente.immagine AS userImage, dataPubblicazione FROM evento, utente WHERE username_autore=username ");
         $stmt->execute();
         $result = $stmt->get_result();
-        return $result->fetch_all(MYSQLI_ASSOC); 
+        return $result->fetch_all(MYSQLI_ASSOC);
     }
 
-    public function getReviews() {
-        $stmt = $this->db->prepare("SELECT voto, titolo_libro, autore_libro, autore_recensione, recensione.immagine, recensione, username, utente.immagine AS userImage, dataPubblicazione FROM recensione, utente WHERE autore_recensione=username "); 
+    public function getReviews()
+    {
+        $stmt = $this->db->prepare("SELECT voto, titolo_libro, autore_libro, autore_recensione, recensione.immagine, recensione, username, utente.immagine AS userImage, dataPubblicazione FROM recensione, utente WHERE autore_recensione=username ");
         $stmt->execute();
         $result = $stmt->get_result();
-        return $result->fetch_all(MYSQLI_ASSOC); 
+        return $result->fetch_all(MYSQLI_ASSOC);
     }
 
     /*funzioni che permettono di pubblicare un post */
 
-    public function pubblicaAnnuncio($dataEvento, $luogo, $descrizione, $usernameAutore ){
+    public function pubblicaAnnuncio($dataEvento, $luogo, $descrizione, $usernameAutore)
+    {
         $stmt = $this->db->prepare("INSERT INTO EVENTO(ID_Evento, Data_Evento, Luogo, Descrizione, Usurname_Autore) VALUES (?, ?, ?, ?, ?, ?)");
         $stmt->bind_param('isssss', $dataEvento, $luogo, $descrizione, $usernameAutore);
         $stmt->execute();
         $result = $stmt->get_result();
     }
 
-    public function pubblicaRecensione($autoreRecensione, $voto, $titolo, $autoreLibro, $immagine, $recensione){
+    public function pubblicaRecensione($autoreRecensione, $voto, $titolo, $autoreLibro, $immagine, $recensione)
+    {
         $stmt = $this->db->prepare("INSERT INTO RECENSIONE(Autore_Recensione, Voto, Titolo_Libro, Autore_Libro, Immagine,Recensione) VALUES (?, ?, ?, ?, ?, ?)");
         $stmt->bind_param('sissss', $autoreRecensione, $voto, $titolo, $autoreLibro, $immagine, $recensione);
         $stmt->execute();
         $result = $stmt->get_result();
     }
 
-    public function pubblicaLibro($titolo, $autore, $casaEditrice, $trama, $condizioni , $Immagine, $usernameAutore, $genere){
+    public function pubblicaLibro($titolo, $autore, $casaEditrice, $trama, $condizioni, $Immagine, $usernameAutore, $genere)
+    {
         $stmt = $this->db->prepare("INSERT INTO LIBRO_POSTATO(ID_Libro, Titolo, Autore, Casa_Editrice, Trama, Condizioni, Immagine, Username_Autore, Nome_Genere) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
-        $stmt->bind_param('issssssss',$titolo, $autore, $casaEditrice, $trama, $condizioni , $Immagine, $usernameAutore, $genere);
+        $stmt->bind_param('issssssss', $titolo, $autore, $casaEditrice, $trama, $condizioni, $Immagine, $usernameAutore, $genere);
         $stmt->execute();
         $result = $stmt->get_result();
     }
@@ -151,7 +176,7 @@ class PostTable
     public function getScambiUtente($account)
     {
         $libri = $this->getPostLibroProfilo($account);
-        
+
         $resultTotale = array();
         foreach ($libri as $libro) {
             $id_libro = $libro["ID_Libro"];

@@ -8,5 +8,6 @@
         } else {
             $dbh->getFollowsTable()->delete($_SESSION["username"], $seguito);
         }
+        echo ($dbh->getUsersTable()->getFollower($seguito)[0]["follower_count"]);
     }
 ?>

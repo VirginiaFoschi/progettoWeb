@@ -8,5 +8,7 @@
         } else {
             $dbh->getInterestsTable()->delete($_SESSION["username"], $id_evento);
         }
+
+        echo ($dbh->getPostTable()->getLikeAnnuncio($id_evento)[0]["numLike"]);
     }
 ?>

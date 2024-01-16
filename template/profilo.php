@@ -24,7 +24,7 @@
             </p>
         <?php endforeach; ?>
         <?php foreach ($templateparams["follower"] as $follower): ?>
-            <p id="num-follower">
+            <p>
                 <?php echo $follower["follower_count"]; ?>
             </p>
         <?php endforeach; ?>

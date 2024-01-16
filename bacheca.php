@@ -10,7 +10,7 @@
     $templateparams["follows"] = array_column($dbh->getFollowsTable()->getFollows($_SESSION["username"]), "username_seguito");
     $templateparams["likes-reviews"] = $dbh->getInteractionsTable()->getUserLikes($_SESSION["username"]);
     $templateparams["likes-events"] = array_column($dbh->getInterestsTable()->getUserLikes($_SESSION["username"]), "id_evento");
-    $templateparams["posts"] = array_merge_recursive($templateparams["eventi"], $templateparams["recensioni"]);
+    $templateparams["posts"] = array_merge($templateparams["eventi"], $templateparams["recensioni"]);
     
     usort($templateparams["posts"], function($a, $b) {
         $dataA = strtotime($a['dataPubblicazione']);

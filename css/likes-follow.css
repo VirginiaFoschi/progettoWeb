@@ -1,4 +1,5 @@
-.heart-icon {
+.heart-icon,
+.comment-icon {
     color: #aaa;
     width: 20px;
     height: 20px;
@@ -9,13 +10,37 @@
 }
 
 .follow {
-    float:right;
+    float: right;
     background-color: rgba(128, 128, 128, 0.245);
-    color:black;
+    color: black;
 }
 
 article>header>img {
-    width:40px;
+    width: 40px;
     height: 40px;
     border-radius: 50%;
+}
+
+
+.scroll-container {
+    width: 100%;
+    height: 90px;
+    overflow: auto;
+    /* This property enables the scrollbar */
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.scroll-container>div>a,
+.scroll-container>div>p {
+    margin-left: 5px;
+}
+
+.scroll-container>div {
+    margin-bottom: 10px;
+    background-color: antiquewhite;
+}
+
+.form-commento{
+    display: none;
 }

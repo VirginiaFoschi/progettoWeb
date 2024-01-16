@@ -225,10 +225,12 @@ ul {
 }
 
 .article-annuncio>footer>p,
-.article-recensione>footer>p {
+.article-recensione>footer>p,
+.article-annuncio>footer>svg {
     box-sizing: border-box;
     margin-left: 10px;
 }
+
 
 /*-------------------------------------------------------------------------*/
 

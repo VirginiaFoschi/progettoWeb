@@ -118,5 +118,11 @@ class ScambiTable
 
         return $resultTotale;
     }
+
+    public function setScambio($IDlibro1, $IDlibro2){
+        $stmt = $this->db->prepare("INSERT INTO SCAMBIO(ID_Scambio, Data_Inizio, ID_Libro1, ID_Libro2, Data_Fine ) VALUES (?, NOW(), ?, ?,DATE_ADD(NOW(), INTERVAL 30 DAY))");
+        $stmt->bind_param('iss',$IDlibro1 ,$IDlibro2);
+        $stmt->execute();
+    }
 }
 ?>

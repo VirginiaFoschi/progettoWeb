@@ -84,7 +84,7 @@ class PostTable
 
     public function getPostLibroProfilo($username)
     {
-        $stmt = $this->db->prepare("SELECT * FROM libro_postato l WHERE Username_Autore = ? AND NOT EXISTS (SELECT *
+        $stmt = $this->db->prepare("SELECT l.* FROM libro_postato l WHERE Username_Autore = ? AND NOT EXISTS (SELECT *
                                                                                                           FROM scambio s
                                                                                                           WHERE (l.ID_libro = s.ID_Libro1 OR l.ID_libro = s.ID_Libro2)
                                                                                                           AND s.Data_Fine > NOW())");

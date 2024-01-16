@@ -15,6 +15,13 @@ $templateparams["follower"] = $dbh->getUsersTable()->getFollower($idAccount);
 $templateparams["follow"] = $dbh->getUsersTable()->getFollow($idAccount);
 $templateparams["nome-profilo"] = "$idAccount";
 
+usort($templateparams["libro-postato"], function ($a, $b) {
+    $dataA = strtotime($a['DataPubblicazione']);
+    $dataB = strtotime($b['DataPubblicazione']);
+
+    return $dataB - $dataA;
+});
+
 require("account.php");
 
 ?>

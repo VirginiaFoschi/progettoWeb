@@ -108,6 +108,14 @@ class PostTable
         return $result->fetch_all(MYSQLI_ASSOC);
     }*/
 
+    public function getComment() {
+        $stmt = $this->db->prepare("SELECT * FROM commento");
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $commenti = $result->fetch_all(MYSQLI_ASSOC);
+        return $commenti;
+    }
+
     public function getPosts($user, $text){
         $stmt = $this->db->prepare("SELECT L.id_libro, L.titolo, L.autore, L.trama, L.casa_editrice, L.condizioni, U.immagine AS fotoProfilo, L.immagine AS copertina, U.username, L.nome_genere 
                 FROM libro_postato L 

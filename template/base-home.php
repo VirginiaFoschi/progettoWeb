@@ -54,7 +54,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link <?php echo ($paginaCorrente == 'post') ? 'active1' : ''; ?>" title="crea" href="addBook.html" onclick="cambiaTab(this)">
+                        <a class="nav-link <?php echo ($paginaCorrente == 'post') ? 'active1' : ''; ?>" title="crea" href="addBook.php" onclick="cambiaTab(this)">
                             <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-plus-square icon" viewBox="0 0 16 16">
                                 <path
                                     d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z" />

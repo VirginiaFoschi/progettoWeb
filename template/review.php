@@ -5,13 +5,13 @@
         <div class="col-12">
             <ul class="nav nav-pills nav-fill">
                 <li class="nav-item">
-                    <a class="nav-link" href="announcement.html" onclick="cambiaTab(this)">Post</a>
+                    <a class="nav-link" href="announcement.php" onclick="cambiaTab(this)">Post</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active" href="#" onclick="cambiaTab(this)">Recensione</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="addBook.html" onclick="cambiaTab(this)">Libro</a>
+                    <a class="nav-link" href="addBook.php" onclick="cambiaTab(this)">Libro</a>
                 </li>
             </ul>
         </div>

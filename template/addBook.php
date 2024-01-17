@@ -6,10 +6,10 @@
             <div class="col-12">
                 <ul class="nav nav-pills nav-fill">
                     <li class="nav-item">
-                        <a class="nav-link" href="announcement.html" onclick="cambiaTab(this)">Post</a>
+                        <a class="nav-link" href="announcement.php" onclick="cambiaTab(this)">Post</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="review.html" onclick="cambiaTab(this)">Recensione</a>
+                        <a class="nav-link" href="review.php" onclick="cambiaTab(this)">Recensione</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" onclick="cambiaTab(this)">Libro</a>

@@ -103,7 +103,7 @@
                                 <?php foreach ($commenti as $commento): ?>
                                     <div class="border">
                                         <a
-                                            href="<?php if ($commento["Autore_Commento"] === $SESSION["username"]):
+                                            href="<?php if ($commento["Autore_Commento"] === $_SESSION["username"]):
                                                 echo "profilo-post.php";
                                             else:
                                                 echo "account-post.php";

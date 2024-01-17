@@ -1,5 +1,5 @@
 <header>
-  <a class="btn btn-primary m-3" href="profilo.php" id="Back" role="button"  onclick="sendAjaxRequest('notifications.php', {back: '1' })">Back</a>
+  <a class="btn btn-primary m-3" href="profilo-post.php" id="Back" role="button"  onclick="sendAjaxRequest('notifications.php', {back: '1' })">Back</a>
 </header>
 <div class="col">
   <?php foreach ($templateparams["notificheGenerali"] as $notifica) : ?>

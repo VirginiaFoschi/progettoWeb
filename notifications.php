@@ -2,10 +2,10 @@
 require_once("bootstrap.php");
 
 $paginaCorrente = 'notifica';
-$templateparams["notifiche"] = $dbh->getNotificationsTable()->getNotifications("luigi_bianchi");
-$templateparams["interesse"] = $dbh->getNotificationsTable()->getInterests("luigi_bianchi");
-$templateparams["interazione"] = $dbh->getNotificationsTable()->getInterests("luigi_bianchi");
-$templateparams["commenti"] = $dbh->getNotificationsTable()->getComments("luigi_bianchi");
+$templateparams["notifiche"] = $dbh->getNotificationsTable()->getNotifications($_SESSION["username"]);
+$templateparams["interesse"] = $dbh->getNotificationsTable()->getInterests($_SESSION["username"]);
+$templateparams["interazione"] = $dbh->getNotificationsTable()->getInteraction($_SESSION["username"]);
+$templateparams["commenti"] = $dbh->getNotificationsTable()->getComments($_SESSION["username"]);
 $templateparams["notificheGenerali"] = array_merge($templateparams["notifiche"], $templateparams["interesse"], $templateparams["interazione"], $templateparams["commenti"]);
 $templateparams["nome"] = "notifications.php";
 $templateparams["css"] = array("notifications.css");
@@ -39,17 +39,17 @@ if (isset($_POST["back"])) {
     }
     foreach ($templateparams["commenti"] as $commento) {
         if ($commento['Visualizzato'] == 0) {
-            $dbh->getNotificationsTable()->updateNotificationViewed($notifica['ID_Evento'], $notifica['Autore_Commento'], $notifica['DataPubblicazione']);
+            $dbh->getNotificationsTable()->updateCommentsViewed($commento['ID_Evento'], $commento['Autore_Commento'], $commento['DataPubblicazione']);
         }
     }
     foreach ($templateparams["interesse"] as $interesse) {
         if ($interesse['Visualizzato'] == 0) {
-            $dbh->getNotificationsTable()->updateNotificationViewed($interesse['ID_Evento'], $interesse['Username_Int']);
+            $dbh->getNotificationsTable()->updateInterestViewed($interesse['ID_Evento'], $interesse['Username_Int']);
         }
     }
     foreach ($templateparams["interazione"] as $interazione) {
         if ($interazione['Visualizzato'] == 0) {
-            $dbh->getNotificationsTable()->updateNotificationViewed($interazione['Autore_Recensione'], $interazione['Titolo_Libro'], $interazione['Autore_Libro'], $interazione['Username_Int']);
+            $dbh->getNotificationsTable()->updateInteractionViewed($interazione['Autore_Recensione'], $interazione['Titolo_Libro'], $interazione['Autore_Libro'], $interazione['Username_Int']);
         }
     }
 }

@@ -2,7 +2,7 @@
 <?php for($i=0; $i<$min; $i++): ?>
     <div class="row justify-content-center mb-3">
         <div class="col-md-6">
-            <article class="article bg-body border mx-3">
+            <article class="article bg-body mx-3">
                 <header class="px-3  mt-3 mb-3">
                     <img src="<?php echo UPLOAD_DIR.$templateparams["posts"][$i]["fotoProfilo"]; ?>" alt="">
                     <a href="<?php if($templateparams["posts"][$i]["username"] === $_SESSION["username"]): echo "profilo-post.php"; else: echo "account-post.php";endif;?>?id=<?php echo $templateparams["posts"][$i]["username"];?>"><?php echo $templateparams["posts"][$i]["username"]; ?></a>
@@ -38,9 +38,9 @@
                             $str=explode(" ", $templateparams["posts"][$i]["trama"]);
                             ?>
                             <p><?php echo implode(' ', array_slice($str, 0, 40)); ?>
-                                <?php if($words > 40): ?>
-                                    <span class="dots" id="dots<?php echo $i; ?>" onclick="showMore('dots<?php echo $i; ?>')"> ...altro</span>
-                                    <span class="hidden-text" id="text<?php echo $i; ?>" ><?php echo implode(' ', array_slice($str, 40)); ?></span>
+                                <?php if(count($words) > 40): ?>
+                                    <span class="dots" id="dotsAU<?php echo $i; ?>" onclick="showMore('dotsAU<?php echo $i; ?>', 'AU<?php echo $i; ?>')"> ...altro</span>
+                                    <span class="hidden-text" id="textAU<?php echo $i; ?>" ><?php echo implode(' ', array_slice($str, 40)); ?></span>
                                 <?php endif; ?>
                             </p>
                         </li>
@@ -62,7 +62,7 @@
     </div>
     <div class="row justify-content-center mb-3">
         <div class="col-md-6">
-            <article class="article bg-body border mx-3">
+            <article class="article bg-body mx-3">
                 <header class="px-3 mt-3 mb-1">
                     <img src="<?php echo UPLOAD_DIR.$templateparams["users"][$i]["immagine"]; ?>" alt="">
                     <a href="<?php if($templateparams["posts"][$i]["username"] === $_SESSION["username"]): echo "profilo-post.php"; else: echo "account-post.php";endif;?>?id=<?php echo $templateparams["posts"][$i]["username"];?>"><?php echo $templateparams["users"][$i]["username"] ?></a>
@@ -79,8 +79,8 @@
                     ?>
                     <p>Generi preferiti: <?php echo implode(', ', array_slice($arrGeneri, 0, 2)); if(count($arrGeneri) > 2): echo ','; endif; ?>
                         <?php if(count($arrGeneri) > 2): ?>
-                            <span class="dots text-truncate" id="dots<?php echo $i; ?>" onclick="showMore('dots<?php echo $i; ?>')"> ...altro</span>
-                            <span class="hidden-text" id="text<?php echo $i; ?>" ><?php echo implode(', ', array_slice($arrGeneri, 2)); ?></span>
+                            <span class="dots text-truncate" id="dotsAP<?php echo $i; ?>" onclick="showMore('dotsAP<?php echo $i; ?>', 'AP<?php echo $i; ?>')"> ...altro</span>
+                            <span class="hidden-text" id="textAP<?php echo $i; ?>" ><?php echo implode(', ', array_slice($arrGeneri, 2)); ?></span>
                         <?php endif; ?>
                     </p>
                 </section>
@@ -92,7 +92,7 @@
     <?php for($i=$min; $i<count($templateparams["posts"]); $i++): ?>
         <div class="row justify-content-center mb-3">
             <div class="col-md-6">
-                <article class="article bg-body border mx-3">
+                <article class="article bg-body mx-3">
                     <header class="px-3  mt-3 mb-3">
                         <img src="<?php echo UPLOAD_DIR.$templateparams["posts"][$i]["fotoProfilo"]; ?>" alt="">
                         <a href="<?php if($templateparams["posts"][$i]["username"] === $_SESSION["username"]): echo "profilo-post.php"; else: echo "account-post.php";endif;?>?id=<?php echo $templateparams["posts"][$i]["username"];?>"><?php echo $templateparams["posts"][$i]["username"]; ?></a>
@@ -128,9 +128,9 @@
                                 $str=explode(" ", $templateparams["posts"][$i]["trama"]);
                                 ?>
                                 <p><?php echo implode(' ', array_slice($str, 0, 40)); ?>
-                                    <?php if($words > 40): ?>
-                                        <span class="dots" id="dots<?php echo $i; ?>" onclick="showMore('dots<?php echo $i; ?>')"> ...altro</span>
-                                        <span class="hidden-text" id="text<?php echo $i; ?>" ><?php echo implode(' ', array_slice($str, 40)); ?></span>
+                                    <?php if(count($words) > 40): ?>
+                                        <span class="dots" id="dotsAll<?php echo $i; ?>" onclick="showMore('dotsAll<?php echo $i; ?>', 'All<?php echo $i; ?>')"> ...altro</span>
+                                        <span class="hidden-text" id="textAll<?php echo $i; ?>" ><?php echo implode(' ', array_slice($str, 40)); ?></span>
                                     <?php endif; ?>
                                 </p>
                             </li>
@@ -155,7 +155,7 @@
     <?php for($i=$min; $i<count($templateparams["users"]); $i++): ?>
         <div class="row justify-content-center mb-3">
             <div class="col-md-6">
-                <article class="article bg-body border mx-3">
+                <article class="article bg-body mx-3">
                     <header class="px-3 mt-3 mb-1">
                         <img src="<?php echo UPLOAD_DIR.$templateparams["users"][$i]["immagine"]; ?>" alt="">
                         <a href="<?php if($templateparams["posts"][$i]["username"] === $_SESSION["username"]): echo "profilo-post.php"; else: echo "account-post.php";endif;?>?id=<?php echo $templateparams["posts"][$i]["username"];?>"><?php echo $templateparams["users"][$i]["username"] ?></a>
@@ -172,8 +172,8 @@
                         ?>
                         <p>Generi preferiti: <?php echo implode(', ', array_slice($arrGeneri, 0, 2)); if(count($arrGeneri) > 2): echo ','; endif; ?>
                             <?php if(count($arrGeneri) > 2): ?>
-                                <span class="dots text-truncate" id="dots<?php echo $i; ?>" onclick="showMore('dots<?php echo $i; ?>')"> ...altro</span>
-                                <span class="hidden-text" id="text<?php echo $i; ?>" ><?php echo implode(', ', array_slice($arrGeneri, 2)); ?></span>
+                                <span class="dots text-truncate" id="dotsAll<?php echo $i; ?>" onclick="showMore('dotsAll<?php echo $i; ?>', 'All<?php echo $i; ?>')"> ...altro</span>
+                                <span class="hidden-text" id="textAll<?php echo $i; ?>" ><?php echo implode(', ', array_slice($arrGeneri, 2)); ?></span>
                             <?php endif; ?>
                         </p>
                     </section>

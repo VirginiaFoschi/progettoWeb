@@ -1,7 +1,7 @@
 <?php foreach ($templateparams["scambi"] as $scambio): ?>
     <div class="row justify-content-center content">
         <!-- Scambio -->
-        <article class="article-account bg-body border mb-3">
+        <article class="article-account bg-body mb-3">
             <section>
                 <ul>
                     <li>

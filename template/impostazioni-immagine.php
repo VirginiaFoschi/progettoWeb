@@ -18,8 +18,8 @@
     </header>
     <div class="mb-3">
         <div class="col-12 text-end">
-            <input id="back" type="button" class="btn btn-outline-primary" value="Back" onclick="backImp()" />
-            <input type="submit" class="btn btn-outline-primary" value="Save" />
+            <input id="back" type="button" class="btn" value="Back" onclick="backImp()" />
+            <input type="submit" class="btn" value="Save" />
         </div>
     </div>
 </form>

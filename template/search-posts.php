@@ -16,7 +16,7 @@
     <?php if($_SESSION["genere"] == "" || $_SESSION["genere"] == $post["nome_genere"]): ?>
         <div class="row justify-content-center mb-3">
             <div class="col-md-6">
-                <article class="article bg-body border mx-3">
+                <article class="article bg-body mx-3">
                     <header class="px-3  mt-3 mb-3">
                         <img src="<?php echo UPLOAD_DIR.$post["fotoProfilo"]; ?>" alt="">
                         <a href="<?php if($post["username"] === $_SESSION["username"]): echo "profilo-post.php"; else: echo "account-post.php";endif;?>?id=<?php echo $post["username"];?>"><?php echo $post["username"]; ?></a>
@@ -52,9 +52,9 @@
                                 $str=explode(" ", $post["trama"]);
                                 ?>
                                 <p><?php echo implode(' ', array_slice($str, 0, 40)); ?>
-                                    <?php if($words > 40): ?>
-                                        <span class="dots" id="dots<?php echo $i; ?>" onclick="showMore('dots<?php echo $i; ?>')"> ...altro</span>
-                                        <span class="hidden-text" id="text<?php echo $i; ?>" ><?php echo implode(' ', array_slice($str, 40)); ?></span>
+                                    <?php if(count($words) > 40): ?>
+                                        <span class="dots" id="dotsP<?php echo $i; ?>" onclick="showMore('dotsP<?php echo $i; ?>', 'P<?php echo $i; ?>')"> ...altro</span>
+                                        <span class="hidden-text" id="textP<?php echo $i; ?>" ><?php echo implode(' ', array_slice($str, 40)); ?></span>
                                     <?php endif; ?>
                                 </p>
                             </li>

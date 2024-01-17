@@ -1,7 +1,7 @@
 <?php $i=0; foreach($templateparams["users"] as $u): $i++;?>
     <div class="row justify-content-center mb-3">
         <div class="col-md-6">
-            <article class="article bg-body border mx-3">
+            <article class="article bg-body mx-3">
                 <header class="px-3 mt-3 mb-1">
                     <img src="<?php echo UPLOAD_DIR.$u["immagine"]; ?>" alt="">
                     <a href="<?php if($post["username"] === $_SESSION["username"]): echo "profilo-post.php"; else: echo "account-post.php";endif;?>?id=<?php echo $post["username"];?>"><?php echo $u["username"] ?></a>
@@ -19,8 +19,8 @@
                     ?>
                     <p>Generi preferiti: <?php echo implode(', ', array_slice($arrGeneri, 0, 2)); if(count($arrGeneri) > 2): echo ','; endif; ?>
                         <?php if(count($arrGeneri) > 2): ?>
-                            <span class="dots text-truncate" id="dots<?php echo $i; ?>" onclick="showMore('dots<?php echo $i; ?>')"> ...altro</span>
-                            <span class="hidden-text" id="text<?php echo $i; ?>" ><?php echo implode(', ', array_slice($arrGeneri, 2)); ?></span>
+                            <span class="dots text-truncate" id="dotsU<?php echo $i; ?>" onclick="showMore('dotsU<?php echo $i; ?>', 'U<?php echo $i; ?>')"> ...altro</span>
+                            <span class="hidden-text" id="textU<?php echo $i; ?>" ><?php echo implode(', ', array_slice($arrGeneri, 2)); ?></span>
                         <?php endif; ?>
                     </p>
                 </section>

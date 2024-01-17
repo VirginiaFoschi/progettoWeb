@@ -10,8 +10,8 @@
         </ul>
         <div class="mb-3">
             <div class="col-12 text-end">
-                <input id="backbtn" type="button" class="btn btn-outline-primary" value="Back" onclick="backImp()" />
-                <input type="submit" class="btn btn-outline-primary" value="Salva" />
+                <input id="backbtn" type="button" class="btn" value="Back" onclick="backImp()" />
+                <input type="submit" class="btn" value="Salva" />
             </div>
         </div>
 </form>

@@ -3,7 +3,7 @@
     <?php if (isset($post["Evento"]) && array_key_exists('id_evento', $post["Evento"])): ?>
         <div class="row justify-content-center content">
             <!-- Annuncio -->
-            <article class="article-annuncio bg-body border mb-3">
+            <article class="article-annuncio bg-body mb-3">
                 <header class="row">
                     <a href="profilo-post.php">
                         <?php foreach ($templateparams["img-profilo"] as $image): ?>
@@ -107,7 +107,7 @@
         <div class="row justify-content-center content">
 
             <!--Recensione-->
-            <article class="article-recensione bg-body border mb-3">
+            <article class="article-recensione bg-body mb-3">
                 <header class="row">
                     <a href="#">
                         <?php foreach ($templateparams["img-profilo"] as $image): ?>

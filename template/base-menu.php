@@ -11,6 +11,7 @@
     <?php foreach ($templateparams["css"] as $css): ?>
         <link rel="stylesheet" href="css/<?php echo $css?>">
     <?php endforeach; ?>
+    <link rel="stylesheet" href="css/base-menu.css" >
 
 
     <title>Progetto Tecnologie Web</title>
@@ -19,6 +20,7 @@
 <body class="bg-light">
     <div class="container-fluid p-0 overflow-hidden">
         <header class="text-center font-monospace">
+            <img id="logo" class="<?php if($templateparams["nome"] === "etichetta.php"): echo "etichetta-no-stampare"; endif;?>" src="./upload/logo.jpeg" alt="logo" >
             <h1 class="py-3 <?php if($templateparams["nome"] === "etichetta.php"): echo "etichetta-no-stampare"; endif;?>">Mille e Una Pagina</h1>
         </header>
         <div class="row justify-content-center">

@@ -116,6 +116,15 @@ class PostTable
         return $commenti;
     }
 
+    public function getCommentEvent($id_evento) {
+        $stmt = $this->db->prepare("SELECT * FROM commento WHERE id_evento=?");
+        $stmt->bind_param('i', $id_evento); 
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $commenti = $result->fetch_all(MYSQLI_ASSOC);
+        return $commenti;
+    }
+
     public function addComment($commento, $id_evento, $autore) {
         $stmt = $this->db->prepare("INSERT INTO commento (ID_Evento, Autore_Commento, Testo_Commento, DataPubblicazione) VALUES (?,?,?, NOW()) ");
         $stmt->bind_param('iss', $id_evento, $autore, $commento);  

@@ -12,13 +12,13 @@ article {
     margin: 0 20px;
 }
 
-h2 {
+section>h2 {
     font-size:larger;
 }
 
-p,h2{
+/*p,h2{
     word-wrap: break-word;
-}
+}*/
 
 /*.flex-container {
     display: flex;

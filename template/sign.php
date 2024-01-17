@@ -49,8 +49,8 @@
     </div>
     <div class="mb-3">
         <div class="col-12 text-end">
-            <input id="backbtn" type="button" class="btn btn-outline-primary" value="Back" onClick="logout()">
-            <input id="signbtn" type="button" class="btn btn-outline-primary" value="Sign In" onclick="appendAlert()">
+            <input id="backbtn" type="button" class="btn " value="Back" onClick="logout()">
+            <input id="signbtn" type="button" class="btn " value="Sign In" onclick="appendAlert()">
         </div>
     </div>
 </form>

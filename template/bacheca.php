@@ -1,12 +1,13 @@
 <header>
     <input class="button" type="button" value="Notifiche" name="notifiche" id="notifiche" onclick="">
 </header>
+<main>
 <div class="container-fluid p-0 overflow-hidden">  
 <?php foreach($templateparams["posts"] as $post): ?>
     <?php if(!array_key_exists('id_evento', $post)): ?>
         <div class="row justify-content-center content">
         <div class="col-md-6">
-            <article class="bg-body border mb-3">
+            <article class="bg-body mb-3">
                 <header class="px-3  mt-3 mb-3">
                     <img src="<?php echo UPLOAD_DIR.$post["userImage"]; ?>" alt="" >
                     <a href="<?php if($post["username"] === $_SESSION["username"]): echo "profilo-post.php"; else: echo "account-post.php";endif;?>?id=<?php echo $post["username"];?>"><?php echo $post["username"]; ?></a>
@@ -62,7 +63,7 @@
     <?php else: ?>
     <div class="row justify-content-center content">
         <div class="col-md-6">
-            <article class="bg-body border mb-3">
+            <article class="bg-body mb-3">
                 <header class="px-3  mt-3 mb-3">
                     <img src="<?php echo UPLOAD_DIR.$post["userImage"]; ?>" alt="">
                     <a href="<?php if($post["username"] === $_SESSION["username"]): echo "profilo-post.php"; else: echo "account-post.php";endif;?>?id=<?php echo $post["username"];?>"><?php echo $post["username"]; ?></a>
@@ -93,9 +94,53 @@
                         <li>
                             <p><?php echo $post["descrizione"]; ?></p>
                         </li>
-                    </ul> 
+                        <?php $commenti=getComments($post["id_evento"]); 
+                            if(count($commenti) !== 0): ?>
+                        <li>
+                            <p>Commenti:</p>
+                        </li>
+                        <li class="ml-3">
+                            <div class="scroll-container smooth-scroll">
+                                <?php foreach ($commenti as $commento): ?>
+                                    <div class="border">
+                                        <a
+                                            href="<?php if ($commento["Autore_Commento"] === $SESSION["username"]):
+                                                echo "profilo-post.php";
+                                            else:
+                                                echo "account-post.php";
+                                            endif; ?>?id=<?php echo $commento["Autore_Commento"]; ?>">
+                                            <?php echo $commento["Autore_Commento"]; ?>
+                                        </a>
+                                        <p>
+                                            <?php echo $commento["Testo_Commento"] ?>
+                                        </p>
+                                    </div>
+                                <?php endforeach; ?>
+                            </div>
+                        </li>
+                        <?php endif; ?>
+                        <li>
+                            <form action="#" method="POST" class="form-commento" id="commentoB<?php echo $post["id_evento"]; ?>">
+                                <div class="mb-3">
+                                    <label for="textArea<?php echo $post["id_evento"]; ?>">Inserisci Commento</label>
+                                    <textarea class="form-control" name="commento" cols="50" id="textArea<?php echo $post["id_evento"]; ?>"></textarea>
+                                    <input type="hidden" value="<?php echo $post["id_evento"]; ?>" name="id_evento">
+                                </div>
+                                <div class="mb-3">
+                                    <div class="col-12 text-end">
+                                        <input type="submit" class="btn btn-sm btn-outline-primary" value="Pubblica">
+                                    </div>
+                                </div>
+                            </form>
+                        </li>
+                    </ul>
                 </section>
                 <footer class="text-end my-3 px-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-chat comment-icon" viewBox="0 0 16 16"
+                    data-target="commentoB<?php echo $post["id_evento"]; ?>">
+                        <path
+                            d="M2.678 11.894a1 1 0 0 1 .287.801 11 11 0 0 1-.398 2c1.395-.323 2.247-.697 2.634-.893a1 1 0 0 1 .71-.074A8 8 0 0 0 8 14c3.996 0 7-2.807 7-6s-3.004-6-7-6-7 2.808-7 6c0 1.468.617 2.83 1.678 3.894m-.493 3.905a22 22 0 0 1-.713.129c-.2.032-.352-.176-.273-.362a10 10 0 0 0 .244-.637l.003-.01c.248-.72.45-1.548.524-2.319C.743 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7-3.582 7-8 7a9 9 0 0 1-2.347-.306c-.52.263-1.639.742-3.468 1.105" />
+                    </svg>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                      class="bi bi-heart-fill heart-icon <?php if(in_array($post["id_evento"],$templateparams["likes-events"])): echo "active"; endif; ?>" viewBox="0 0 16 16" onClick="sendAjaxRequest('likes-events.php', {evento: '<?php echo $post['id_evento']; ?>'})">
                         <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"/>
@@ -106,3 +151,4 @@
     </div>
     <?php endif; ?>
 <?php endforeach; ?>
+</main>

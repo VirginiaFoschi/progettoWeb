@@ -20,5 +20,13 @@ class PreferencesTable{
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
+    public function getUserGenres($username) {
+        $stmt = $this->db->prepare("SELECT nome_genere FROM preferenze WHERE username=?");
+        $stmt->bind_param('s',$username);  
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
 }
 ?>

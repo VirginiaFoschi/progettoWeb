@@ -23,8 +23,12 @@ if(isset($_POST["rifiuta"])){
     $dbh->getNotificationsTable()->updateNotificationType($_POST["rifiuta"], "rifiutato");
 }
 
-if (isset($_POST["selected_book"]) && isset($_POST["selected_book2"]) && isset($_POST["accetta"])) {
-   $dbh->getNotificationsTable()->updateNotificationType($_POST["accetta"], "accettata");
+if(isset($_POST["accetta"])){
+    $dbh->getNotificationsTable()->updateNotificationType($_POST["accetta"], "accettata");
+}
+
+if (isset($_POST["selected_book"]) && isset($_POST["selected_book2"]) ) {
+   
     $dbh->getScambioTable()->setScambio($_POST["selected_book"], $_POST["selected_book2"]);
 }
 

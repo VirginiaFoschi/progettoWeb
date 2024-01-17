@@ -21,8 +21,8 @@
 
               <a class="btn btn-primary m-3 accetta" href="#" role="button" data-bs-toggle="modal" data-bs-target="#exampleModal<?php echo $notifica["ID_Notifica"] ?>">
                 Scambia</a>
-              <a class="btn btn-secondary m-3 rifiuta" name="rifiuta" href="#" role="button">
-                Rifiuta</a>
+              <a class="btn btn-secondary m-3 rifiuta" name="rifiuta" href="#" role="button" onclick="sendAjaxRequest('notifications.php', {rifiuta: '<?php echo $notifica['ID_Notifica']; ?>' })" >
+               Rifiuta</a>
             </footer>
           </article>
 
@@ -61,7 +61,7 @@
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annulla</button>
-                <button type="submit" class="btn btn-primary conferma" data-bs-dismiss="modal" name="conferma" onclick="accetta(<?php echo $notifica['ID_Notifica']; ?>)">Conferma</button>
+                <button type="submit" class="btn btn-primary conferma" data-bs-dismiss="modal" name="conferma"onclick="sendAjaxRequest('notifications.php', {accetta: '<?php echo $notifica['ID_Notifica']; ?>' })">Conferma</button>
                 </form>
               </div>
             </div>

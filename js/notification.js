@@ -1,11 +1,11 @@
 
 let bottoni = document.querySelectorAll(".seleziona-libro");
 
-document.addEventListener("DOMContentLoaded", function() {
+
   let conferma = document.querySelector(".conferma");
   conferma.disabled = true;
   // Il resto del tuo codice va qui
-});
+
 
 
 // Crea una letiabile per tenere traccia del bottone selezionato

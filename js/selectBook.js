@@ -6,7 +6,4 @@ function setSelectedBook(bookId) {
    
   }
   
-  function accetta(id){
-    acc = document.getElementById("accettata");
-    acc.value = id;
-  }
+  

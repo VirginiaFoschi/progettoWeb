@@ -9,7 +9,7 @@
 }
 
 
-#logo {
+#logoMenu {
     width: 80px;
     height: 80px;
     border-radius: 50%;
@@ -19,6 +19,6 @@ h1 {
     color: #41643f;
 }
 
-h1,#logo {
+h1,#logoMenu {
     display:inline-block;
 }

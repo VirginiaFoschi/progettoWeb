@@ -20,8 +20,8 @@
 <body class="bg-light">
     <div class="container-fluid p-0 overflow-hidden">
         <header class="text-center font-monospace">
-            <img id="logo" class="<?php if($templateparams["nome"] === "etichetta.php"): echo "etichetta-no-stampare"; endif;?>" src="./upload/logo.jpeg" alt="logo" >
-            <h1 class="py-3 <?php if($templateparams["nome"] === "etichetta.php"): echo "etichetta-no-stampare"; endif;?>">Mille e Una Pagina</h1>
+            <img id="logoMenu" class="<?php if($templateparams["nome"] === "etichetta.php"): echo "etichetta-no-stampare"; endif;?>" src="./upload/logo.jpeg" alt="logo" >
+            <h1 class="<?php if($templateparams["nome"] === "etichetta.php"): echo "etichetta-no-stampare"; endif;?>">Mille e Una Pagina</h1>
         </header>
         <div class="row justify-content-center">
             <div class="col-md-4">

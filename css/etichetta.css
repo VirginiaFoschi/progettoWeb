@@ -1,6 +1,6 @@
-header {
-    display: flex;
-    flex-wrap: wrap;
+header{
+    margin-bottom: 50px;
+    margin-top: 50px;
 }
 
 legend{
@@ -8,31 +8,12 @@ legend{
     font-size: large;
 }
 
-header>h1 {
-    font-family: monospace;
-    color: blue;
-    font-size: 250%;
-    margin: 5% 0;
-    flex-basis: 100%;
-    text-align: center;
-}
-
-header>div {
-    display: flex;
-    box-sizing: border-box;
-    text-align: center;
-    width: 100%;
-    justify-content: center;
-}
 
 header>div>p {
     margin-left: 20px;
 }
 
-.bg-body {
-    max-width: 500px;
-    margin-left: auto;
-    margin-right: auto;
+fieldset {
     margin-bottom: 20px;
 }
 

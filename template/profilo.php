@@ -1,7 +1,15 @@
 <header class="top">
-    <input class="button" type="button" value="Impostazioni" name="impostazioni" id="impostazioni"
+    <input class="btn" type="button" value="Impostazioni" name="impostazioni" id="impostazioni"
         onclick="impostazioni()" />
-    <input class="button" type="button" value="Notifiche" name="notifiche" id="notifiche" onclick="notifiche()" />
+    <button type="button" class="btn position-relative" onclick="notifiche()">
+        Notifiche
+        <?php if ($templateparams["num-notifiche"] != 0): ?>
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                <?php echo $templateparams["num-notifiche"] ?>
+                <span class="visually-hidden">unread messages</span>
+            </span>
+        <?php endif ?>
+    </button>
 </header>
 
 <div class="top-inf">

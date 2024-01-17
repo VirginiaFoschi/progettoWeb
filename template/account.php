@@ -1,5 +1,5 @@
 <header class="top">
-    <input class="button" type="button" value="Indietro" name="indietro" title="Home" onclick="backHome()" />
+    <input class="btn" type="button" value="Indietro" name="indietro" title="Home" onclick="backHome()" />
 </header>
 
 <div class="top-inf">

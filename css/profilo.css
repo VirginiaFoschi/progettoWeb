@@ -6,6 +6,16 @@ body header:first-child {
     padding: 20px;
 }
 
+.btn {
+    color: #41643f;
+    border-color: #41643f;
+}
+
+.btn:hover {
+    background-color: #41643f;
+    color: white;
+}
+
 /*--------------------------------------------------------------------------------*/
 /*Informazioni prima della barra strumenti del profilo*/
 .top-inf {
@@ -292,6 +302,10 @@ footer>svg {
 }
 
 
-.article-account,.article-annuncio,.article-libro,.article-recensione,.article-scambi{
+.article-account,
+.article-annuncio,
+.article-libro,
+.article-recensione,
+.article-scambi {
     margin: 0 20px;
 }

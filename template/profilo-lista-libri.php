@@ -72,7 +72,7 @@
                 </section>
                 <footer>
                     <?php if (getNotificheLibro($postLibro["ID_Libro"])): ?>
-                        <input value="Elimina" type="submit" name="elimina-libro"
+                        <input value="Elimina" type="submit" name="elimina-libro" class="btn"
                             onClick="sendAjaxRequest('profilo-lista-libri.php', {id_libro: '<?php echo $postLibro['ID_Libro']; ?>'})" />
                     <?php endif; ?>
                 </footer>

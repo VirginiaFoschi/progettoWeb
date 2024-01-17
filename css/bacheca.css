@@ -70,7 +70,21 @@ ul {
     list-style-type: none;
 }
 
+.btn{
+    color: #41643f;
+    border-color: #41643f;
+}
+
+.btn:hover{
+    background-color: #41643f;
+    color:white;
+}
+
 button {
     border: none;
     background-color: #fff;
+}
+
+#notifiche {
+    margin:20px;
 }

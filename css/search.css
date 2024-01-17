@@ -132,5 +132,15 @@ article>section>ul li:last-child {
   margin-top:2%;
 }
 
+.btn{
+  color: #41643f;
+  border-color: #41643f;
+}
+
+.btn:hover{
+  background-color: #41643f;
+  color:white;
+}
+
 
 

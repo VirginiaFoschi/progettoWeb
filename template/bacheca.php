@@ -1,5 +1,13 @@
 <header>
-    <input class="button" type="button" value="Notifiche" name="notifiche" id="notifiche" onclick="">
+    <button type="button" class="btn position-relative" name="notifiche" id="notifiche">
+    Notifiche
+    <?php if($templateparams["num_notifiche"] !== 0); ?>
+    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+        <?php echo $templateparams["num_notifiche"]; ?>
+        <span class="visually-hidden">unread messages</span>
+    </span>
+    <?php endif; ?>
+    </button>
 </header>
 <div class="container-fluid p-0 overflow-hidden">  
 <?php foreach($templateparams["posts"] as $post): ?>

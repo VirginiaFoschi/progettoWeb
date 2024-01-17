@@ -23,7 +23,8 @@
                 list($result, $msg) = uploadImage(UPLOAD_DIR, $_FILES["image"]);
                 if($result != 0){
                     $image = $msg;
-                    $dbh->getUsersTable()->registerLoggedUser($_POST["name"], $_POST["surname"], $_POST["username"], $_POST["password"], $_POST["address"],$image);
+                    $pws =password_hash($_POST["password"], PASSWORD_DEFAULT);
+                    $dbh->getUsersTable()->registerLoggedUser($_POST["name"], $_POST["surname"], $_POST["username"], $pws, $_POST["address"],$image);
                     $genres=$_POST["genres"];
                     foreach($genres as $genre) {
                         $dbh->getPreferencesTable()->saveUserFavouriteGenre($genre,$_POST["username"]);
@@ -36,7 +37,8 @@
                     $templateparams["errormsg"] = $msg;
                 }
             } else {
-                $dbh->getUsersTable()->registerLoggedUser($_POST["name"], $_POST["surname"], $_POST["username"], $_POST["password"], $_POST["address"],$image);
+                $pws =password_hash($_POST["password"], PASSWORD_DEFAULT);
+                $dbh->getUsersTable()->registerLoggedUser($_POST["name"], $_POST["surname"], $_POST["username"], $pws, $_POST["address"],$image);
                 $genres=$_POST["genres"];
                 foreach($genres as $genre) {
                     $dbh->getPreferencesTable()->saveUserFavouriteGenre($genre,$_POST["username"]);

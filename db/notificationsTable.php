@@ -8,9 +8,9 @@ class NotificationsTable{
     }
 
     /*funzione per inserire una nuova notifica*/
-    public function addNotification( $idLibro ,$usernameInt, $tipo,  $visualizzato){
-        $stmt = $this->db->prepare("INSERT INTO NOTIFICHE(ID_Libro, Username_Int, Tipo, data_notifica, Visualizzato) VALUES (?, ?, ?, NOW())");
-        $stmt->bind_param('issb', $idLibro ,$usernameInt, $tipo, $visualizzato);
+    public function addNotification( $idLibro ,$usernameInt, $tipo){
+        $stmt = $this->db->prepare("INSERT INTO NOTIFICHE(ID_Libro, Username_Int, Tipo, data_notifica, Visualizzato) VALUES (?, ?, ?, NOW(), false)");
+        $stmt->bind_param('iss', $idLibro ,$usernameInt, $tipo);
         $stmt->execute();
         $result = $stmt->get_result();
     } 
@@ -19,6 +19,14 @@ class NotificationsTable{
     public function getNotifications($username) {
         $stmt = $this->db->prepare("SELECT N.*, U.Immagine as userProfileImage, L.Titolo as bookTitle FROM NOTIFICHE N JOIN LIBRO_POSTATO L ON N.ID_Libro = L.ID_Libro JOIN UTENTE U ON N.Username_Int = U.Username WHERE L.Username_Autore = ?" ); 
         $stmt->bind_param('s', $username);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC); 
+    }
+
+    public function getSuspendNotifyLibro($username, $id_libro) {
+        $stmt = $this->db->prepare("SELECT N.id_libro, L.username_autore FROM NOTIFICHE N JOIN LIBRO_POSTATO L ON N.ID_Libro = L.ID_Libro WHERE L.username_autore = ? AND N.tipo = 'in_sospeso' AND L.ID_Libro = ?"); 
+        $stmt->bind_param('si', $username, $id_libro);
         $stmt->execute();
         $result = $stmt->get_result();
         return $result->fetch_all(MYSQLI_ASSOC); 

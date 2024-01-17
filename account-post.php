@@ -18,6 +18,14 @@ $templateparams["follow"] = $dbh->getUsersTable()->getFollow($idAccount);
 $templateparams["nome-profilo"] = $idAccount;
 $templateparams["likes-reviews"] = $dbh->getInteractionsTable()->getUserLikes($_SESSION["username"]);
 $templateparams["likes-events"] = array_column($dbh->getInterestsTable()->getUserLikes($_SESSION["username"]), "id_evento");
+$templateparams["commenti"] = $dbh->getPostTable()->getComment();
+
+usort($templateparams["commenti"], function ($a, $b) {
+    $dataA = strtotime($a['DataPubblicazione']);
+    $dataB = strtotime($b['DataPubblicazione']);
+
+    return $dataA - $dataB;
+});
 
 $templateparams["posts"] = array_merge($templateparams["annuncio"], $templateparams["recensione"]);
 
@@ -27,6 +35,22 @@ usort($templateparams["posts"], function($a, $b){
 
     return strtotime($dataB) - strtotime($dataA);
 });
+
+if (isset($_POST["commento"]) && isset($_POST["id_evento"])) {
+    $commento = $_POST["commento"];
+    $id_evento = $_POST["id_evento"];
+    $autore_commento = $_SESSION["username"];
+    $dbh->getPostTable()->addComment($commento, $id_evento, $autore_commento);
+    header("Location: account-post.php?id=$idAccount");
+    $templateparams["commenti"] = $dbh->getPostTable()->getComment();
+
+    usort($templateparams["commenti"], function ($a, $b) {
+        $dataA = strtotime($a['DataPubblicazione']);
+        $dataB = strtotime($b['DataPubblicazione']);
+
+        return $dataA - $dataB;
+    });
+}
 
 
 require("account.php");

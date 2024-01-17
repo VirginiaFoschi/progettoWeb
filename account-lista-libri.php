@@ -14,6 +14,7 @@ $templateparams["img-profilo"] = $dbh->getUsersTable()->getImgProfile($idAccount
 $templateparams["follower"] = $dbh->getUsersTable()->getFollower($idAccount);
 $templateparams["follow"] = $dbh->getUsersTable()->getFollow($idAccount);
 $templateparams["nome-profilo"] = "$idAccount";
+$templateparams["notifiche"] = $dbh->getNotificationsTable()->getSuspendNotify($idAccount);
 
 usort($templateparams["libro-postato"], function ($a, $b) {
     $dataA = strtotime($a['DataPubblicazione']);

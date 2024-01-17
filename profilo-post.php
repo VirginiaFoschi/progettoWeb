@@ -30,7 +30,6 @@ usort($templateparams["posts"], function ($a, $b) {
 });
 
 if (isset($_POST["commento"]) && isset($_POST["id_evento"])) {
-    echo "ciao";
     $commento = $_POST["commento"];
     $id_evento = $_POST["id_evento"];
     $autore_commento = $_SESSION["username"];

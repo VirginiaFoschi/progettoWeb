@@ -3,7 +3,7 @@ function impostazioni() {
 }
 
 function notifiche() {
-  window.location.href = "notifications.html";
+  window.location.href = "notifications.php";
 }
 
 function backHome() {

@@ -5,7 +5,7 @@
         <button id="btnannulla" class="<?php if($_SESSION["text"] != ""): echo 'restore'; endif; ?>" type="submit">Annulla</button>
     </form>
 </header>
-<ul class="nav justify-content-center bg-light" id="options">
+<ul class="nav justify-content-center" id="options">
     <li class="nav-item">
         <a class="nav-link <?php echo ($sottopagina == 'all') ? 'active3' : ''; ?>" aria-current="page" href="search-all.php" >Tutti</a>
     </li>

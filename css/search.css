@@ -1,4 +1,4 @@
-body>header {
+body>div>header {
     margin: 10px 50px 0 50px;
 }
 
@@ -13,7 +13,7 @@ body>header {
     border: 1px solid grey;
     float: left;
     width: 90%;
-    background: #f1f1f1;
+    background: white;
   }
   
   form button {
@@ -111,8 +111,8 @@ ul {
   list-style: none;
 }
 
-body>ul>li {
-  background-color: transparent !important; 
+body>div>ul>li {
+  background-color: #f5f5e6 !important; 
 }
 
 .hidden-text {
@@ -130,6 +130,16 @@ body>ul>li {
 
 article>section>ul li:last-child {
   margin-top:2%;
+}
+
+.btn{
+  color: #41643f;
+  border-color: #41643f;
+}
+
+.btn:hover{
+  background-color: #41643f;
+  color:white;
 }
 
 

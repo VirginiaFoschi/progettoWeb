@@ -31,5 +31,10 @@
         return $dataB - $dataA;
     });
 
+    function getUserGenres($username) {
+        global $dbh;
+        return $dbh->getPreferencesTable()->getUserGenres($username);
+    }
+
     require("template/base-home.php");
 ?>

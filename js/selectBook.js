@@ -1,6 +1,7 @@
 function setSelectedBook(bookId) {
-    var inputField = document.getElementById('selected');
-
+    let inputField = document.getElementById(bookId);
+    console.log(bookId);
+    console.log(inputField);
     inputField.value = bookId;
    
   }

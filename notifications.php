@@ -11,7 +11,7 @@ $templateparams["interazione"] = $dbh->getNotificationsTable()->getInterests("lu
 $templateparams["commenti"] = $dbh->getNotificationsTable()->getComments("luigi_bianchi");
 $templateparams["nome"] = "notifications.php";
 $templateparams["css"] = array("notifications.css");
-$templateparams["js"] = array("notification.js", "selelctBook.js");
+$templateparams["js"] = array("notification.js", "selectBook.js");
 
 if (isset($_POST["selected_book"]) && isset($_POST["selected_book2"])) {
     $dbh->getScambioTable()->setScambio($_POST["selected_book"], $_POST["selected_book2"]);

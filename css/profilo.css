@@ -16,7 +16,7 @@ body header:first-child {
 #profilo-image {
     height: 150px;
     width: 150px;
-    border-radius: 5px;
+    border-radius: 50%;
     margin: 20px 20px 0px 50px;
 }
 
@@ -101,28 +101,28 @@ body header:first-child {
     box-sizing: border-box;
 }
 
-.article-scambi>section>ul li:first-of-type{
+.article-scambi>section>ul li:first-of-type {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
 }
 
-.article-scambi>section>ul li:last-of-type{
+.article-scambi>section>ul li:last-of-type {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     margin-top: 20px;
 }
 
-.article-scambi>section>ul li:last-of-type :last-child{
+.article-scambi>section>ul li:last-of-type :last-child {
     margin-left: 10px;
 }
 
-.article-scambi>section>ul>li>img{
+.article-scambi>section>ul>li>img {
     width: 80px;
 }
 
-.article-scambi>section>ul>li>h4{
+.article-scambi>section>ul>li>h4 {
     text-align: center;
     word-wrap: break-word;
     max-width: 5em;
@@ -138,7 +138,7 @@ body header:first-child {
     margin-bottom: 20px;
 }
 
-.article-scambi>footer{
+.article-scambi>footer {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-end;
@@ -154,7 +154,9 @@ body header:first-child {
 /*-------------------------------------------------------------------------*/
 /*Profilo post libro-scambio*/
 .article-libro>header>a>img {
-    width: 10%;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
     margin-right: 10px;
 }
 
@@ -200,7 +202,9 @@ ul {
 /*Profilo post annuncio*/
 
 .article-annuncio>header>a>img {
-    width: 10%;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
     margin-right: 10px;
 }
 
@@ -237,7 +241,9 @@ ul {
 /*Profilo post recensione*/
 
 .article-recensione>header>a>img {
-    width: 10%;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
     margin-right: 10px;
 }
 

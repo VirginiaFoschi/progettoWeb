@@ -19,8 +19,8 @@
                     ?>
                     <p>Generi preferiti: <?php echo implode(', ', array_slice($arrGeneri, 0, 2)); if(count($arrGeneri) > 2): echo ','; endif; ?>
                         <?php if(count($arrGeneri) > 2): ?>
-                            <span class="dots text-truncate" id="dots<?php echo $i; ?>" onclick="showMore('dots<?php echo $i; ?>')"> ...altro</span>
-                            <span class="hidden-text" id="text<?php echo $i; ?>" ><?php echo implode(', ', array_slice($arrGeneri, 2)); ?></span>
+                            <span class="dots text-truncate" id="dotsU<?php echo $i; ?>" onclick="showMore('dotsU<?php echo $i; ?>', 'U<?php echo $i; ?>')"> ...altro</span>
+                            <span class="hidden-text" id="textU<?php echo $i; ?>" ><?php echo implode(', ', array_slice($arrGeneri, 2)); ?></span>
                         <?php endif; ?>
                     </p>
                 </section>

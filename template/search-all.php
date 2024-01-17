@@ -38,9 +38,9 @@
                             $str=explode(" ", $templateparams["posts"][$i]["trama"]);
                             ?>
                             <p><?php echo implode(' ', array_slice($str, 0, 40)); ?>
-                                <?php if($words > 40): ?>
-                                    <span class="dots" id="dots<?php echo $i; ?>" onclick="showMore('dots<?php echo $i; ?>')"> ...altro</span>
-                                    <span class="hidden-text" id="text<?php echo $i; ?>" ><?php echo implode(' ', array_slice($str, 40)); ?></span>
+                                <?php if(count($words) > 40): ?>
+                                    <span class="dots" id="dotsAU<?php echo $i; ?>" onclick="showMore('dotsAU<?php echo $i; ?>', 'AU<?php echo $i; ?>')"> ...altro</span>
+                                    <span class="hidden-text" id="textAU<?php echo $i; ?>" ><?php echo implode(' ', array_slice($str, 40)); ?></span>
                                 <?php endif; ?>
                             </p>
                         </li>
@@ -79,8 +79,8 @@
                     ?>
                     <p>Generi preferiti: <?php echo implode(', ', array_slice($arrGeneri, 0, 2)); if(count($arrGeneri) > 2): echo ','; endif; ?>
                         <?php if(count($arrGeneri) > 2): ?>
-                            <span class="dots text-truncate" id="dots<?php echo $i; ?>" onclick="showMore('dots<?php echo $i; ?>')"> ...altro</span>
-                            <span class="hidden-text" id="text<?php echo $i; ?>" ><?php echo implode(', ', array_slice($arrGeneri, 2)); ?></span>
+                            <span class="dots text-truncate" id="dotsAP<?php echo $i; ?>" onclick="showMore('dotsAP<?php echo $i; ?>', 'AP<?php echo $i; ?>')"> ...altro</span>
+                            <span class="hidden-text" id="textAP<?php echo $i; ?>" ><?php echo implode(', ', array_slice($arrGeneri, 2)); ?></span>
                         <?php endif; ?>
                     </p>
                 </section>
@@ -128,9 +128,9 @@
                                 $str=explode(" ", $templateparams["posts"][$i]["trama"]);
                                 ?>
                                 <p><?php echo implode(' ', array_slice($str, 0, 40)); ?>
-                                    <?php if($words > 40): ?>
-                                        <span class="dots" id="dots<?php echo $i; ?>" onclick="showMore('dots<?php echo $i; ?>')"> ...altro</span>
-                                        <span class="hidden-text" id="text<?php echo $i; ?>" ><?php echo implode(' ', array_slice($str, 40)); ?></span>
+                                    <?php if(count($words) > 40): ?>
+                                        <span class="dots" id="dotsAll<?php echo $i; ?>" onclick="showMore('dotsAll<?php echo $i; ?>', 'All<?php echo $i; ?>')"> ...altro</span>
+                                        <span class="hidden-text" id="textAll<?php echo $i; ?>" ><?php echo implode(' ', array_slice($str, 40)); ?></span>
                                     <?php endif; ?>
                                 </p>
                             </li>
@@ -172,8 +172,8 @@
                         ?>
                         <p>Generi preferiti: <?php echo implode(', ', array_slice($arrGeneri, 0, 2)); if(count($arrGeneri) > 2): echo ','; endif; ?>
                             <?php if(count($arrGeneri) > 2): ?>
-                                <span class="dots text-truncate" id="dots<?php echo $i; ?>" onclick="showMore('dots<?php echo $i; ?>')"> ...altro</span>
-                                <span class="hidden-text" id="text<?php echo $i; ?>" ><?php echo implode(', ', array_slice($arrGeneri, 2)); ?></span>
+                                <span class="dots text-truncate" id="dotsAll<?php echo $i; ?>" onclick="showMore('dotsAll<?php echo $i; ?>', 'All<?php echo $i; ?>')"> ...altro</span>
+                                <span class="hidden-text" id="textAll<?php echo $i; ?>" ><?php echo implode(', ', array_slice($arrGeneri, 2)); ?></span>
                             <?php endif; ?>
                         </p>
                     </section>

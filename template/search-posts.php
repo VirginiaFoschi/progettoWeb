@@ -52,9 +52,9 @@
                                 $str=explode(" ", $post["trama"]);
                                 ?>
                                 <p><?php echo implode(' ', array_slice($str, 0, 40)); ?>
-                                    <?php if($words > 40): ?>
-                                        <span class="dots" id="dots<?php echo $i; ?>" onclick="showMore('dots<?php echo $i; ?>')"> ...altro</span>
-                                        <span class="hidden-text" id="text<?php echo $i; ?>" ><?php echo implode(' ', array_slice($str, 40)); ?></span>
+                                    <?php if(count($words) > 40): ?>
+                                        <span class="dots" id="dotsP<?php echo $i; ?>" onclick="showMore('dotsP<?php echo $i; ?>', 'P<?php echo $i; ?>')"> ...altro</span>
+                                        <span class="hidden-text" id="textP<?php echo $i; ?>" ><?php echo implode(' ', array_slice($str, 40)); ?></span>
                                     <?php endif; ?>
                                 </p>
                             </li>

@@ -19,9 +19,9 @@
             </section>
             <footer class="text-end my-3 px-3">
 
-              <a class="btn btn-primary m-3 accetta" href="#" role="button" data-bs-toggle="modal" data-bs-target="#exampleModal<?php echo $notifica["ID_Notifica"] ?>" id="<?php echo $notifica["ID_Notifica"] ?>">
+              <a class="btn btn-primary m-3 accetta" href="#" role="button" data-bs-toggle="modal" data-bs-target="#exampleModal<?php echo $notifica["ID_Notifica"] ?>">
                 Scambia</a>
-              <a class="btn btn-secondary m-3 rifiuta" name="rifiuta" href="#" role="button" onclick="rifiuta(this, <?php echo $notifica['ID_Notifica']; ?>)">
+              <a class="btn btn-secondary m-3 rifiuta" name="rifiuta" href="#" role="button">
                 Rifiuta</a>
             </footer>
           </article>

@@ -3,10 +3,10 @@ function setSelectedBook(bookId) {
     console.log(bookId);
     console.log(inputField);
     inputField.value = bookId;
-    
+   
   }
   
-function accetta(id){
-  acc = document.getElementById("accettata");
-  acc.value = id;
-}
+  function accetta(id){
+    acc = document.getElementById("accettata");
+    acc.value = id;
+  }

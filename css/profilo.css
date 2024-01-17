@@ -62,23 +62,23 @@ body header:first-child {
     align-items: center;
     align-self: center;
     min-height: 10vh;
+
 }
 
 .nav-link.active2 {
-    background-color: #3498db;
-    /* Colore di sfondo quando il bottone è attivo */
-    color: #fff;
-    /* Colore del testo quando il bottone è attivo */
+    background-color: #558151;
+    color: white;
 }
 
-/*-------------------------------------------------------------------*/
-
-.bg-body {
-    max-width: 500px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 20px;
+.nav-link:hover {
+    color: #006161;
 }
+
+.profileBar>div {
+    border-bottom: 2px solid #558151;
+    border-top: 2px solid #558151;
+}
+
 
 /*----------------------------------------------------------------------------------*/
 /*Articoli scambio attivo*/
@@ -136,6 +136,7 @@ body header:first-child {
     text-align: center;
     box-sizing: border-box;
     margin-bottom: 20px;
+    margin-right: 15px;
 }
 
 .article-scambi>footer {
@@ -143,6 +144,7 @@ body header:first-child {
     flex-wrap: wrap;
     justify-content: flex-end;
     margin-bottom: 20px;
+    margin-right: 15px;
 }
 
 
@@ -196,6 +198,7 @@ ul {
     display: flex;
     justify-content: flex-end;
     margin-bottom: 20px;
+    margin-right: 10px;
 }
 
 /*-------------------------------------------------------------------*/
@@ -226,6 +229,7 @@ ul {
 .article-recensione>footer {
     display: flex;
     justify-content: flex-end;
+    margin-right: 15px;
 }
 
 .article-annuncio>footer>p,
@@ -285,4 +289,9 @@ footer>svg {
 
 .hidden-text {
     display: none;
+}
+
+
+.article-account,.article-annuncio,.article-libro,.article-recensione,.article-scambi{
+    margin: 0 20px;
 }

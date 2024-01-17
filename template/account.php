@@ -1,8 +1,6 @@
-<div class="container-fluid p-0 overflow-hidden">
-    <header class="top">
-        <input class="button" type="button" value="Indietro" name="indietro" title="Home" onclick="backHome()" />
-    </header>
-</div>
+<header class="top">
+    <input class="button" type="button" value="Indietro" name="indietro" title="Home" onclick="backHome()" />
+</header>
 
 <div class="top-inf">
     <?php foreach ($templateparams["img-profilo"] as $image): ?>
@@ -24,7 +22,12 @@
                 <?php echo $follower["follower_count"]; ?>
             </p>
         <?php endforeach; ?>
-        <input class="follow" type="submit" value="<?php if(in_array($templateparams["nome-profilo"],$templateparams["follows"])): echo "Segui Già"; else: echo "Segui"; endif; ?>" onClick="sendAjaxRequest('follow.php', {username: '<?php echo $templateparams["nome-profilo"]; ?>'})" />
+        <input class="follow" type="submit" value="<?php if (in_array($templateparams["nome-profilo"], $templateparams["follows"])):
+            echo "Segui Già";
+        else:
+            echo "Segui";
+        endif; ?>"
+            onClick="sendAjaxRequest('follow.php', {username: '<?php echo $templateparams["nome-profilo"]; ?>'})" />
     </section>
 </div>
 
@@ -51,7 +54,9 @@
     </div>
 </div>
 <main id="contenitore-post">
-    <?php
-    require($templateparams["nome-articolo"]);
-    ?>
+    <div class="container-fluid p-0 overflow-hidden">
+        <?php
+        require($templateparams["nome-articolo"]);
+        ?>
+    </div>
 </main>

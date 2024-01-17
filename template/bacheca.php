@@ -1,7 +1,6 @@
 <header>
     <input class="button" type="button" value="Notifiche" name="notifiche" id="notifiche" onclick="">
 </header>
-<main>
 <div class="container-fluid p-0 overflow-hidden">  
 <?php foreach($templateparams["posts"] as $post): ?>
     <?php if(!array_key_exists('id_evento', $post)): ?>
@@ -151,4 +150,4 @@
     </div>
     <?php endif; ?>
 <?php endforeach; ?>
-</main>
+</div>

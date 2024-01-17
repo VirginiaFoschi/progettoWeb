@@ -72,15 +72,34 @@ class NotificationsTable{
     }
     
     public function updateNotificationType($idNotifica, $newType) {
-        // Prepara la query SQL
         $stmt = $this->db->prepare("UPDATE NOTIFICHE SET Tipo = ? WHERE ID_Notifica = ?");
-    
-        // Collega i parametri alla query SQL
         $stmt->bind_param('si', $newType, $idNotifica);
-    
-        // Esegui la query SQL
         $stmt->execute();
     }
+    public function updateNotificationViewed($idNotifica) {
+        $stmt = $this->db->prepare("UPDATE NOTIFICHE SET Visualizzato = 1 WHERE ID_Notifica = ?");
+        $stmt->bind_param('i', $idNotifica);
+        $stmt->execute();
+    }
+    public function updateInteractionViewed($autore_rec, $titolo, $autore_libro, $username) {
+        $stmt = $this->db->prepare("UPDATE INTERAZIONE SET Visualizzato = 1 WHERE Autore_Recensione = ? AND Titolo_Libro = ? AND Autore_Libro = ? AND Username_Int = ?");
+        $stmt->bind_param('ssss', $autore_rec, $titolo, $autore_libro, $username);
+        $stmt->execute();
+    }
+    
+    public function updateInterestViewed($idEvento, $username) {
+        $stmt = $this->db->prepare("UPDATE INTERESSE SET ID_Evento = ? WHERE Username_Int = ?");
+        $stmt->bind_param('is', $idEvento, $username);
+        $stmt->execute();
+    }
+    
+    public function updateCommentsViewed($idEvento, $autore_commento, $dataPubblicazione) {
+        $stmt = $this->db->prepare("UPDATE COMMENTO SET Visualizzato = 1 WHERE ID_Evento = ? AND Autore_Commento = ? AND DataPubblicazione = ?");
+        $stmt->bind_param('iss', $idEvento, $autore_commento, $dataPubblicazione);
+        $stmt->execute();
+    }
+    
+    
     
 }
 ?>

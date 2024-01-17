@@ -20,7 +20,7 @@
 <form action="#" method="POST" enctype="multipart/form-data">
 <div class="row justify-content-center align-items-end">
                     <div class="col d-flex justify-content-center">
-                        <img src="img/2200720.png" alt="" class="img_profile" id="profilo">
+                        <img src="upload/InserisciImg.jpeg" alt="" class="img_profile" id="profilo">
                         <input type="file" id="fileInput" accept="image/*" style="display: none;" name="image">
                         <a class="nav-link" href="#">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
@@ -67,12 +67,12 @@
 
         <form class="text-center" action="#">
             <div class="d-grid gap-2 col-6 mx-auto">
-                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+                <textarea class="form-control" placeholder="Trama" id="floatingTextarea" name ="trama"></textarea>
             </div>
         </form>
 
         <div class="d-grid gap-2 col-3 mx-auto">
-            <button id="invia" type="button" class="btn btn-lg btn-outline-primary" value="send" onclick="sendForm()" >Invia</button>
+            <button id="invia" type="submit" class="btn btn-lg btn-outline-primary" value="send" >Invia</button>
         </div>
     </div> 
 

@@ -33,7 +33,7 @@
                         <textarea class="form-control" placeholder="Leave a comment here"name="descrizione" id="floatingTextarea" ></textarea>
                     </li>
                     <li>
-                    <button id="invia" type="button" class="btn btn-lg btn-outline-primary" value="send" onclick="sendForm()" >Invia</button>
+                    <button id="invia" type="submit" class="btn btn-lg btn-outline-primary" value="send"  >Invia</button>
                     </li>
                 </ul>
 

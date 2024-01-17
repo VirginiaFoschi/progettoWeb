@@ -26,7 +26,7 @@
                     <form class="text-center" action="#" method="POST"  enctype="multipart/form-data">
                         <div class="row justify-content-center align-items-end">
                             <div class="col d-flex justify-content-center">
-                                <img src="img/2200720.png" alt="" class="img_profile" id="profilo">
+                                <img src="upload/InserisciImg.jpeg" alt="" class="img_profile" id="profilo">
                                 <input type="file" id="fileInput" name="image" style="display: none;">
                                 <a class="nav-link" href="#">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16" id="addImg">
@@ -66,7 +66,7 @@
                             </div>
                         </div>
                         <div class="d-grid gap-2 col-3 mx-auto">
-                            <button type="button" class="btn btn-lg btn-outline-primary" onclick="sendForm()">Send</button>
+                            <button type="submit" class="btn btn-lg btn-outline-primary">Invia</button>
                         </div>
 
                     </form>

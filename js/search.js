@@ -32,8 +32,8 @@ for(let i=0; i<buttons.length; i++) {
 }*/
 
 function showMore(dotID) {
-    var dots = document.getElementById(dotID);
-    var hiddenText = document.getElementById('text' + dotID.substr(-1));
+    let dots = document.getElementById(dotID);
+    let hiddenText = document.getElementById('text' + dotID.substr(-1));
 
     if (dots.style.display === 'none') {
         dots.style.display = 'inline';

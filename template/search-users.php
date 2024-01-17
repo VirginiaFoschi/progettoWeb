@@ -1,7 +1,7 @@
 <?php $i=0; foreach($templateparams["users"] as $u): $i++;?>
     <div class="row justify-content-center mb-3">
         <div class="col-md-6">
-            <article class="article bg-body border mx-3">
+            <article class="article bg-body mx-3">
                 <header class="px-3 mt-3 mb-1">
                     <img src="<?php echo UPLOAD_DIR.$u["immagine"]; ?>" alt="">
                     <a href="<?php if($post["username"] === $_SESSION["username"]): echo "profilo-post.php"; else: echo "account-post.php";endif;?>?id=<?php echo $post["username"];?>"><?php echo $u["username"] ?></a>

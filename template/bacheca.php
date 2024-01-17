@@ -1,12 +1,13 @@
 <header>
     <input class="button" type="button" value="Notifiche" name="notifiche" id="notifiche" onclick="">
 </header>
+<main>
 <div class="container-fluid p-0 overflow-hidden">  
 <?php foreach($templateparams["posts"] as $post): ?>
     <?php if(!array_key_exists('id_evento', $post)): ?>
         <div class="row justify-content-center content">
         <div class="col-md-6">
-            <article class="bg-body border mb-3">
+            <article class="bg-body mb-3">
                 <header class="px-3  mt-3 mb-3">
                     <img src="<?php echo UPLOAD_DIR.$post["userImage"]; ?>" alt="" >
                     <a href="<?php if($post["username"] === $_SESSION["username"]): echo "profilo-post.php"; else: echo "account-post.php";endif;?>?id=<?php echo $post["username"];?>"><?php echo $post["username"]; ?></a>
@@ -62,7 +63,7 @@
     <?php else: ?>
     <div class="row justify-content-center content">
         <div class="col-md-6">
-            <article class="bg-body border mb-3">
+            <article class="bg-body mb-3">
                 <header class="px-3  mt-3 mb-3">
                     <img src="<?php echo UPLOAD_DIR.$post["userImage"]; ?>" alt="">
                     <a href="<?php if($post["username"] === $_SESSION["username"]): echo "profilo-post.php"; else: echo "account-post.php";endif;?>?id=<?php echo $post["username"];?>"><?php echo $post["username"]; ?></a>
@@ -150,3 +151,4 @@
     </div>
     <?php endif; ?>
 <?php endforeach; ?>
+</main>

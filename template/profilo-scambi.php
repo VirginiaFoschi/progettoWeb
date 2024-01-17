@@ -1,6 +1,6 @@
 <?php foreach ($templateparams["scambio"] as $coppiaLibri): ?>
     <div class="row justify-content-center content">
-        <article class="article-scambi bg-body border mb-3">
+        <article class="article-scambi bg-body mb-3">
             <header>
                 <a href="profilo-post.php">
                     <?php echo $coppiaLibri['Libro1']['DettagliLibro1']['Username_Autore']; ?>

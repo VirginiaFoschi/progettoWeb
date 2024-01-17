@@ -1,7 +1,7 @@
 <!-- Libri -->
 <?php foreach ($templateparams["libro-postato"] as $postLibro): ?>
     <div class="row justify-content-center content">
-        <article class="article-libro bg-body border mb-3">
+        <article class="article-libro bg-body mb-3">
             <header class="row">
                 <a href="account-post.php?id=<?php echo $templateparams["nome-profilo"];?>">
                     <?php foreach ($templateparams["img-profilo"] as $image): ?>

@@ -71,5 +71,16 @@ class NotificationsTable{
         return $result->fetch_all(MYSQLI_ASSOC); 
     }
     
+    public function updateNotificationType($idNotifica, $newType) {
+        // Prepara la query SQL
+        $stmt = $this->db->prepare("UPDATE NOTIFICHE SET Tipo = ? WHERE ID_Notifica = ?");
+    
+        // Collega i parametri alla query SQL
+        $stmt->bind_param('si', $newType, $idNotifica);
+    
+        // Esegui la query SQL
+        $stmt->execute();
+    }
+    
 }
 ?>

@@ -9,7 +9,7 @@ $templateparams["commenti"] = $dbh->getNotificationsTable()->getComments("luigi_
 $templateparams["notificheGenerali"]= array_merge( $templateparams["notifiche"], $templateparams["interesse"],$templateparams["interazione"], $templateparams["commenti"]);
 $templateparams["nome"] = "notifications.php";
 $templateparams["css"] = array("notifications.css");
-$templateparams["js"] = array("notification.js", "selectBook.js");
+$templateparams["js"] = array("notification.js", "selectBook.js", "rifiuta.js");
 
 usort($templateparams["notificheGenerali"], function ($a, $b) {
     
@@ -19,7 +19,10 @@ usort($templateparams["notificheGenerali"], function ($a, $b) {
     return $dataB - $dataA;
    
 });
-if (isset($_POST["selected_book"]) && isset($_POST["selected_book2"])) {
+
+
+if (isset($_POST["selected_book"]) && isset($_POST["selected_book2"]) && isset($_POST["accettata"])) {
+   $dbh->getNotificationsTable()->updateNotificationType($_POST["accettata"], "accettata");
     $dbh->getScambioTable()->setScambio($_POST["selected_book"], $_POST["selected_book2"]);
 }
 

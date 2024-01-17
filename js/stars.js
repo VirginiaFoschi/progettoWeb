@@ -4,8 +4,8 @@ let stars = document.querySelectorAll('.star-icon');
 // Aggiungi un evento click a ciascuna icona stella
 stars.forEach((star, index) => {
     star.addEventListener('click', function(ev) {
-        var span = ev.currentTarget;
-        var rating = star.dataset.value; // Modifica qui
+        let span = ev.currentTarget;
+        let rating = star.dataset.value; // Modifica qui
     
         // Imposta il valore del campo nascosto
         document.getElementById('voto').value = rating;

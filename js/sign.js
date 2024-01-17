@@ -3,7 +3,7 @@ document.getElementById("input").addEventListener("change", function (event) {
     let immagine = document.getElementById('profilo');
 
     if (input.files && input.files[0]) {
-        var reader = new FileReader();
+        let reader = new FileReader();
 
         reader.onload = function (e) {
           if (immagine) {

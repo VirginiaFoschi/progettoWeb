@@ -51,9 +51,16 @@
                         </div>
                     </li>
                     <li>
-                        <p id="descrizione-libro">
-                            <?php echo $postLibro["Trama"] ?>
-                        </p>
+                    <?php
+                            $words = str_word_count($postLibro["Trama"], 1); // Ottieni un array di parole dalla stringa
+                            $str=explode(" ", $postLibro["Trama"]);
+                            ?>
+                            <p><?php echo implode(' ', array_slice($str, 0, 40)); ?>
+                                <?php if(count($words) > 40): ?>
+                                    <span class="dots" id="dotsA<?php echo $postLibro["ID_Libro"]; ?>" onclick="showMore('dotsA<?php echo $postLibro['ID_Libro']; ?>', <?php echo $postLibro['ID_Libro']; ?>)"> ...altro</span>
+                                    <span class="hidden-text" id="text<?php echo $postLibro['ID_Libro']; ?>" ><?php echo implode(' ', array_slice($str, 40)); ?></span>
+                                <?php endif; ?>
+                            </p>
                     </li>
                 </ul>
             </section>

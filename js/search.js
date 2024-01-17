@@ -31,9 +31,9 @@ for(let i=0; i<buttons.length; i++) {
     });
 }*/
 
-function showMore(dotID) {
+function showMore(dotID, id) {
     var dots = document.getElementById(dotID);
-    var hiddenText = document.getElementById('text' + dotID.substr(-1));
+    var hiddenText = document.getElementById('text' + id);
 
     if (dots.style.display === 'none') {
         dots.style.display = 'inline';

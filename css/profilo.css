@@ -277,3 +277,12 @@ footer>svg {
 .article-account>section>ul>li>div>img {
     margin-top: 20px;
 }
+
+.dots {
+    cursor: pointer;
+    color: #777;
+}
+
+.hidden-text {
+    display: none;
+}

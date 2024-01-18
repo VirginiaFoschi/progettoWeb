@@ -187,7 +187,7 @@ class PostTable
 
     public function pubblicaLibro($titolo, $autore, $casaEditrice, $trama, $condizioni, $Immagine, $usernameAutore, $genere)
     {
-        $stmt = $this->db->prepare("INSERT INTO LIBRO_POSTATO( Titolo, Autore, Casa_Editrice, Trama, Condizioni, Immagine, Username_Autore, Nome_Genere) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?)");
+        $stmt = $this->db->prepare("INSERT INTO LIBRO_POSTATO( Titolo, Autore, Casa_Editrice, Trama, Condizioni, Immagine, Username_Autore, Nome_Genere, Eliminato) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, '0')");
         $stmt->bind_param('ssssssss', $titolo, $autore, $casaEditrice, $trama, $condizioni, $Immagine, $usernameAutore, $genere);
         $stmt->execute();
         $result = $stmt->get_result();

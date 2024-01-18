@@ -24,15 +24,15 @@ body>div>header {
   #btnsearch{
     padding: 10px;
     width: 10%;
-    background: #2196F3;
+    background-color: #558151;
     color: white;
-    border: 1px solid grey;
+    border: 1px solid #558151;
     border-right: none;
     float: left;
   }
   
   form #btnsearch:hover {
-    background: #0b7dda;
+    background: #41643f;
   }
   
   form::after {

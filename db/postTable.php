@@ -126,7 +126,7 @@ class PostTable
     }
 
     public function addComment($commento, $id_evento, $autore) {
-        $stmt = $this->db->prepare("INSERT INTO commento (ID_Evento, Autore_Commento, Testo_Commento, DataPubblicazione) VALUES (?,?,?, NOW()) ");
+        $stmt = $this->db->prepare("INSERT INTO commento (ID_Evento, Autore_Commento, Testo_Commento, DataPubblicazione, Visualizzato) VALUES (?,?,?, NOW(), false)");
         $stmt->bind_param('iss', $id_evento, $autore, $commento);  
         $stmt->execute();
         $result = $stmt->get_result();

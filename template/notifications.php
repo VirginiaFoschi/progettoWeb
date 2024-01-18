@@ -6,8 +6,8 @@
     <?php if (isset($notifica["ID_Notifica"]) && !array_key_exists('id_notifica', $notifica)) : ?>
       <?php if ($notifica["Tipo"] == "attesa") : ?>
 
-        <div class="row-justify-content-center">
-          <article class="article bg-body border mb-3">
+        <div class="row-justify-content-center ">
+          <article class="article bg-body border mb-3 notifica">
             <header class="px-3  mt-3 mb-3">
               <img src="<?php echo  UPLOAD_DIR . $notifica["userProfileImage"]; ?>" alt="" class="img_profile">
               <a href="<?php echo "account-post.php"; ?>?id=<?php echo  $notifica["Username_Int"]; ?>"><?php echo $notifica["Username_Int"]; ?></a>
@@ -68,8 +68,8 @@
           </div>
         </div>
         <?php elseif ($notifica["Tipo"] == "accettata") : ?>
-        <div class="row-justify-content-center">
-          <article class="article bg-body border mb-3">
+        <div class="row-justify-content-center ">
+          <article class="article bg-body border mb-3 notifica">
             <section class="px-3 mb-4">
               <p><?php echo formatDataOra($notifica["DataPubblicazione"]); ?></p>
               <h4>Scambio in corso con il libro <?php echo $notifica["bookTitle"]; ?> di <?php echo $notifica["Username_Autore"]; ?></h4>
@@ -78,7 +78,7 @@
         </div>
       <?php endif; ?>
     <?php elseif (isset($notifica["Autore_Commento"]) && !array_key_exists('id_commenti', $notifica)) : ?>
-      <div class="row-justify-content-center">
+      <div class="row-justify-content-center notifica">
         <article class="article bg-body border mb-3">
           <header class="px-3  mt-3 mb-3">
             <img src="<?php echo  UPLOAD_DIR . $notifica["userProfileImage"]; ?>" alt="" class="img_profile">
@@ -98,8 +98,8 @@
 
     <?php elseif (isset($notifica["ID_Evento"]) && !array_key_exists('id_interesse', $notifica)) : ?>
 
-      <div class="row-justify-content-center">
-        <article class="article bg-body border mb-3">
+      <div class="row-justify-content-center ">
+        <article class="article bg-body border mb-3 notifica">
           <header class="px-3  mt-3 mb-3">
             <img src="<?php echo  UPLOAD_DIR . $notifica["userProfileImage"]; ?>" alt="" class="img_profile">
             <a href="<?php echo "account-post.php"; ?>?id=<?php echo  $notifica["Username_Int"]; ?>"><?php echo $notifica["Username_Int"]; ?></a>
@@ -115,8 +115,8 @@
 
 
     <?php elseif (isset($notifica["Autore_Recensione"]) && !array_key_exists('id_interazione', $notifica)) : ?>
-      <div class="row-justify-content-center">
-        <article class="article bg-body border mb-3">
+      <div class="row-justify-content-center ">
+        <article class="article bg-body border mb-3 notifica">
           <header class="px-3  mt-3 mb-3">
             <img src="<?php echo  UPLOAD_DIR . $notifica["userProfileImage"]; ?>" alt="" class="img_profile">
             <a href="<?php echo "account-post.php"; ?>?id=<?php echo  $notifica["Username_Int"]; ?>"><?php echo $notifica["Username_Int"]; ?></a>

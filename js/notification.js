@@ -20,7 +20,7 @@ for (let i = 0; i < bottoni.length; i++) {
       }
     } else {
       // Altrimenti, seleziona il bottone e disabilita gli altri bottoni
-      this.style.backgroundColor = "blue";
+      this.style.backgroundColor = '#558151';
       this.style.color = "white"
       selezionato = this;
       conferma.disabled = false;

@@ -88,7 +88,7 @@ class NotificationsTable{
     }
     
     public function updateInterestViewed($idEvento, $username) {
-        $stmt = $this->db->prepare("UPDATE INTERESSE SET ID_Evento = ? WHERE Username_Int = ?");
+        $stmt = $this->db->prepare("UPDATE INTERESSE SET Visualizzato = 1 WHERE Username_Int = ? AND ID_Evento = ? ");
         $stmt->bind_param('is', $idEvento, $username);
         $stmt->execute();
     }

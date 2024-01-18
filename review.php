@@ -1,5 +1,5 @@
 <?php
-
+$paginaCorrente='addBook';
 require_once("bootstrap.php");
 $templateparams["nome"] = "review.php";
 $templateparams["css"] = array("post.css");

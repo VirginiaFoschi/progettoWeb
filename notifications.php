@@ -1,7 +1,6 @@
 <?php
 require_once("bootstrap.php");
 
-$paginaCorrente = 'notifica';
 $templateparams["notifiche"] = $dbh->getNotificationsTable()->getNotifications("luigi_bianchi");
 $templateparams["interesse"] = $dbh->getNotificationsTable()->getInterests("luigi_bianchi");
 $templateparams["interazione"] = $dbh->getNotificationsTable()->getInterests("luigi_bianchi");
@@ -39,17 +38,17 @@ if (isset($_POST["back"])) {
     }
     foreach ($templateparams["commenti"] as $commento) {
         if ($commento['Visualizzato'] == 0) {
-            $dbh->getNotificationsTable()->updateNotificationViewed($notifica['ID_Evento'], $notifica['Autore_Commento'], $notifica['DataPubblicazione']);
+            $dbh->getNotificationsTable()->updateCommentsViewed($notifica['ID_Evento'], $notifica['Autore_Commento'], $notifica['DataPubblicazione']);
         }
     }
     foreach ($templateparams["interesse"] as $interesse) {
         if ($interesse['Visualizzato'] == 0) {
-            $dbh->getNotificationsTable()->updateNotificationViewed($interesse['ID_Evento'], $interesse['Username_Int']);
+            $dbh->getNotificationsTable()->updateInterestViewed($interesse['ID_Evento'], $interesse['Username_Int']);
         }
     }
     foreach ($templateparams["interazione"] as $interazione) {
         if ($interazione['Visualizzato'] == 0) {
-            $dbh->getNotificationsTable()->updateNotificationViewed($interazione['Autore_Recensione'], $interazione['Titolo_Libro'], $interazione['Autore_Libro'], $interazione['Username_Int']);
+            $dbh->getNotificationsTable()->updateInteractionViewed($interazione['Autore_Recensione'], $interazione['Titolo_Libro'], $interazione['Autore_Libro'], $interazione['Username_Int']);
         }
     }
 }

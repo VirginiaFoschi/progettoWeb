@@ -11,6 +11,7 @@
             <header class="px-3  mt-3 mb-3">
               <img src="<?php echo  UPLOAD_DIR . $notifica["userProfileImage"]; ?>" alt="" class="img_profile">
               <a href="<?php echo "account-post.php"; ?>?id=<?php echo  $notifica["Username_Int"]; ?>"><?php echo $notifica["Username_Int"]; ?></a>
+              <p><?php echo formatDataOra($notifica["DataPubblicazione"]); ?></p>
               <?php $idBook = $notifica["ID_Libro"] ?>
             </header>
             <section class="px-3 mb-4">
@@ -44,7 +45,6 @@
                   <input type="hidden" id="select2" name="selected_book2" value="<?php echo  $notifica["ID_Libro"]; ?>">
                   <input type="hidden" id="accettata" name="accettata" value="attesa">
                   <?php $books = $dbh->getPostTable()->getPostLibro($notifica['Username_Int']); ?>
-                  <?php echo $notifica['Username_Int']?>
                   <?php foreach ($books as $postLibro) : ?>
                     <article class="article-annuncio bg-body border mb-3">
                       <header class="px-3  mt-3 mb-3">
@@ -54,22 +54,25 @@
                       </header>
                       <section class="px-3 mb-4">
                         <p><?php echo $postLibro["Trama"] ?></p>
+                        <?php $bookSelected = $postLibro['ID_Libro']; ?>
                         <input type="button" value="Seleziona" name="seleziona-libro" class="seleziona-libro" onclick="setSelectedBook(<?php echo $postLibro['ID_Libro']; ?>, <?php echo $notifica['ID_Notifica']; ?>)">
                     </article>
                   <?php endforeach; ?>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annulla</button>
-                <button type="submit" class="btn btn-primary conferma" data-bs-dismiss="modal" name="conferma"onclick="sendAjaxRequest('notifications.php', {accetta: '<?php echo $notifica['ID_Notifica']; ?>' })">Conferma</button>
+                <button type="submit" class="btn btn-primary conferma" data-bs-dismiss="modal" name="conferma"onclick="sendAjaxRequest('notifications.php', {accetta: '<?php echo $notifica['ID_Notifica']; ?>', id_libro: '<?php echo $bookSelected; ?>' })">Conferma</button>
                 </form>
               </div>
             </div>
           </div>
-        </div><?php elseif ($notifica["Tipo"] == "accettata") : ?>
+        </div>
+        <?php elseif ($notifica["Tipo"] == "accettata") : ?>
         <div class="row-justify-content-center">
           <article class="article bg-body border mb-3">
             <section class="px-3 mb-4">
-              <h4>Scambio in corso con il libro <?php echo $notifica["bookTitle"]; ?> di <?php echo $notifica["Username_Int"]; ?></h4>
+              <p><?php echo formatDataOra($notifica["DataPubblicazione"]); ?></p>
+              <h4>Scambio in corso con il libro <?php echo $notifica["bookTitle"]; ?> di <?php echo $notifica["Username_Autore"]; ?></h4>
             </section>
           </article>
         </div>
@@ -100,6 +103,7 @@
           <header class="px-3  mt-3 mb-3">
             <img src="<?php echo  UPLOAD_DIR . $notifica["userProfileImage"]; ?>" alt="" class="img_profile">
             <a href="<?php echo "account-post.php"; ?>?id=<?php echo  $notifica["Username_Int"]; ?>"><?php echo $notifica["Username_Int"]; ?></a>
+            <p><?php echo formatDataOra($notifica["DataPubblicazione"]); ?></p>
           </header>
           <section class="px-3 mb-4">
             <h4>Ha messo like al tuo post</h4>
@@ -116,6 +120,7 @@
           <header class="px-3  mt-3 mb-3">
             <img src="<?php echo  UPLOAD_DIR . $notifica["userProfileImage"]; ?>" alt="" class="img_profile">
             <a href="<?php echo "account-post.php"; ?>?id=<?php echo  $notifica["Username_Int"]; ?>"><?php echo $notifica["Username_Int"]; ?></a>
+            <p><?php echo formatDataOra($notifica["DataPubblicazione"]); ?></p>
           </header>
           <section class="px-3 mb-4">
             <h4>Ha messo like alla tua recensione</h4>

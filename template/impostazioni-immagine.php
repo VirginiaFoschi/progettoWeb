@@ -1,8 +1,8 @@
-<form method="POST" action="#" enctype="multipart/form-data">
+<form method="POST" action="impostazioni-immagine.php" enctype="multipart/form-data">
     <header class="px-3 mt-3 mb-3">
         <div class="row justify-content-center align-items-end">
             <div class="col d-flex justify-content-center">
-                    <img src="<?php echo UPLOAD_DIR . $templateparams["img-profilo"][0]["Immagine"]; ?>" alt="Immagine-Profilo" />
+                    <img src="<?php echo UPLOAD_DIR . $templateparams["img-profilo"][0]["Immagine"]; ?>" alt="Immagine-Profilo" id="profilo-imp"/>
                 <label for="fileInput" style="display: none;">Choose a file:</label>
                 <input type="file" id="fileInput" style="display: none;" name="img" />
                 <a class="nav-link" href="#" title="Add image" onclick="addImg()">

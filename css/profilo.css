@@ -136,7 +136,7 @@ h2 {
     width: 80px;
 }
 
-.article-scambi>section>ul>li>h4 {
+.article-scambi>section>ul>li>h2 {
     text-align: center;
     word-wrap: break-word;
     max-width: 5em;

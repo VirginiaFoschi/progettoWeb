@@ -3,8 +3,8 @@
         <div class="row justify-content-center align-items-end">
             <div class="col d-flex justify-content-center">
                     <img src="<?php echo UPLOAD_DIR . $templateparams["img-profilo"][0]["Immagine"]; ?>" alt="Immagine-Profilo" id="profilo-imp"/>
-                <label for="fileInput" style="display: none;">Choose a file:</label>
-                <input type="file" id="fileInput" style="display: none;" name="img" />
+                <label for="fileInputImp" style="display: none;">Choose a file:</label>
+                <input type="file" id="fileInputImp" style="display: none;" name="img" />
                 <a class="nav-link" href="#" title="Add image" onclick="addImg()">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
                         class="bi bi-plus-circle" viewBox="0 0 16 16" id="addImg">

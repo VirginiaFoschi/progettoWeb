@@ -84,7 +84,7 @@ class PostTable
 
     public function getPostLibroProfilo($username)
     {
-        $stmt = $this->db->prepare("SELECT l.* FROM libro_postato l WHERE Username_Autore = ? AND NOT EXISTS (SELECT *
+        $stmt = $this->db->prepare("SELECT l.* FROM libro_postato l WHERE Username_Autore = ? AND Eliminato = '0' AND NOT EXISTS (SELECT *
                                                                                                           FROM scambio s
                                                                                                           WHERE (l.ID_libro = s.ID_Libro1 OR l.ID_libro = s.ID_Libro2)
                                                                                                           AND s.Data_Fine > NOW())");
@@ -137,6 +137,7 @@ class PostTable
                 FROM libro_postato L 
                 JOIN utente U ON L.Username_Autore = U.username
                 WHERE U.username <> ?
+                AND L.Eliminato = '0'
                 AND (L.autore LIKE ? OR L.titolo LIKE ?)
                 AND NOT EXISTS (SELECT S.*
                                 FROM scambio S
@@ -194,7 +195,7 @@ class PostTable
 
     public function deleteLibro($id_libro)
     {
-        $stmt = $this->db->prepare("DELETE FROM libro_postato WHERE ID_Libro = ? ");
+        $stmt = $this->db->prepare("UPDATE libro_postato SET Eliminato = '1' WHERE ID_Libro = ?");
         $stmt->bind_param('i', $id_libro);
         $stmt->execute();
     }

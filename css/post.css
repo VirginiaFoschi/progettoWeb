@@ -1,51 +1,59 @@
 .img_profile {
     margin-top: 20px;
     width: 100px;
-   
+
 }
 
-ul{
-       list-style-type: none;
+ul {
+    list-style-type: none;
 }
+
 section li {
     width: 100%;
     margin-top: 20px;
     box-sizing: border-box;
-    
+
 }
-.sectionAddBook>form>div>ul>li>input, .sectionReview>form>div>ul>li>input, .sectionAnnouncement>form>div>ul>li input{
+
+.sectionAddBook>form>div>ul>li>input,
+.sectionReview>form>div>ul>li>input,
+.sectionAnnouncement>form>div>ul>li input {
     width: 400px;
 }
 
-.sectionAnnouncement>form>div{
+.sectionAnnouncement>form>div {
     margin-top: 200px;
 }
-.sectionAnnouncement>form>div>ul>li textarea, .sectionReview>form>div>ul>li textarea , .sectionAddBook>form>div>ul>li textarea{
+
+.sectionAnnouncement>form>div>ul>li textarea,
+.sectionReview>form>div>ul>li textarea,
+.sectionAddBook>form>div>ul>li textarea {
     width: 400px;
 }
 
-.sectionAddBook>form>div>ul>li>select{
+.sectionAddBook>form>div>ul>li>select {
     width: 400px;
 }
+
 .sectionAddBook>form>div {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
 }
 
-.sectionAnnouncement{
+.sectionAnnouncement {
     display: flex;
     justify-content: center;
-    
+
 }
 
 
- 
+
 
 .AddBook>footer {
     margin-bottom: 60px;
     margin-right: 20px;
-    
+
 }
 
 
@@ -55,46 +63,50 @@ section li {
     justify-content: center;
 }
 
-@media screen and (max-width : 768px){
-   
-main>footer, img {
-margin-left: 20px;
-}
+@media screen and (max-width : 768px) {
 
-.sectionAddBook, .sectionAnnouncement, .sectionReview{
-    margin-right: 30px;
-}
+    main>section>footer,
+    img {
+        margin-left: 20px;
+    }
 
-main>footer{
-    margin-bottom: 60px;
-}
-img, .sectionAddBook a, .sectionReview a{
-    margin-top: 50px;
-}
+    .sectionAddBook,
+    .sectionAnnouncement,
+    .sectionReview {
+        margin-right: 30px;
+    }
 
-header {
-    position: fixed;
-    width: 100%;
-    clear: both;
-    
-}
+    main>section>form {
+        margin-bottom: 80px;
+    }
+
+
+    .sectionAddBook>form>div a,
+    .sectionAddBook>form>div img,
+    .sectionReview>form>div a,
+    .sectionReview>form>div img {
+        margin-top: 50px;
+    }
+
+    header {
+        position: fixed;
+        width: 100%;
+        clear: both;
+    }
 
 }
 
 .nav-link.active4 {
     background-color: #558151;
-    color:white;
-} 
+    color: white;
+}
 
-.btn{
+.btn {
     color: #41643f;
     border-color: #41643f;
 }
 
-.btn:hover{
+.btn:hover {
     background-color: #41643f;
-    color:white;
+    color: white;
 }
-
-
-

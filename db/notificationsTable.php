@@ -12,7 +12,7 @@ class NotificationsTable
     /*funzione per inserire una nuova notifica*/
     public function addNotification($idLibro, $usernameInt, $tipo)
     {
-        $stmt = $this->db->prepare("INSERT INTO NOTIFICHE(ID_Libro, Username_Int, Tipo, data_notifica, Visualizzato) VALUES (?, ?, ?, NOW(), false)");
+        $stmt = $this->db->prepare("INSERT INTO NOTIFICHE(ID_Libro, Username_Int, Tipo, DataPubblicazione, Visualizzato) VALUES (?, ?, ?, NOW(), false)");
         $stmt->bind_param('iss', $idLibro, $usernameInt, $tipo);
         $stmt->execute();
         $result = $stmt->get_result();

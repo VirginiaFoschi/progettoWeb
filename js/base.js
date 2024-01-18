@@ -64,7 +64,7 @@ function sendAjaxRequest(php, params) {
         else if (php === "profilo-lista-libri.php") {
           location.reload();
         }
-        else if (php === "notifications.php" && 'rifiuta' in params) {
+        else if (php === "notifications.php" && ('rifiuta' in params || 'accetta' in params)) {
           location.reload();
         }
         console.log(xhr.responseText); // Questo è il corpo della risposta HTTP

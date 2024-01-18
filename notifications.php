@@ -6,7 +6,8 @@ $templateparams["notifiche"] = $dbh->getNotificationsTable()->getNotifications($
 $templateparams["interesse"] = $dbh->getNotificationsTable()->getInterests($_SESSION["username"]);
 $templateparams["interazione"] = $dbh->getNotificationsTable()->getInteraction($_SESSION["username"]);
 $templateparams["commenti"] = $dbh->getNotificationsTable()->getComments($_SESSION["username"]);
-$templateparams["notificheGenerali"] = array_merge($templateparams["notifiche"], $templateparams["interesse"], $templateparams["interazione"], $templateparams["commenti"]);
+$templateparams["notifiche_accettate"] = $dbh->getNotificationsTable()->getNotificationsAccettata($_SESSION["username"]);
+$templateparams["notificheGenerali"] = array_merge($templateparams["notifiche"], $templateparams["notifiche_accettate"], $templateparams["interesse"], $templateparams["interazione"], $templateparams["commenti"]);
 $templateparams["nome"] = "notifications.php";
 $templateparams["css"] = array("notifications.css");
 $templateparams["js"] = array("notification.js", "selectBook.js", "base.js");
@@ -24,6 +25,8 @@ if (isset($_POST["rifiuta"])) {
 
 if (isset($_POST["accetta"])) {
     $dbh->getNotificationsTable()->updateNotificationType($_POST["accetta"], "accettata");
+    $book=$_POST["id_libro"];
+    $dbh->getNotificationsTable()->addNotification($book,$_SESSION["username"],"accettata");
 }
 
 if (isset($_POST["selected_book"]) && isset($_POST["selected_book2"])) {
@@ -50,6 +53,11 @@ if (isset($_POST["back"])) {
     foreach ($templateparams["interazione"] as $interazione) {
         if ($interazione['Visualizzato'] == 0) {
             $dbh->getNotificationsTable()->updateInteractionViewed($interazione['Autore_Recensione'], $interazione['Titolo_Libro'], $interazione['Autore_Libro'], $interazione['Username_Int']);
+        }
+    }
+    foreach($templateparams["notifiche_accettate"] as $not_accettata) {
+        if ($not_accettata['Visualizzato'] == 0) {
+            $dbh->getNotificationsTable()->updateNotificationViewed($not_accettata['ID_Notifica']);
         }
     }
 }

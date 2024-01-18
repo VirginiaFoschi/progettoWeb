@@ -44,13 +44,14 @@
                                     <?php echo $post["Evento"]["descrizione"] ?>
                                 </p>
                             </li>
-                            <li>
-                                <p>Commenti:</p>
-                            </li>
-                            <li class="ml-3">
-                                <div class="scroll-container smooth-scroll">
-                                    <?php foreach ($templateparams["commenti"] as $commento): ?>
-                                        <?php if ($commento["ID_Evento"] === $post["Evento"]["id_evento"]): ?>
+                            <?php $commenti = getComments($post["Evento"]["id_evento"]);
+                            if (count($commenti) !== 0): ?>
+                                <li>
+                                    <p>Commenti:</p>
+                                </li>
+                                <li class="ml-3">
+                                    <div class="scroll-container smooth-scroll">
+                                        <?php foreach ($commenti as $commento): ?>
                                             <div class="border">
                                                 <a href="<?php if ($commento["Autore_Commento"] === $templateparams["nome-profilo"]):
                                                     echo "profilo-post.php";
@@ -63,10 +64,10 @@
                                                     <?php echo $commento["Testo_Commento"] ?>
                                                 </p>
                                             </div>
-                                        <?php endif; ?>
-                                    <?php endforeach; ?>
-                                </div>
-                            </li>
+                                        <?php endforeach; ?>
+                                    </div>
+                                </li>
+                            <?php endif; ?>
                             <li>
                                 <form action="#" method="POST" class="form-commento"
                                     id="commento<?php echo $post["Evento"]["id_evento"]; ?>" autocomplete="off">

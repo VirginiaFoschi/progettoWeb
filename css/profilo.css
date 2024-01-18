@@ -6,14 +6,15 @@ body header:first-child {
     padding: 20px;
 }
 
-.btn {
-    color: #41643f;
-    border-color: #41643f;
+.btn{
+    color: #558151;
+    border-color: #558151;
 }
 
-.btn:hover {
-    background-color: #41643f;
-    color: white;
+.btn:hover{
+    background-color: #558151;
+    border-color: #558151;
+    color:white;
 }
 
 /*--------------------------------------------------------------------------------*/

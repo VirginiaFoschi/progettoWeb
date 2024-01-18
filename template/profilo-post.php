@@ -80,7 +80,7 @@
                                     </div>
                                     <div class="mb-3">
                                         <div class="col-12 text-end">
-                                            <input type="submit" title="Pubblica Commento" class="btn btn-sm btn-outline-primary" value="Pubblica">
+                                            <input type="submit" title="Pubblica Commento" class="btn btn-sm" value="Pubblica">
                                         </div>
                                     </div>
                                 </form>

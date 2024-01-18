@@ -24,16 +24,12 @@ ul {
 }
 
 .btn{
-    color: #41643f;
-    border-color: #41643f;
+    color: #558151;
+    border-color: #558151;
 }
 
 .btn:hover{
-    background-color: #41643f;
+    background-color: #558151;
+    border-color: #558151;
     color:white;
-}
-
-button {
-    border: none;
-    background-color: #fff;
 }

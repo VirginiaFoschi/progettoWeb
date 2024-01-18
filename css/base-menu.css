@@ -5,6 +5,7 @@
 
 .btn:hover{
     background-color: #558151;
+    border-color: #558151;
     color:white;
 }
 

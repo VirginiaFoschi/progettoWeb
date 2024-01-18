@@ -30,7 +30,7 @@
             <footer class="footer">
                 <ul class="nav nav-pills nav-fill">
                     <li class="nav-item" id="nome_sito">
-                        <h2>Mille e Una Pagina</h2>
+                        <h1>Mille e Una Pagina</h1>
                         <img id="logo" src="./upload/logo.jpeg" alt="logo" >
                     </li>
                     <li class="nav-item">

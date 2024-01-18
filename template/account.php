@@ -22,7 +22,7 @@
                 <?php echo $follower["follower_count"]; ?>
             </p>
         <?php endforeach; ?>
-        <input class="follow" type="submit" value="<?php if (in_array($templateparams["nome-profilo"], $templateparams["follows"])):
+        <input class="follow" type="submit" title="Segui\Non seguire" value="<?php if (in_array($templateparams["nome-profilo"], $templateparams["follows"])):
             echo "Segui Già";
         else:
             echo "Segui";

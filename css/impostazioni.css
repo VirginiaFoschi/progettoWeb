@@ -1,14 +1,8 @@
-h1 {
-    font-family: Arial, Helvetica, sans-serif;
-    color: blue;
-    font-size: 250%;
-    margin: 5% 0;
-}
-
 form {
     margin: 10px 50px;
     justify-content: center;
 }
+
 
 img {
     width: 130px;
@@ -27,6 +21,7 @@ img {
 
 .genere>ul>li {
     flex-basis: 50%;
+    justify-content: center;
     box-sizing: border-box;
 }
 

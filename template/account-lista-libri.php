@@ -79,7 +79,7 @@
                         }
                     }
                     ?>
-                    <input type="submit" class="btn btn-sm btn-outline-dark" value="<?php if ($active):
+                    <input type="submit" title="Proposta di scambio" class="btn btn-sm btn-outline-dark" value="<?php if ($active):
                         echo 'Proposta effettuata';
                     else:
                         echo 'Proponi scambio';

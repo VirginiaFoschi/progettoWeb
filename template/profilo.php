@@ -1,7 +1,7 @@
 <header class="top">
-    <input class="btn" type="button" value="Impostazioni" name="impostazioni" id="impostazioni"
+    <input class="btn" type="button" value="Impostazioni" name="impostazioni" title="Impostazioni"
         onclick="impostazioni()" />
-    <button type="button" class="btn position-relative" onclick="notifiche()">
+    <button type="button" class="btn position-relative" title="Notifiche" onclick="notifiche()">
         Notifiche
         <?php if ($templateparams["num-notifiche"] != 0): ?>
             <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
@@ -19,11 +19,11 @@
 
     <section>
 
-        <h2 id="nome-utente">
+        <h2>
             <?php echo $templateparams["nome-profilo"]; ?>
         </h2>
-        <p id="follow">Seguiti</p>
-        <p id="follower">Follower</p>
+        <p>Seguiti</p>
+        <p>Follower</p>
         <?php foreach ($templateparams["follow"] as $follow): ?>
             <p id="num-follow">
                 <?php echo $follow["follow_count"]; ?>

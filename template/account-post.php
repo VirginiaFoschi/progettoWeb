@@ -79,7 +79,7 @@
                                     </div>
                                     <div class="mb-3">
                                         <div class="col-12 text-end">
-                                            <input type="submit" class="btn btn-sm btn-outline-primary" value="Pubblica">
+                                            <input type="submit" class="btn btn-sm btn-outline-primary" title="Pubblica Commento" value="Pubblica">
                                         </div>
                                     </div>
                                 </form>

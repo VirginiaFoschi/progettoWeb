@@ -10,8 +10,8 @@
         </ul>
         <div class="mb-3">
             <div class="col-12 text-end">
-                <input type="button" class="btn" value="Indietro" onclick="backImp()" />
-                <input type="submit" class="btn" value="Salva" />
+                <input type="button" title="Impostazioni" class="btn" value="Indietro" onclick="backImp()" />
+                <input type="submit" class="btn" value="Salva" title="Salvataggio Modifiche"/>
             </div>
         </div>
 </form>

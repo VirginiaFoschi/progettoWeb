@@ -25,6 +25,6 @@
     </ul>
 </fieldset>
 <div class="text-end etichetta-no-stampare">
-    <input id="back" type="button" class="btn" value="Indietro" onclick="backPost()"/>
-    <input id="print" type="button" class="btn" value="Stampa" onclick="stamparePagina()" />
+    <input id="back" type="button" title="Profilo" class="btn" value="Indietro" onclick="backPost()"/>
+    <input id="print" type="button" class="btn" value="Stampa" title="Stampa Etichetta" onclick="stamparePagina()" />
 </div>

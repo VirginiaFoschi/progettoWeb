@@ -1,5 +1,5 @@
 <header>
-    <button type="button" class="btn position-relative" name="notifiche" id="notifiche">
+    <button type="button" class="btn position-relative" name="notifiche" id="notifiche" onclick="notifiche()">
     Notifiche
     <?php if ($templateparams["num_notifiche"] != 0): ?>
             <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">

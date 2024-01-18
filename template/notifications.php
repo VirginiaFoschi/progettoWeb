@@ -21,16 +21,16 @@
             </header>
             <section class="px-3 mb-4">
               <h2>Vuole proporti uno scambio con
-                <?php echo $notifica["bookTitle"]; ?>
+                "<?php echo $notifica["bookTitle"]; ?>"
               </h2>
 
             </section>
             <footer class="text-end my-3 px-3">
 
-              <a class="btn btn-primary m-3 accetta" href="#" role="button" data-bs-toggle="modal"
+              <a class="btn m-3 accetta" href="#" role="button" data-bs-toggle="modal"
                 data-bs-target="#exampleModal<?php echo $notifica["ID_Notifica"] ?>">
                 Scambia</a>
-              <a class="btn btn-secondary m-3 rifiuta" name="rifiuta" href="#" role="button"
+              <a class="btn m-3 rifiuta" name="rifiuta" href="#" role="button"
                 onclick="sendAjaxRequest('notifications.php', {rifiuta: '<?php echo $notifica['ID_Notifica']; ?>' })">
                 Rifiuta</a>
             </footer>
@@ -56,7 +56,7 @@
                   <input type="hidden" id="<?php echo $notifica['ID_Notifica']; ?>" name="selected_book" value="book_id">
                   <input type="hidden" id="select2" name="selected_book2" value="<?php echo $notifica["ID_Libro"]; ?>">
                   <input type="hidden" id="accettata" name="accettata" value="attesa">
-                  <?php $books = $dbh->getPostTable()->getPostLibro($notifica['Username_Int']); ?>
+                  <?php $books = $dbh->getPostTable()->getPostLibroProfilo($notifica['Username_Int']); ?>
                   <?php foreach ($books as $postLibro): ?>
                     <article class="article-annuncio bg-body border mb-3">
                       <header class="px-3  mt-3 mb-3">
@@ -73,14 +73,14 @@
                           <?php echo $postLibro["Trama"] ?>
                         </p>
                         <?php $bookSelected = $postLibro['ID_Libro']; ?>
-                        <input type="button" value="Seleziona" name="seleziona-libro" class="seleziona-libro"
+                        <input type="button" value="Seleziona" name="seleziona-libro" class="btn seleziona-libro"
                           onclick="setSelectedBook(<?php echo $postLibro['ID_Libro']; ?>, <?php echo $notifica['ID_Notifica']; ?>)">
                     </article>
                   <?php endforeach; ?>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annulla</button>
-                <button type="submit" class="btn btn-primary conferma" data-bs-dismiss="modal" name="conferma"
+                <button type="button" class="btn " data-bs-dismiss="modal">Annulla</button>
+                <button type="submit" class="btn conferma" data-bs-dismiss="modal" name="conferma"
                   onclick="sendAjaxRequest('notifications.php', {accetta: '<?php echo $notifica['ID_Notifica']; ?>', id_libro: '<?php echo $bookSelected; ?>' })">Conferma</button>
                 </form>
               </div>
@@ -95,7 +95,7 @@
                 <?php echo formatDataOra($notifica["DataPubblicazione"]); ?>
               </p>
               <h2>Scambio in corso con il libro
-                <?php echo $notifica["bookTitle"]; ?> di
+                "<?php echo $notifica["bookTitle"]; ?>" di
                 <?php echo $notifica["Username_Autore"]; ?>
               </h2>
             </section>

@@ -12,6 +12,8 @@ form {
 
 img {
     width: 130px;
+    height: 130px;
+    border-radius: 50%;
     margin-right: 10px;
 }
 
@@ -24,7 +26,7 @@ img {
 }
 
 .genere>ul>li {
-    flex-basis: 33%;
+    flex-basis: 50%;
     box-sizing: border-box;
 }
 

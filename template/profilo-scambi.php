@@ -16,14 +16,14 @@
                         <li>
                             <img src="<?php echo UPLOAD_DIR . $coppiaLibri['Libro1']['DettagliLibro1']['Immagine']; ?>"
                                 alt="Copertina Libro1" class="image">
-                            <h4>
+                            <h2>
                                 <?php echo $coppiaLibri['Libro1']['DettagliLibro1']['Titolo']; ?>
-                            </h4>
+                            </h2>
                             <img src="<?php echo UPLOAD_DIR . $coppiaLibri['Libro2']['DettagliLibro2']['Immagine']; ?>"
                                 alt="Copertina Libro2" class="image">
-                            <h4>
+                            <h2>
                                 <?php echo $coppiaLibri['Libro2']['DettagliLibro2']['Titolo']; ?>
-                            </h4>
+                            </h2>
                         </li>
                         <li>
                             <p>Data di scadenza:</p>

@@ -23,7 +23,11 @@ body header:first-child {
     align-items: center;
 }
 
-#profilo-image {
+h2 {
+    font-size: larger;
+}
+
+#profilo-image, #account-image {
     height: 150px;
     width: 150px;
     border-radius: 50%;
@@ -35,7 +39,7 @@ body header:first-child {
     flex-wrap: wrap;
 }
 
-.top-inf>section>h2 {
+.top-inf>section>h1 {
     text-align: center;
     font-weight: bold;
     font-size: x-large;

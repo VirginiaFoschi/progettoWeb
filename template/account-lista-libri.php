@@ -60,9 +60,9 @@
                                 <?php echo implode(' ', array_slice($str, 0, 40)); ?>
                                 <?php if (count($words) > 40): ?>
                                     <span class="dots" id="dotsA<?php echo $postLibro["ID_Libro"]; ?>"
-                                        onclick="showMore('dotsA<?php echo $postLibro['ID_Libro']; ?>', <?php echo $postLibro['ID_Libro']; ?>)">
+                                        onclick="showMore('dotsA<?php echo $postLibro['ID_Libro']; ?>', 'A<?php echo $postLibro['ID_Libro']; ?>')">
                                         ...altro</span>
-                                    <span class="hidden-text" id="text<?php echo $postLibro['ID_Libro']; ?>">
+                                    <span class="hidden-text" id="textA<?php echo $postLibro['ID_Libro']; ?>">
                                         <?php echo implode(' ', array_slice($str, 40)); ?>
                                     </span>
                                 <?php endif; ?>

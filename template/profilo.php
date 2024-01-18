@@ -19,13 +19,13 @@
 
     <section>
 
-        <h2>
+        <h1>
             <?php echo $templateparams["nome-profilo"]; ?>
-        </h2>
+        </h1>
         <p>Seguiti</p>
         <p>Follower</p>
         <?php foreach ($templateparams["follow"] as $follow): ?>
-            <p id="num-follow">
+            <p>
                 <?php echo $follow["follow_count"]; ?>
             </p>
         <?php endforeach; ?>

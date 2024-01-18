@@ -39,7 +39,7 @@
                                 </span>
                             </li>
                             <li>
-                                <p id="descrizione-post">
+                                <p>
                                     <?php echo $post["Evento"]["descrizione"] ?>
                                 </p>
                             </li>
@@ -109,7 +109,7 @@
                 <!--Recensione-->
                 <article class="article-recensione bg-body mb-3">
                     <header class="row">
-                        <a href="#">
+                        <a href="account-post.php?id=<?php echo $templateparams["nome-profilo"]; ?>">
                             <?php foreach ($templateparams["img-profilo"] as $image): ?>
                                 <img src="<?php echo UPLOAD_DIR . $image["Immagine"]; ?>" alt="Immagine-Profilo" />
                             <?php endforeach; ?>
@@ -117,7 +117,7 @@
                         </a>
                     </header>
                     <section class="px-3 mb-4">
-                        <h4>Recensione del libro: </h4>
+                        <h2>Recensione del libro: </h2>
                         <ul>
                             <li>
                                 <div class="d-flex align-items-center">

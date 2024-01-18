@@ -4,16 +4,16 @@
 
 <div class="top-inf">
     <?php foreach ($templateparams["img-profilo"] as $image): ?>
-        <img src="<?php echo UPLOAD_DIR . $image["Immagine"]; ?>" alt="Immagine-Profilo" id="profilo-image" />
+        <img src="<?php echo UPLOAD_DIR . $image["Immagine"]; ?>" alt="Immagine-Profilo" id="account-image" />
     <?php endforeach; ?>
     <section>
-        <h2 id="nome-utente">
+        <h1>
             <?php echo $templateparams["nome-profilo"]; ?>
-        </h2>
-        <p id="follow">Seguiti</p>
-        <p id="follower">Follower</p>
+        </h1>
+        <p>Seguiti</p>
+        <p>Follower</p>
         <?php foreach ($templateparams["follow"] as $follow): ?>
-            <p id="num-follow">
+            <p>
                 <?php echo $follow["follow_count"]; ?>
             </p>
         <?php endforeach; ?>
@@ -53,7 +53,7 @@
         </ul>
     </div>
 </div>
-<main id="contenitore-post">
+<main>
     <div class="container-fluid p-0 overflow-hidden">
         <?php
         require($templateparams["nome-articolo"]);

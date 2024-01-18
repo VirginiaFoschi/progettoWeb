@@ -15,7 +15,7 @@
               <?php $idBook = $notifica["ID_Libro"] ?>
             </header>
             <section class="px-3 mb-4">
-              <h4>Vuole proporti uno scambio con <?php echo $notifica["bookTitle"]; ?></h4>
+              <h2>Vuole proporti uno scambio con <?php echo $notifica["bookTitle"]; ?></h2>
 
             </section>
             <footer class="text-end my-3 px-3">
@@ -72,7 +72,7 @@
           <article class="article bg-body border mb-3 notifica">
             <section class="px-3 mb-4">
               <p><?php echo formatDataOra($notifica["DataPubblicazione"]); ?></p>
-              <h4>Scambio in corso con il libro <?php echo $notifica["bookTitle"]; ?> di <?php echo $notifica["Username_Autore"]; ?></h4>
+              <h2>Scambio in corso con il libro <?php echo $notifica["bookTitle"]; ?> di <?php echo $notifica["Username_Autore"]; ?></h2>
             </section>
           </article>
         </div>
@@ -85,7 +85,7 @@
             <a href="<?php echo "account-post.php"; ?>?id=<?php echo  $notifica["Autore_Commento"]; ?>"><?php echo $notifica["Autore_Commento"]; ?></a>
           </header>
           <section class="px-3 mb-4">
-            <h4>Ha commentato il tuo post</h4>
+            <h2>Ha commentato il tuo post</h2>
             <p><?php echo $notifica["Testo_Commento"]; ?>
             </p>
 
@@ -106,7 +106,7 @@
             <p><?php echo formatDataOra($notifica["DataPubblicazione"]); ?></p>
           </header>
           <section class="px-3 mb-4">
-            <h4>Ha messo like al tuo post</h4>
+            <h2>Ha messo like al tuo post</h2>
 
           </section>
         </article>
@@ -123,7 +123,7 @@
             <p><?php echo formatDataOra($notifica["DataPubblicazione"]); ?></p>
           </header>
           <section class="px-3 mb-4">
-            <h4>Ha messo like alla tua recensione</h4>
+            <h2>Ha messo like alla tua recensione</h2>
       </div>
       </section>
       </article>

@@ -8,11 +8,11 @@
     <?php endif; ?>
     <div class="mb-5 mt-3">
         <label for="usernameLogin" class="form-label">Username</label>
-        <input type="text" class="form-control" id="usernameLogin" name="username">
+        <input type="text" class="form-control" id="usernameLogin" name="username" />
     </div>
     <div class="mb-5">
         <label for="passwordLogin" class="form-label">Password</label>
-        <input type="password" minlength="5" class="form-control" id="passwordLogin" name="password">
+        <input type="password" minlength="5" class="form-control" id="passwordLogin" name="password" />
     </div>
     <div class="mb-5">
         <div class="col-12 text-end">

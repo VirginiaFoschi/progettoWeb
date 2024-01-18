@@ -3,9 +3,9 @@
         <div class="col-md-6">
             <article class="article bg-body mx-3">
                 <header class="px-3 mt-3 mb-1">
-                    <img src="<?php echo UPLOAD_DIR.$u["immagine"]; ?>" alt="immagine-profilo">
+                    <img src="<?php echo UPLOAD_DIR.$u["immagine"]; ?>" alt="immagine-profilo" />
                     <a href="<?php if($u["username"] === $_SESSION["username"]): echo "profilo-post.php"; else: echo "account-post.php";endif;?>?id=<?php echo $u["username"];?>"><?php echo $u["username"] ?></a>
-                    <input class="follow" type="button" value="<?php if(in_array($u["username"],$templateparams["follows"])): echo "Segui già"; else: echo "Segui"; endif; ?>" onClick="sendAjaxRequest('follow.php', {username: '<?php echo $u['username']; ?>'})" title="followbtn">
+                    <input class="follow" type="button" value="<?php if(in_array($u["username"],$templateparams["follows"])): echo "Segui già"; else: echo "Segui"; endif; ?>" onClick="sendAjaxRequest('follow.php', {username: '<?php echo $u['username']; ?>'})" title="followbtn" />
                 </header>
                 <section class="px-3 justify-content-center">
                     <?php $arrGeneri=array_column(getUserGenres($u["username"]), "nome_genere"); ?>

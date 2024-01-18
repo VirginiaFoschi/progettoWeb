@@ -1,7 +1,7 @@
 <header>
     <form action="#" method="POST">
         <button id="btnsearch" type="submit"><strong class="fa fa-search"></strong></button>
-        <input id="cerca" class="<?php if($_SESSION["text"] != ""): echo 'restore'; endif; ?>" type="text" placeholder="<?php echo $_SESSION["text"] == "" ? 'Cerca..' :  $_SESSION["text"]; ?>" name="search" title="searchbtn">
+        <input id="cerca" class="<?php if($_SESSION["text"] != ""): echo 'restore'; endif; ?>" type="text" placeholder="<?php echo $_SESSION["text"] == "" ? 'Cerca..' :  $_SESSION["text"]; ?>" name="search" title="searchbtn" />
         <button id="btnannulla" class="<?php if($_SESSION["text"] != ""): echo 'restore'; endif; ?>" type="submit">Annulla</button>
     </form>
 </header>

@@ -36,7 +36,7 @@
             </div>
             <footer>
             <div class="mb-3 text-center">
-                    <button id="invia" type="submit" class="btn" value="send">Invia</button>
+                    <button type="submit" class="btn" value="send">Invia</button>
 
                 </div>
             </footer>

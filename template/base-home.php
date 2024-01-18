@@ -31,7 +31,7 @@
                 <ul class="nav nav-pills nav-fill">
                     <li class="nav-item" id="nome_sito">
                         <h1>Mille e Una Pagina</h1>
-                        <img id="logo" src="./upload/logo.jpeg" alt="logo" >
+                        <img id="logo" src="./upload/logo.jpeg" alt="logo" />
                     </li>
                     <li class="nav-item">
                         <a class="nav-link <?php echo ($paginaCorrente == 'bacheca') ? 'active1' : ''; ?>" title="home" href="bacheca.php" onclick="cambiaTab(this)">

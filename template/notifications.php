@@ -10,7 +10,7 @@
         <div class="row-justify-content-center ">
           <article class="article bg-body border mb-3 notifica">
             <header class="px-3  mt-3 mb-3">
-              <img src="<?php echo UPLOAD_DIR . $notifica["userProfileImage"]; ?>" alt="" class="img_profile">
+              <img src="<?php echo UPLOAD_DIR . $notifica["userProfileImage"]; ?>" alt="" class="img_profile" />
               <a href="<?php echo "account-post.php"; ?>?id=<?php echo $notifica["Username_Int"]; ?>">
                 <?php echo $notifica["Username_Int"]; ?>
               </a>
@@ -53,9 +53,9 @@
               </div>
               <div class="modal-body">
                 <form action="#" method="Post">
-                  <input type="hidden" id="<?php echo $notifica['ID_Notifica']; ?>" name="selected_book" value="book_id">
-                  <input type="hidden" id="select2" name="selected_book2" value="<?php echo $notifica["ID_Libro"]; ?>">
-                  <input type="hidden" id="accettata" name="accettata" value="attesa">
+                  <input type="hidden" id="<?php echo $notifica['ID_Notifica']; ?>" name="selected_book" value="book_id" />
+                  <input type="hidden" id="select2" name="selected_book2" value="<?php echo $notifica["ID_Libro"]; ?>" />
+                  <input type="hidden" id="accettata" name="accettata" value="attesa" />
                   <?php $books = $dbh->getPostTable()->getPostLibroProfilo($notifica['Username_Int']); ?>
                   <?php foreach ($books as $postLibro): ?>
                     <article class="article-annuncio bg-body border mb-3">
@@ -74,7 +74,7 @@
                         </p>
                         <?php $bookSelected = $postLibro['ID_Libro']; ?>
                         <input type="button" value="Seleziona" name="seleziona-libro" class="btn seleziona-libro"
-                          onclick="setSelectedBook(<?php echo $postLibro['ID_Libro']; ?>, <?php echo $notifica['ID_Notifica']; ?>)">
+                          onclick="setSelectedBook(<?php echo $postLibro['ID_Libro']; ?>, <?php echo $notifica['ID_Notifica']; ?>)" />
                     </article>
                   <?php endforeach; ?>
               </div>
@@ -106,7 +106,7 @@
       <div class="row-justify-content-center notifica">
         <article class="article bg-body border mb-3">
           <header class="px-3  mt-3 mb-3">
-            <img src="<?php echo UPLOAD_DIR . $notifica["userProfileImage"]; ?>" alt="" class="img_profile">
+            <img src="<?php echo UPLOAD_DIR . $notifica["userProfileImage"]; ?>" alt="" class="img_profile" />
             <a href="<?php echo "account-post.php"; ?>?id=<?php echo $notifica["Autore_Commento"]; ?>">
               <?php echo $notifica["Autore_Commento"]; ?>
             </a>
@@ -129,7 +129,7 @@
       <div class="row-justify-content-center ">
         <article class="article bg-body border mb-3 notifica">
           <header class="px-3  mt-3 mb-3">
-            <img src="<?php echo UPLOAD_DIR . $notifica["userProfileImage"]; ?>" alt="" class="img_profile">
+            <img src="<?php echo UPLOAD_DIR . $notifica["userProfileImage"]; ?>" alt="" class="img_profile" />
             <a href="<?php echo "account-post.php"; ?>?id=<?php echo $notifica["Username_Int"]; ?>">
               <?php echo $notifica["Username_Int"]; ?>
             </a>
@@ -150,7 +150,7 @@
       <div class="row-justify-content-center ">
         <article class="article bg-body border mb-3 notifica">
           <header class="px-3  mt-3 mb-3">
-            <img src="<?php echo UPLOAD_DIR . $notifica["userProfileImage"]; ?>" alt="" class="img_profile">
+            <img src="<?php echo UPLOAD_DIR . $notifica["userProfileImage"]; ?>" alt="" class="img_profile" />
             <a href="<?php echo "account-post.php"; ?>?id=<?php echo $notifica["Username_Int"]; ?>">
               <?php echo $notifica["Username_Int"]; ?>
             </a>

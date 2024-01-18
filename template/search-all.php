@@ -4,15 +4,15 @@
         <div class="col-md-6">
             <article class="article bg-body mx-3">
                 <header class="px-3  mt-3 mb-3">
-                    <img src="<?php echo UPLOAD_DIR.$templateparams["posts"][$i]["fotoProfilo"]; ?>" alt="immagine-profilo">
+                    <img src="<?php echo UPLOAD_DIR.$templateparams["posts"][$i]["fotoProfilo"]; ?>" alt="immagine-profilo" />
                     <a href="<?php if($templateparams["posts"][$i]["username"] === $_SESSION["username"]): echo "profilo-post.php"; else: echo "account-post.php";endif;?>?id=<?php echo $templateparams["posts"][$i]["username"];?>"><?php echo $templateparams["posts"][$i]["username"]; ?></a>
-                    <input class="follow" type="button" value="<?php if(in_array($templateparams["posts"][$i]["username"],$templateparams["follows"])): echo "Segui già"; else: echo "Segui"; endif; ?>" onClick="sendAjaxRequest('follow.php', {username: '<?php echo $templateparams["posts"][$i]['username']; ?>'})">
+                    <input class="follow" type="button" value="<?php if(in_array($templateparams["posts"][$i]["username"],$templateparams["follows"])): echo "Segui già"; else: echo "Segui"; endif; ?>" onClick="sendAjaxRequest('follow.php', {username: '<?php echo $templateparams["posts"][$i]['username']; ?>'})" />
                 </header>
                 <section class="px-3 mb-4">
                     <ul>
                         <li>
                             <div class="d-flex align-items-center">
-                                <img src="<?php echo UPLOAD_DIR.$templateparams["posts"][$i]["copertina"]; ?>" alt="copertina-libro" class="image">
+                                <img src="<?php echo UPLOAD_DIR.$templateparams["posts"][$i]["copertina"]; ?>" alt="copertina-libro" class="image" />
                                 <ul>
                                     <li>
                                         <h2><?php echo $templateparams["posts"][$i]["titolo"]; ?></h2>
@@ -55,7 +55,7 @@
                         }
                     }
                     ?>
-                    <input type="submit" class="btn btn-sm btn-outline-dark" value="<?php if($active) : echo 'Proposta effettuata'; else: echo 'Proponi scambio'; endif; ?>" <?php if($active) : echo 'disabled'; endif; ?> onClick="disabledButton(this); sendAjaxRequest('proposta-scambio.php', {id_libro: '<?php echo $templateparams["posts"][$i]["id_libro"]; ?>', username: '<?php echo $templateparams["posts"][$i]["username"]; ?>'})">
+                    <input type="submit" class="btn btn-sm btn-outline-dark" value="<?php if($active) : echo 'Proposta effettuata'; else: echo 'Proponi scambio'; endif; ?>" <?php if($active) : echo 'disabled'; endif; ?> onClick="disabledButton(this); sendAjaxRequest('proposta-scambio.php', {id_libro: '<?php echo $templateparams["posts"][$i]["id_libro"]; ?>', username: '<?php echo $templateparams["posts"][$i]["username"]; ?>'})" />
                 </footer>
             </article>
         </div>
@@ -64,9 +64,9 @@
         <div class="col-md-6">
             <article class="article bg-body mx-3">
                 <header class="px-3 mt-3 mb-1">
-                    <img src="<?php echo UPLOAD_DIR.$templateparams["users"][$i]["immagine"]; ?>" alt="immagine-profilo">
+                    <img src="<?php echo UPLOAD_DIR.$templateparams["users"][$i]["immagine"]; ?>" alt="immagine-profilo" />
                     <a href="<?php if($templateparams["users"][$i]["username"] === $_SESSION["username"]): echo "profilo-post.php"; else: echo "account-post.php";endif;?>?id=<?php echo $templateparams["users"][$i]["username"];?>"><?php echo $templateparams["users"][$i]["username"] ?></a>
-                    <input class="follow" type="button" value="<?php if(in_array($templateparams["users"][$i]["username"],$templateparams["follows"])): echo "Segui già"; else: echo "Segui"; endif; ?>" onClick="sendAjaxRequest('follow.php', {username: '<?php echo $templateparams["users"][$i]['username']; ?>'})" title="followbtn">
+                    <input class="follow" type="button" value="<?php if(in_array($templateparams["users"][$i]["username"],$templateparams["follows"])): echo "Segui già"; else: echo "Segui"; endif; ?>" onClick="sendAjaxRequest('follow.php', {username: '<?php echo $templateparams["users"][$i]['username']; ?>'})" title="followbtn" />
                 </header>
                 <section class="px-3 justify-content-center">
                     <?php $arrGeneri=array_column(getUserGenres($templateparams["users"][$i]["username"] ), "nome_genere"); ?>
@@ -87,15 +87,15 @@
             <div class="col-md-6">
                 <article class="article bg-body mx-3">
                     <header class="px-3  mt-3 mb-3">
-                        <img src="<?php echo UPLOAD_DIR.$templateparams["posts"][$i]["fotoProfilo"]; ?>" alt="immagine-profilo">
+                        <img src="<?php echo UPLOAD_DIR.$templateparams["posts"][$i]["fotoProfilo"]; ?>" alt="immagine-profilo" />
                         <a href="<?php if($templateparams["posts"][$i]["username"] === $_SESSION["username"]): echo "profilo-post.php"; else: echo "account-post.php";endif;?>?id=<?php echo $templateparams["posts"][$i]["username"];?>"><?php echo $templateparams["posts"][$i]["username"]; ?></a>
-                        <input class="follow" type="button" value="<?php if(in_array($templateparams["posts"][$i]["username"],$templateparams["follows"])): echo "Segui già"; else: echo "Segui"; endif; ?>" onClick="sendAjaxRequest('follow.php', {username: '<?php echo $templateparams["posts"][$i]['username']; ?>'})">
+                        <input class="follow" type="button" value="<?php if(in_array($templateparams["posts"][$i]["username"],$templateparams["follows"])): echo "Segui già"; else: echo "Segui"; endif; ?>" onClick="sendAjaxRequest('follow.php', {username: '<?php echo $templateparams["posts"][$i]['username']; ?>'})" />
                     </header>
                     <section class="px-3 mb-4">
                         <ul>
                             <li>
                                 <div class="d-flex align-items-center">
-                                    <img src="<?php echo UPLOAD_DIR.$templateparams["posts"][$i]["copertina"]; ?>" alt="copertina-libro" class="image">
+                                    <img src="<?php echo UPLOAD_DIR.$templateparams["posts"][$i]["copertina"]; ?>" alt="copertina-libro" class="image" />
                                     <ul>
                                         <li>
                                             <h2><?php echo $templateparams["posts"][$i]["titolo"]; ?></h2>
@@ -138,7 +138,7 @@
                             }
                         }
                         ?>
-                        <input type="submit" class="btn btn-sm btn-outline-dark" value="<?php if($active) : echo 'Proposta effettuata'; else: echo 'Proponi scambio'; endif; ?>" <?php if($active) : echo 'disabled'; endif; ?> onClick="disabledButton(this); sendAjaxRequest('proposta-scambio.php', {id_libro: '<?php echo $templateparams["posts"][$i]["id_libro"]; ?>', username: '<?php echo $templateparams["posts"][$i]["username"]; ?>'})">
+                        <input type="submit" class="btn btn-sm btn-outline-dark" value="<?php if($active) : echo 'Proposta effettuata'; else: echo 'Proponi scambio'; endif; ?>" <?php if($active) : echo 'disabled'; endif; ?> onClick="disabledButton(this); sendAjaxRequest('proposta-scambio.php', {id_libro: '<?php echo $templateparams["posts"][$i]["id_libro"]; ?>', username: '<?php echo $templateparams["posts"][$i]["username"]; ?>'})" />
                     </footer>
                 </article>
             </div>
@@ -150,9 +150,9 @@
             <div class="col-md-6">
                 <article class="article bg-body mx-3">
                     <header class="px-3 mt-3 mb-1">
-                        <img src="<?php echo UPLOAD_DIR.$templateparams["users"][$i]["immagine"]; ?>" alt="immagine-profilo">
+                        <img src="<?php echo UPLOAD_DIR.$templateparams["users"][$i]["immagine"]; ?>" alt="immagine-profilo" />
                         <a href="<?php if($templateparams["users"][$i]["username"] === $_SESSION["username"]): echo "profilo-post.php"; else: echo "account-post.php";endif;?>?id=<?php echo $templateparams["users"][$i]["username"];?>"><?php echo $templateparams["users"][$i]["username"] ?></a>
-                        <input class="follow" type="button" value="<?php if(in_array($templateparams["users"][$i]["username"],$templateparams["follows"])): echo "Segui già"; else: echo "Segui"; endif; ?>" onClick="sendAjaxRequest('follow.php', {username: '<?php echo $templateparams["users"][$i]['username']; ?>'})" title="followbtn">
+                        <input class="follow" type="button" value="<?php if(in_array($templateparams["users"][$i]["username"],$templateparams["follows"])): echo "Segui già"; else: echo "Segui"; endif; ?>" onClick="sendAjaxRequest('follow.php', {username: '<?php echo $templateparams["users"][$i]['username']; ?>'})" title="followbtn" />
                     </header>
                     <section class="px-3 justify-content-center">
                         <?php $arrGeneri=array_column(getUserGenres($templateparams["users"][$i]["username"]), "nome_genere"); ?>

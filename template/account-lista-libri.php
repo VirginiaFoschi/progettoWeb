@@ -86,7 +86,7 @@
                     endif; ?>" <?php if ($active):
                          echo 'disabled';
                      endif; ?>
-                        onClick="disabledButton(this); sendAjaxRequest('proposta-scambio.php', {id_libro: '<?php echo $postLibro["ID_Libro"]; ?>'})">
+                        onClick="disabledButton(this); sendAjaxRequest('proposta-scambio.php', {id_libro: '<?php echo $postLibro["ID_Libro"]; ?>'})"/>
 
                 </footer>
             </article>

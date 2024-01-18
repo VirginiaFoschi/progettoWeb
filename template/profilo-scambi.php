@@ -15,12 +15,12 @@
                     <ul>
                         <li>
                             <img src="<?php echo UPLOAD_DIR . $coppiaLibri['Libro1']['DettagliLibro1']['Immagine']; ?>"
-                                alt="Copertina Libro1" class="image">
+                                alt="Copertina Libro1" class="image" />
                             <h2>
                                 <?php echo $coppiaLibri['Libro1']['DettagliLibro1']['Titolo']; ?>
                             </h2>
                             <img src="<?php echo UPLOAD_DIR . $coppiaLibri['Libro2']['DettagliLibro2']['Immagine']; ?>"
-                                alt="Copertina Libro2" class="image">
+                                alt="Copertina Libro2" class="image" />
                             <h2>
                                 <?php echo $coppiaLibri['Libro2']['DettagliLibro2']['Titolo']; ?>
                             </h2>

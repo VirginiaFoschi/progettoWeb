@@ -18,15 +18,15 @@
             <div class="col-md-6">
                 <article class="article bg-body mx-3">
                     <header class="px-3  mt-3 mb-3">
-                        <img src="<?php echo UPLOAD_DIR.$post["fotoProfilo"]; ?>" alt="immagine-profilo">
+                        <img src="<?php echo UPLOAD_DIR.$post["fotoProfilo"]; ?>" alt="immagine-profilo" />
                         <a href="<?php if($post["username"] === $_SESSION["username"]): echo "profilo-post.php"; else: echo "account-post.php";endif;?>?id=<?php echo $post["username"];?>"><?php echo $post["username"]; ?></a>
-                        <input class="follow" type="button" value="<?php if(in_array($post["username"],$templateparams["follows"])): echo "Segui già"; else: echo "Segui"; endif; ?>" onClick="sendAjaxRequest('follow.php', {username: '<?php echo $post['username']; ?>'})">
+                        <input class="follow" type="button" value="<?php if(in_array($post["username"],$templateparams["follows"])): echo "Segui già"; else: echo "Segui"; endif; ?>" onClick="sendAjaxRequest('follow.php', {username: '<?php echo $post['username']; ?>'})" />
                     </header>
                     <section class="px-3 mb-4">
                         <ul>
                             <li>
                                 <div class="d-flex align-items-center">
-                                    <img src="<?php echo UPLOAD_DIR.$post["copertina"]; ?>" alt="copertina-libro" class="image">
+                                    <img src="<?php echo UPLOAD_DIR.$post["copertina"]; ?>" alt="copertina-libro" class="image" />
                                     <ul>
                                         <li>
                                             <h2><?php echo $post["titolo"]; ?></h2>
@@ -69,7 +69,7 @@
                             }
                         }
                         ?>
-                        <input type="submit" class="btn btn-sm btn-outline-dark" value="<?php if($active) : echo 'Proposta effettuata'; else: echo 'Proponi scambio'; endif; ?>" <?php if($active) : echo 'disabled'; endif; ?> onClick="disabledButton(this); sendAjaxRequest('proposta-scambio.php', {id_libro: '<?php echo $post["id_libro"]; ?>'})">
+                        <input type="submit" class="btn btn-sm btn-outline-dark" value="<?php if($active) : echo 'Proposta effettuata'; else: echo 'Proponi scambio'; endif; ?>" <?php if($active) : echo 'disabled'; endif; ?> onClick="disabledButton(this); sendAjaxRequest('proposta-scambio.php', {id_libro: '<?php echo $post["id_libro"]; ?>'})" />
                     </footer>
                 </article>
             </div>

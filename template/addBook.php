@@ -18,8 +18,8 @@
 
             <div class="col d-flex justify-content-center">
                 <label for="fileInputBook" class="sr-only">Upload image</label>
-                <img src="upload/InserisciImg.jpeg" alt="" class="img_profile" id="copertina">
-                <input type="file" id="fileInputBook" accept="image/*" style="display: none;" name="image">
+                <img src="upload/InserisciImg.jpeg" alt="" class="img_profile" id="copertina" />
+                <input type="file" id="fileInputBook" accept="image/*" style="display: none;" name="image"/>
                 <a class="nav-link" href="#" onclick="addBook()">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
                         class="bi bi-plus-circle" viewBox="0 0 16 16" id="addImg">
@@ -35,20 +35,20 @@
                     <li>
 
                         <label for="titolo">Nome Libro</label>
-                        <input type="text" class="form-control " id="titolo" name="titolo">
+                        <input type="text" class="form-control " id="titolo" name="titolo" />
 
                     </li>
                     <li>
 
                         <label for="autore">Autore</label>
-                        <input type="text" class="form-control " id="autore" name="autore">
+                        <input type="text" class="form-control " id="autore" name="autore" />
 
                     </li>
                     <li>
 
 
                         <label for="casaEditrice">Casa Editrice</label>
-                        <input type="text" class="form-control " id="casaEditrice" name="casaEditrice">
+                        <input type="text" class="form-control " id="casaEditrice" name="casaEditrice" />
 
                     </li>
                 </ul>
@@ -83,8 +83,8 @@
 
                     <li>
 
-                        <label for="floatingTextarea">Trama</label>
-                        <textarea class="form-control " placeholder="Trama" id="floatingTextarea"
+                        <label for="floatingTextareaB">Trama</label>
+                        <textarea class="form-control " placeholder="Trama" id="floatingTextareaB"
                             name="trama"></textarea>
 
                     </li>
@@ -93,7 +93,7 @@
             <footer>
                 <div class="mb-3 text-center">
 
-                    <button id="invia" type="submit" class="btn" value="send">Invia</button>
+                    <button type="submit" class="btn" value="send">Invia</button>
 
                 </div>
             </footer>

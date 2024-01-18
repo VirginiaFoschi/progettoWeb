@@ -16,10 +16,10 @@
         <div class="col-md-6">
             <article class="bg-body mb-3">
                 <header class="px-3  mt-3 mb-3">
-                    <img src="<?php echo UPLOAD_DIR.$post["userImage"]; ?>" alt="immagine-profilo" >
+                    <img src="<?php echo UPLOAD_DIR.$post["userImage"]; ?>" alt="immagine-profilo" />
                     <a href="<?php if($post["username"] === $_SESSION["username"]): echo "profilo-post.php"; else: echo "account-post.php";endif;?>?id=<?php echo $post["username"];?>"><?php echo $post["username"]; ?></a>
                     <?php if($_SESSION["username"] !== $post["username"]): ?>
-                        <input class="follow" type="submit" value="<?php if(in_array($post["username"],$templateparams["follows"])): echo "Segui già"; else: echo "Segui"; endif; ?>" onClick="sendAjaxRequest('follow.php', {username: '<?php echo $post['username']; ?>'})">
+                        <input class="follow" type="submit" value="<?php if(in_array($post["username"],$templateparams["follows"])): echo "Segui già"; else: echo "Segui"; endif; ?>" onClick="sendAjaxRequest('follow.php', {username: '<?php echo $post['username']; ?>'})" />
                     <?php endif; ?>
                 </header>
                 <section class="px-3 mb-4">
@@ -27,7 +27,7 @@
                     <ul>
                         <li>
                             <div class="d-flex align-items-center">
-                                <img src="<?php echo UPLOAD_DIR.$post["immagine"]; ?>" alt="copertina-libro" class="image">
+                                <img src="<?php echo UPLOAD_DIR.$post["immagine"]; ?>" alt="copertina-libro" class="image" />
                                 <ul>
                                     <li>
                                         <h3><?php echo $post["titolo_libro"]; ?></h3>
@@ -72,10 +72,10 @@
         <div class="col-md-6">
             <article class="bg-body mb-3">
                 <header class="px-3  mt-3 mb-3">
-                    <img src="<?php echo UPLOAD_DIR.$post["userImage"]; ?>" alt="immagine-profilo">
+                    <img src="<?php echo UPLOAD_DIR.$post["userImage"]; ?>" alt="immagine-profilo" />
                     <a href="<?php if($post["username"] === $_SESSION["username"]): echo "profilo-post.php"; else: echo "account-post.php";endif;?>?id=<?php echo $post["username"];?>"><?php echo $post["username"]; ?></a>
                     <?php if($_SESSION["username"] !== $post["username"]): ?>
-                        <input class="follow" type="submit" value="<?php if(in_array($post["username"],$templateparams["follows"])): echo "Segui già"; else: echo "Segui"; endif; ?>" onClick="sendAjaxRequest('follow.php', {username: '<?php echo $post['username']; ?>'})">
+                        <input class="follow" type="submit" value="<?php if(in_array($post["username"],$templateparams["follows"])): echo "Segui già"; else: echo "Segui"; endif; ?>" onClick="sendAjaxRequest('follow.php', {username: '<?php echo $post['username']; ?>'})" />
                     <?php endif; ?>
                 </header>
                 <section class="px-3 mb-4">
@@ -131,11 +131,11 @@
                                 <div class="mb-3">
                                     <label for="textArea<?php echo $post["id_evento"]; ?>">Inserisci Commento</label>
                                     <textarea class="form-control" name="commento" cols="50" id="textArea<?php echo $post["id_evento"]; ?>"></textarea>
-                                    <input type="hidden" value="<?php echo $post["id_evento"]; ?>" name="id_evento">
+                                    <input type="hidden" value="<?php echo $post["id_evento"]; ?>" name="id_evento" />
                                 </div>
                                 <div class="mb-3">
                                     <div class="col-12 text-end">
-                                        <input type="submit" class="btn btn-sm" value="Pubblica">
+                                        <input type="submit" class="btn btn-sm" value="Pubblica" />
                                     </div>
                                 </div>
                             </form>

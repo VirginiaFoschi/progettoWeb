@@ -76,11 +76,11 @@
                                         <textarea class="form-control" id="text<?php echo $post["Evento"]["id_evento"]; ?>"
                                             name="commento" cols="50"></textarea>
                                         <input type="hidden" value="<?php echo $post["Evento"]["id_evento"]; ?>"
-                                            name="id_evento">
+                                            name="id_evento" />
                                     </div>
                                     <div class="mb-3">
                                         <div class="col-12 text-end">
-                                            <input type="submit" title="Pubblica Commento" class="btn btn-sm" value="Pubblica">
+                                            <input type="submit" title="Pubblica Commento" class="btn btn-sm" value="Pubblica" />
                                         </div>
                                     </div>
                                 </form>

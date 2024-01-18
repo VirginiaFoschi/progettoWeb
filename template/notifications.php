@@ -46,7 +46,6 @@
                   <?php $books = $dbh->getPostTable()->getPostLibro($notifica['Username_Int']); ?>
                   <?php echo $notifica['Username_Int']?>
                   <?php foreach ($books as $postLibro) : ?>
-                    <?php echo $postLibro?>
                     <article class="article-annuncio bg-body border mb-3">
                       <header class="px-3  mt-3 mb-3">
                         <img src="<?php echo UPLOAD_DIR . $postLibro["Immagine"] ?>" alt="Copertina libro" class="image" />
@@ -55,7 +54,7 @@
                       </header>
                       <section class="px-3 mb-4">
                         <p><?php echo $postLibro["Trama"] ?></p>
-                        <input type="button" value="Seleziona" name="seleziona-libro" class="seleziona-libro" onclick="setSelectedBook(<?php echo $postLibro['ID_Libro']; ?>)">
+                        <input type="button" value="Seleziona" name="seleziona-libro" class="seleziona-libro" onclick="setSelectedBook(<?php echo $postLibro['ID_Libro']; ?>, <?php echo $notifica['ID_Notifica']; ?>)">
                     </article>
                   <?php endforeach; ?>
               </div>

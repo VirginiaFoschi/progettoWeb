@@ -30,7 +30,7 @@ class NotificationsTable
 
     public function getSuspendNotifyLibro($username, $id_libro)
     {
-        $stmt = $this->db->prepare("SELECT N.id_libro, L.username_autore FROM NOTIFICHE N JOIN LIBRO_POSTATO L ON N.ID_Libro = L.ID_Libro WHERE L.username_autore = ? AND N.tipo = 'in_sospeso' AND L.ID_Libro = ?");
+        $stmt = $this->db->prepare("SELECT N.id_libro, L.username_autore FROM NOTIFICHE N JOIN LIBRO_POSTATO L ON N.ID_Libro = L.ID_Libro WHERE L.username_autore = ? AND N.tipo = 'attesa' AND L.ID_Libro = ?");
         $stmt->bind_param('si', $username, $id_libro);
         $stmt->execute();
         $result = $stmt->get_result();

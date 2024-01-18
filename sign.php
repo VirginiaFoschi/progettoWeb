@@ -22,7 +22,7 @@
             if(isset($_FILES["image"]) && $_FILES["image"]["size"] > 0) {
                 list($result, $msg) = uploadImage(UPLOAD_DIR, $_FILES["image"]);
                 if($result != 0){
-                    $image = $msg;
+                    $image = $_FILES["image"]["name"];
                     $pws =password_hash($_POST["password"], PASSWORD_DEFAULT);
                     $dbh->getUsersTable()->registerLoggedUser($_POST["name"], $_POST["surname"], $_POST["username"], $pws, $_POST["address"],$image);
                     $genres=$_POST["genres"];

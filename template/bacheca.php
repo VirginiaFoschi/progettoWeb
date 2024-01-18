@@ -16,7 +16,7 @@
         <div class="col-md-6">
             <article class="bg-body mb-3">
                 <header class="px-3  mt-3 mb-3">
-                    <img src="<?php echo UPLOAD_DIR.$post["userImage"]; ?>" alt="" >
+                    <img src="<?php echo UPLOAD_DIR.$post["userImage"]; ?>" alt="immagine-profilo" >
                     <a href="<?php if($post["username"] === $_SESSION["username"]): echo "profilo-post.php"; else: echo "account-post.php";endif;?>?id=<?php echo $post["username"];?>"><?php echo $post["username"]; ?></a>
                     <?php if($_SESSION["username"] !== $post["username"]): ?>
                         <input class="follow" type="submit" value="<?php if(in_array($post["username"],$templateparams["follows"])): echo "Segui già"; else: echo "Segui"; endif; ?>" onClick="sendAjaxRequest('follow.php', {username: '<?php echo $post['username']; ?>'})">
@@ -27,7 +27,7 @@
                     <ul>
                         <li>
                             <div class="d-flex align-items-center">
-                                <img src="<?php echo UPLOAD_DIR.$post["immagine"]; ?>" alt="" class="image">
+                                <img src="<?php echo UPLOAD_DIR.$post["immagine"]; ?>" alt="copertina-libro" class="image">
                                 <ul>
                                     <li>
                                         <h3><?php echo $post["titolo_libro"]; ?></h3>
@@ -72,7 +72,7 @@
         <div class="col-md-6">
             <article class="bg-body mb-3">
                 <header class="px-3  mt-3 mb-3">
-                    <img src="<?php echo UPLOAD_DIR.$post["userImage"]; ?>" alt="">
+                    <img src="<?php echo UPLOAD_DIR.$post["userImage"]; ?>" alt="immagine-profilo">
                     <a href="<?php if($post["username"] === $_SESSION["username"]): echo "profilo-post.php"; else: echo "account-post.php";endif;?>?id=<?php echo $post["username"];?>"><?php echo $post["username"]; ?></a>
                     <?php if($_SESSION["username"] !== $post["username"]): ?>
                         <input class="follow" type="submit" value="<?php if(in_array($post["username"],$templateparams["follows"])): echo "Segui già"; else: echo "Segui"; endif; ?>" onClick="sendAjaxRequest('follow.php', {username: '<?php echo $post['username']; ?>'})">

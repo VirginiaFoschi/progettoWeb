@@ -1,29 +1,47 @@
 img {
-    width:50px;
-    height: 50px;
-    border-radius: 50%;
-}
-.article-annuncio {
-    height: auto;  
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
 }
 
-.informazione-libro h3, .informazione-libro p {
-    /* Riduci le dimensioni del testo */
-    font-size: 0.8em;  /* Riduci le dimensioni del testo dell'80% */
+.article-annuncio {
+  height: auto;
+}
+
+.informazione-libro h3,
+.informazione-libro p {
+  /* Riduci le dimensioni del testo */
+  font-size: 0.8em;
+  /* Riduci le dimensioni del testo dell'80% */
 }
 
 .modal-body {
-    /* Imposta la barra di scorrimento solo se il contenuto supera l'altezza massima */
-    overflow-y: auto;
-    /* Imposta l'altezza massima del corpo del modal */
-    max-height: 300px;
-  }
+  /* Imposta la barra di scorrimento solo se il contenuto supera l'altezza massima */
+  overflow-y: auto;
+  /* Imposta l'altezza massima del corpo del modal */
+  max-height: 300px;
+}
 
-  .notifica{
-    margin-left: 10px;
-    margin-right: 10px;
-  }
-  
-  h2 {
-    font-size: medium;
-  }
+.notifica {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+h2 {
+  font-size: medium;
+}
+
+.btn{
+  color: #558151;
+  border-color: #558151;
+}
+
+.btn:hover{
+  background-color: #558151;
+  border-color: #558151;
+  color:white;
+}
+
+a {
+  text-decoration: none;
+}

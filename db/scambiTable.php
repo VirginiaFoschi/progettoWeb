@@ -51,18 +51,16 @@ class ScambiTable
                 $resultLibro2 = $stmt->get_result();
                 $row2 = $resultLibro2->fetch_assoc();
 
-
                 if ($row2) {
-                    $resultPerLibro[] = array(
+                    array_push($resultPerLibro, array(
                         'Libro1' => array('ID_Libro1' => $id_libro["ID_Libro"], 'DettagliLibro1' => $rowLibro),
                         'Libro2' => array('ID_Libro2' => $libro2, 'DettagliLibro2' => $row2),
                         'Data_Fine' => $row['Data_Fine']
-                    );
+                    ));
                 }
 
             }
 
-            $risultatoTotale += $resultPerLibro;
 
             // Esegui la query per trovare tutti i libri2 associati al libro corrente e la data di scadenza
             $stmt = $this->db->prepare("SELECT ID_Libro1, Data_Fine FROM scambio WHERE ID_Libro2 = ? AND Data_Fine > NOW()");
@@ -82,15 +80,15 @@ class ScambiTable
 
 
                 if ($row2) {
-                    $resultPerLibro[] = array(
+                    array_push($resultPerLibro, array(
                         'Libro1' => array('ID_Libro1' => $id_libro["ID_Libro"], 'DettagliLibro1' => $rowLibro),
                         'Libro2' => array('ID_Libro2' => $libro1, 'DettagliLibro2' => $row2),
                         'Data_Fine' => $row['Data_Fine']
-                    );
+                    ));
                 }
 
             }
-            $risultatoTotale += $resultPerLibro;
+            $risultatoTotale = array_merge($risultatoTotale, $resultPerLibro);
         }
         return $risultatoTotale;
     }

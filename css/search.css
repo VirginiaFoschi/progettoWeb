@@ -2,70 +2,49 @@ body>div>header {
     margin: 10px 50px 0 50px;
 }
 
-  form{
-    margin:auto;
-    max-width:100%;
-  }
-  
-  form input[type=text] {
-    padding: 10px;
-    font-size: 17px;
-    border: 1px solid grey;
-    float: left;
-    width: 90%;
-    background: white;
-  }
-  
-  form button {
-    font-size: 17px;
-    cursor: pointer;
-  }
-
-  #btnsearch{
-    padding: 10px;
-    width: 10%;
-    background-color: #558151;
-    color: white;
-    border: 1px solid #558151;
-    border-right: none;
-    float: left;
-  }
-  
-  form #btnsearch:hover {
-    background: #41643f;
-  }
-  
-  form::after {
-    content: "";
-    clear: both;
-    display: table;
-  }
-
-
-/*.flex-container {
-    display: flex;
-}*/
-
-/*.follow{
-    margin:2%;
-    float:right;
-    background-color: rgba(128, 128, 128, 0.245);
-    color:black;
+form{
+  margin:auto;
+  max-width:100%;
 }
 
-.follow.clicked {
-    background-color: #28a745;
-    color: #fff;
-} */
+form input[type=text] {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  float: left;
+  width: 90%;
+  background: white;
+}
+
+form button {
+  font-size: 17px;
+  cursor: pointer;
+}
+
+#btnsearch{
+  padding: 10px;
+  width: 10%;
+  background-color: #558151;
+  color: white;
+  border: 1px solid #558151;
+  border-right: none;
+  float: left;
+}
+
+form #btnsearch:hover {
+  background: #41643f;
+}
+
+form::after {
+  content: "";
+  clear: both;
+  display: table;
+}
 
 img {
     width:24%;
     /*object-fit: contain;*/
 }
-
-/*article>header>img{
-    width:5%;
-}*/
 
 #btnannulla{
     display: none;
@@ -82,30 +61,10 @@ form input.restore {
   width:18%;
   display:block;
 }
-/*table{
-    border-spacing: 10px;
-}
-
-th,td {
-      text-align: center;
-      padding: 8px;
-}
-
-td .follow {
-    float: none;
-}*/
 
 #options a.active3 {
   text-decoration: underline;
 }
-
-/*section>ul {
-  margin-top: 2%;
-}
-
-section> ul>li {
-  margin: 1% 0;
-}*/
 
 ul {
   list-style: none;
@@ -124,7 +83,7 @@ body>div>ul>li {
   color: #777;
 }
 
-#genere {
+#genereSearch {
   width: 100px;
 }
 

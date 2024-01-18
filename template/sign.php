@@ -1,14 +1,14 @@
 <h2>Crea un account</h2>
-<form action="#" method="POST" enctype="multipart/form-data">
+<form action="#" method="POST" enctype="multipart/form-data" id="formSign">
     <div class="mb-3" id="select-image">
-        <img src="img/immagineProfilo.png" alt="" id="profilo" class="image">
-        <label for="input">Seleziona foto profilo:
-        <input type="file" id="input" accept="image/*" name="image"></label>
+        <img src="img/immagineProfilo.png" alt="immagine-profilo" id="profiloSign" class="image">
+        <label for="inputSign">Seleziona foto profilo:
+        <input type="file" id="inputSign" accept="image/*" name="image"></label>
     </div>
     <?php if($templateparams["erroreSignIn"]): ?>
         <div id="liveAlertPlaceholder" class=" mb-3 alert alert-danger alert-dismissible" role="alert">
-        <div id="message"><?php echo $templateparams["errormsg"]; ?></div>
-        <button type="button" class="btn-close" id="btnclose" data-bs-dismiss="alert" aria-label="Close"></button>
+        <div><?php echo $templateparams["errormsg"]; ?></div>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>  
     <?php else: ?>
         <div id="liveAlertPlaceholder" class="mb-3"></div>
@@ -29,7 +29,7 @@
         <label for="password" class="form-label">Password</label>
         <input type="password" minlength="5" class="form-control" id="password" name="password">
         <span class="form-text">
-            Your password must be at least 5 characters long
+            La password deve essere lunga almeno 5 caratteri
         </span>
     </div>
     <div class="mb-3">
@@ -44,13 +44,13 @@
             <?php endforeach; ?>
         </select>
         <span class="form-text">
-            Press CTRL and select all your favourite genres
+            Premi CTRL e seleziona tutti i tuoi generi preferiti
         </span>
     </div>
     <div class="mb-3">
         <div class="col-12 text-end">
-            <input id="backbtn" type="button" class="btn " value="Back" onClick="logout()">
-            <input id="signbtn" type="button" class="btn " value="Sign In" onclick="appendAlert()">
+            <input type="button" class="btn " value="Indietro" onClick="logout()">
+            <input type="button" class="btn " value="Registrati" onclick="appendAlert()">
         </div>
     </div>
 </form>

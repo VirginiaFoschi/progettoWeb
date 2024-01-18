@@ -1,4 +1,4 @@
-<form method="POST" class="genere">
+<form method="POST" class="genere" action="#" >
         <h2>Generi preferiti:</h2>
         <ul>
             <?php foreach($templateparams["generi"] as $generi):?>
@@ -10,7 +10,7 @@
         </ul>
         <div class="mb-3">
             <div class="col-12 text-end">
-                <input id="backbtn" type="button" class="btn" value="Back" onclick="backImp()" />
+                <input type="button" class="btn" value="Indietro" onclick="backImp()" />
                 <input type="submit" class="btn" value="Salva" />
             </div>
         </div>

@@ -10,7 +10,7 @@
         <h2 id="nome-utente">
             <?php echo $templateparams["nome-profilo"]; ?>
         </h2>
-        <p id="follow">Follow</p>
+        <p id="follow">Seguiti</p>
         <p id="follower">Follower</p>
         <?php foreach ($templateparams["follow"] as $follow): ?>
             <p id="num-follow">

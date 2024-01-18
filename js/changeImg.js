@@ -3,9 +3,9 @@ function addImg() {
     fileInput.click();
 }
 
-// Aggiungi un evento change all'input file
+// Aggiungo un evento change all'input file
 fileInput.addEventListener('change', function(event) {
-    // Ottieni il file selezionato dall'utente
+    // Ottengo il file selezionato dall'utente
    
     let immagine = document.getElementById('profilo');
     let input = event.target;

@@ -1,7 +1,7 @@
 <?php
 require_once("bootstrap.php");
 
-$paginaCorrente = 'notifica';
+
 $templateparams["notifiche"] = $dbh->getNotificationsTable()->getNotifications($_SESSION["username"]);
 $templateparams["interesse"] = $dbh->getNotificationsTable()->getInterests($_SESSION["username"]);
 $templateparams["interazione"] = $dbh->getNotificationsTable()->getInteraction($_SESSION["username"]);
@@ -47,6 +47,7 @@ if (isset($_POST["back"])) {
     }
     foreach ($templateparams["interesse"] as $interesse) {
         if ($interesse['Visualizzato'] == 0) {
+            $dbh->getNotificationsTable()->updateInterestViewed($interesse['ID_Evento'], $interesse['Username_Int']);
             $dbh->getNotificationsTable()->updateInterestViewed($interesse['ID_Evento'], $interesse['Username_Int']);
         }
     }

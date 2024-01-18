@@ -13,13 +13,13 @@ function cambiaTab(elemento) {
 /*Nav del profilo */
 function cambiaTab2(elemento) {
   // Rimuovi la classe "active" dall'elemento corrente
-  let elementiAttivi = document.querySelectorAll('a.active2');
+  let elementiAttivi = document.querySelectorAll('a.active4');
   elementiAttivi.forEach(function (el) {
-    el.classList.remove('active2');
+    el.classList.remove('active4');
   });
 
   // Aggiungi la classe "active" all'elemento cliccato
-  elemento.classList.add('active2');
+  elemento.classList.add('active4');
 }
 
 /*

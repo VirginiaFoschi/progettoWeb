@@ -30,3 +30,7 @@ for (let i = 0; i < comment.length; i++) {
     form.style.display = 'block';
   });
 }
+
+function notifiche() {
+    window.location.href = "notifications.php";
+}

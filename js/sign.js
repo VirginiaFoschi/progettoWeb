@@ -1,6 +1,6 @@
-document.getElementById("input").addEventListener("change", function (event) {
+document.getElementById("inputSign").addEventListener("change", function (event) {
     const input = event.target;
-    let immagine = document.getElementById('profilo');
+    let immagine = document.getElementById('profiloSign');
 
     if (input.files && input.files[0]) {
         let reader = new FileReader();
@@ -16,17 +16,17 @@ document.getElementById("input").addEventListener("change", function (event) {
 });
 
 function appendAlert(){
-  let name = document.getElementById('name');
-  let surname=document.getElementById('surname');
-  let username = document.getElementById('username');
-  let password = document.getElementById('password');
-  let address=document.getElementById('address');
+  let name = document.getElementById('name').value;
+  let surname=document.getElementById('surname').value;
+  let username = document.getElementById('username').value;
+  let password = document.getElementById('password').value;
+  let address=document.getElementById('address').value;
   let genres=document.getElementById('genres').selectedOptions;
   if(name && surname && username && password && address && genres.length>0) {
-    if(password.value.length < 5) {
+    if(password.length < 5) {
       alertMessage("La password contiene meno di 5 caratteri");
     } else {
-      document.querySelector('form').submit();
+      document.getElementById('formSign').submit();
     }
   } else {
     alertMessage("Please fill all fields!");
@@ -40,7 +40,7 @@ function alertMessage(message) {
   alertPlaceholder.innerHTML = [
     `<div class="alert alert-${type} alert-dismissible" role="alert">`,
     `   <div>${message}</div>`,
-    '   <button type="button" class="btn-close" id="btnclose" data-bs-dismiss="alert" aria-label="Close"></button>',
+    '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
     '</div>'
   ].join('');
 

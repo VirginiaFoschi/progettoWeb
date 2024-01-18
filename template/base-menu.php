@@ -19,7 +19,7 @@
 
 <body class="bg-light">
     <div class="container-fluid p-0 overflow-hidden">
-        <header class="text-center font-monospace">
+        <header class="text-center">
             <img id="logoMenu" class="<?php if($templateparams["nome"] === "etichetta.php"): echo "etichetta-no-stampare"; endif;?>" src="./upload/logo.jpeg" alt="logo" >
             <h1 class="<?php if($templateparams["nome"] === "etichetta.php"): echo "etichetta-no-stampare"; endif;?>">Mille e Una Pagina</h1>
         </header>
@@ -34,7 +34,7 @@
         </div>
         <div class="row">
             <div class="col-12">
-                <footer class="font-monospace text-center py-4">
+                <footer class="text-center py-4">
                     <p>From MVC</p>
                 </footer>
             </div>

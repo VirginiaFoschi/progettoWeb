@@ -21,7 +21,16 @@ class NotificationsTable
 
     public function getNotifications($username)
     {
-        $stmt = $this->db->prepare("SELECT N.*, U.Immagine as userProfileImage, L.Titolo as bookTitle FROM NOTIFICHE N JOIN LIBRO_POSTATO L ON N.ID_Libro = L.ID_Libro JOIN UTENTE U ON N.Username_Int = U.Username WHERE L.Username_Autore = ?");
+        $stmt = $this->db->prepare("SELECT N.*, U.Immagine as userProfileImage, L.Titolo as bookTitle, L.Username_Autore FROM NOTIFICHE N JOIN LIBRO_POSTATO L ON N.ID_Libro = L.ID_Libro JOIN UTENTE U ON N.Username_Int = U.Username WHERE L.Username_Autore = ? AND N.Tipo = 'attesa'");
+        $stmt->bind_param('s', $username);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function getNotificationsAccettata($username)
+    {
+        $stmt = $this->db->prepare("SELECT N.*, U.Immagine as userProfileImage, L.Titolo as bookTitle, L.Username_Autore FROM NOTIFICHE N JOIN LIBRO_POSTATO L ON N.ID_Libro = L.ID_Libro JOIN UTENTE U ON N.Username_Int = U.Username WHERE N.Username_Int = ? AND N.Tipo = 'accettata'");
         $stmt->bind_param('s', $username);
         $stmt->execute();
         $result = $stmt->get_result();
@@ -111,11 +120,17 @@ class NotificationsTable
 
     public function getNotificationsNotDisplayed($username)
     {
-        $stmt = $this->db->prepare("SELECT COUNT(N.ID_Notifica) as num_not FROM NOTIFICHE N JOIN LIBRO_POSTATO L ON N.ID_Libro = L.ID_Libro WHERE L.Username_Autore = ? AND N.Visualizzato = 'false'");
+        $stmt = $this->db->prepare("SELECT COUNT(N.ID_Notifica) as num_not FROM NOTIFICHE N JOIN LIBRO_POSTATO L ON N.ID_Libro = L.ID_Libro WHERE L.Username_Autore = ? AND N.Tipo='attesa' AND N.Visualizzato = 'false'");
         $stmt->bind_param('s', $username);
         $stmt->execute();
         $result = $stmt->get_result();
         $notifica = $result->fetch_all(MYSQLI_ASSOC);
+
+        $stmt = $this->db->prepare("SELECT COUNT(N.ID_Notifica) as num_not FROM NOTIFICHE N JOIN LIBRO_POSTATO L ON N.ID_Libro = L.ID_Libro WHERE N.Username_Int = ? AND N.Tipo='accettata' AND N.Visualizzato = 'false'");
+        $stmt->bind_param('s', $username);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $notifica_accettata = $result->fetch_all(MYSQLI_ASSOC);
 
         $stmt = $this->db->prepare("SELECT COUNT(*) as count_rec FROM INTERAZIONE WHERE Autore_Recensione = ? AND Visualizzato = 'false'");
         $stmt->bind_param('s', $username);
@@ -135,7 +150,7 @@ class NotificationsTable
         $result = $stmt->get_result();
         $commento = $result->fetch_all(MYSQLI_ASSOC);
 
-        $notifiche = $notifica[0]["num_not"] + $recensioni[0]["count_rec"] + $interesse[0]["count_int"] + $commento[0]["count_com"];
+        $notifiche = $notifica[0]["num_not"] + $notifica_accettata[0]["num_not"] + $recensioni[0]["count_rec"] + $interesse[0]["count_int"] + $commento[0]["count_com"];
         return $notifiche;
     }
 }

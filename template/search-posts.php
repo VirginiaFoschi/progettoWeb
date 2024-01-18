@@ -1,8 +1,8 @@
 <div class="row justify-content-center my-3">
     <div class="col-md-6">
         <form action="#" method="POST" id="formPost" class="mx-3">
-            <label for="genere">Filtra per genere: 
-                <select name="genere" id="genere" onChange="sendSelectedValue()">
+            <label for="genereSearch">Filtra per genere: 
+                <select name="genere" id="genereSearch" onChange="sendSelectedValue()">
                     <option value="Tutti" <?php if($_SESSION["genere"] == 'Tutti'): echo 'selected'; endif; ?>>Tutti</option>
                     <?php foreach($templateparams["genere"] as $genere): ?>
                     <option value="<?php echo $genere["nome"]; ?>" <?php if($_SESSION["genere"] == $genere["nome"]): echo 'selected'; endif; ?>><?php echo $genere["nome"]; ?></option>
@@ -18,7 +18,7 @@
             <div class="col-md-6">
                 <article class="article bg-body mx-3">
                     <header class="px-3  mt-3 mb-3">
-                        <img src="<?php echo UPLOAD_DIR.$post["fotoProfilo"]; ?>" alt="">
+                        <img src="<?php echo UPLOAD_DIR.$post["fotoProfilo"]; ?>" alt="immagine-profilo">
                         <a href="<?php if($post["username"] === $_SESSION["username"]): echo "profilo-post.php"; else: echo "account-post.php";endif;?>?id=<?php echo $post["username"];?>"><?php echo $post["username"]; ?></a>
                         <input class="follow" type="button" value="<?php if(in_array($post["username"],$templateparams["follows"])): echo "Segui già"; else: echo "Segui"; endif; ?>" onClick="sendAjaxRequest('follow.php', {username: '<?php echo $post['username']; ?>'})">
                     </header>
@@ -26,7 +26,7 @@
                         <ul>
                             <li>
                                 <div class="d-flex align-items-center">
-                                    <img src="<?php echo UPLOAD_DIR.$post["copertina"]; ?>" alt="" class="image">
+                                    <img src="<?php echo UPLOAD_DIR.$post["copertina"]; ?>" alt="copertina-libro" class="image">
                                     <ul>
                                         <li>
                                             <h2><?php echo $post["titolo"]; ?></h2>
@@ -53,8 +53,8 @@
                                 ?>
                                 <p><?php echo implode(' ', array_slice($str, 0, 40)); ?>
                                     <?php if(count($words) > 40): ?>
-                                        <span class="dots" id="dotsP<?php echo $i; ?>" onclick="showMore('dotsP<?php echo $i; ?>', 'P<?php echo $i; ?>')"> ...altro</span>
-                                        <span class="hidden-text" id="textP<?php echo $i; ?>" ><?php echo implode(' ', array_slice($str, 40)); ?></span>
+                                        <span class="dots" id="dotsPO<?php echo $i; ?>" onclick="showMore('dotsPO<?php echo $i; ?>', 'PO<?php echo $i; ?>')"> ...altro</span>
+                                        <span class="hidden-text" id="textPO<?php echo $i; ?>" ><?php echo implode(' ', array_slice($str, 40)); ?></span>
                                     <?php endif; ?>
                                 </p>
                             </li>

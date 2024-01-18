@@ -6,6 +6,10 @@
     border-top: 2px solid #558151;
 }
 
+h1 {
+    font-size: xx-large;
+}
+
 .content {
     margin-bottom: 40px;
 }

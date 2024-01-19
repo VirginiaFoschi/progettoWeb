@@ -137,7 +137,7 @@ CREATE TABLE `libro_postato` (
   `Trama` mediumtext NOT NULL,
   `Condizioni` varchar(100) NOT NULL,
   `Immagine` varchar(100) NOT NULL,
-  `dataPubblicazione` date NOT NULL DEFAULT '2023-10-01',
+  `DataPubblicazione` date NOT NULL DEFAULT '2023-10-01',
   `Username_Autore` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `Nome_Genere` varchar(100) NOT NULL,
   `Eliminato` tinyint(1) NOT NULL DEFAULT '0'
